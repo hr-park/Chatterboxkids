@@ -2,19 +2,62 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Chatterboxkids</title>
-    <style>
-       
-    </style>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Chatterboxkids">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chatterboxkids">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="/inc/images/og_image.png">
+    <meta property="og:url" content="https://www.chatterboxkids.net/">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- css / js -->
+    <link rel="stylesheet" href="/inc/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/inc/css/common.css">
+    <script src="/inc/js/common.js"></script>
+    <script src="/inc/js/jquery-3.6.4.min.js"></script>
+    <script src="/inc/js/swiper-bundle.min.js"></script>
 </head>
 <body>
-    <div class="container">
-       TEST
+    <!-- [include] header -->
+    <div data-include-file="/inc/layout/header.html" class="includeJs"></div>
+    <!-- //[include] header -->
+    <div id="container" class="container">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">슬라이드 1</div>
+              <div class="swiper-slide">슬라이드 2</div>
+              <div class="swiper-slide">슬라이드 3</div>
+            </div>
+            <div class="swiper_pagination"></div>
+            <div class="swiper_button_prev"></div>
+            <div class="swiper_button_next"></div>
+          </div>
     </div>
+    <!-- [include] footer -->
+    <div data-include-file="/inc/layout/footer.html" class="includeJs"></div>
+    <!-- //[include] footer -->
 
+    <script src="/inc/js/include.js"></script>
     <script>
-        
+    document.addEventListener('DOMContentLoaded', function() {
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            pagination: {
+                el: '.swiper_pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.swiper_button_next',
+                prevEl: '.swiper_button_prev'
+            }
+        });
+    });
     </script>
 </body>
 </html> 

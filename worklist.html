@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatterboxkids Worklist</title>
     <style>
-        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;margin:10px;background-color:#f5f5f5;}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background-color:#f5f5f5;}
         .container{max-width:1200px;margin:0 auto;background-color:white;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,0.1);overflow:hidden;}
-        h1{background-color:#2c3e50;color:white;margin:0;padding:15px;text-align:center;font-size:1.5rem;}
-        .table_container{padding:10px;}
-        table{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px;}
+        h1{color:#2c3e50;;margin:0;padding:15px 20px 0;text-align:left;font-size:1.5rem;}
+        .table_container{padding:15px 20px;}
+        table{width:100%;border-collapse:collapse;font-size:14px;}
         th,td{padding:8px 10px;text-align:left;border-bottom:1px solid #ddd;}
-        th{background-color:#34495e;color:white;font-weight:600;position:sticky;top:0;font-size:15px;}
+        th{background-color:#34495e;color:white;font-weight:600;position:sticky;top:0;font-size:14px;}
         tr:hover{background-color:#f8f9fa;}
         .path_column{font-family:'Courier New',monospace;color:#2c3e50;max-width:200px;word-break:break-all;font-size:15px;}
         .path_column a{color:#3498db;text-decoration:none;}
@@ -22,15 +22,13 @@
         .status_in_progress{background-color:#3498db;color:white;padding:3px 6px;border-radius:3px;font-size:13px;}
         
         /* 테이블 스크롤 컨테이너 */
-        .table_scroll{overflow-x:auto;overflow-y:auto;max-height:70vh;}
+        .table_scroll{overflow-x:auto;overflow-y:auto;max-height:85vh;}
         
         /* 모바일 반응형 스타일 */
         @media (max-width:768px) {
-            body{margin:5px;}
             .container{border-radius:4px;}
             h1{padding:10px;font-size:1.2rem;}
             .table_container{padding:5px;}
-            .table_scroll{max-height:60vh;}
             table{font-size:14px;min-width:600px;}
             th,td{padding:6px 8px;}
             th{font-size:13px;}
@@ -40,10 +38,8 @@
         }
         
         @media (max-width:480px) {
-            body{margin:2px;}
             h1{padding:8px;font-size:1rem;}
             .table_container{padding:3px;}
-            .table_scroll{max-height:50vh;}
             table{font-size:13px;min-width:500px;}
             th,td{padding:4px 6px;}
             th{font-size:12px;}
@@ -59,65 +55,197 @@
         <div class="table_container">
             <div class="table_scroll">
                 <table>
-                <thead>
-                    <tr>
-                        <th>번호</th>
-                        <th>경로</th>
-                        <th>페이지명</th>
-                        <th>상태</th>
-                        <th>작업일</th>
-                        <th>비고</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td class="path_column"><a href="/src/pages/home" target="_blank">/src/pages/home</a></td>
-                        <td class="page_name_column">홈페이지</td>
-                        <td class="status_column"><span class="status_complete">완료</span></td>
-                        <td>2024-01-15</td>
-                        <td>메인 페이지 구현</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td class="path_column"><a href="/src/pages/about" target="_blank">/src/pages/about</a></td>
-                        <td class="page_name_column">소개 페이지</td>
-                        <td class="status_column"><span class="status_in_progress">진행중</span></td>
-                        <td>2024-01-16</td>
-                        <td>회사 소개 내용 추가 필요</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td class="path_column"><a href="/src/pages/contact" target="_blank">/src/pages/contact</a></td>
-                        <td class="page_name_column">연락처</td>
-                        <td class="status_column"><span class="status_pending">대기</span></td>
-                        <td>-</td>
-                        <td>폼 검증 로직 구현 예정</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td class="path_column"><a href="/src/components/Header" target="_blank">/src/components/Header</a></td>
-                        <td class="page_name_column">헤더 컴포넌트</td>
-                        <td class="status_column"><span class="status_complete">완료</span></td>
-                        <td>2024-01-14</td>
-                        <td>네비게이션 메뉴 포함</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td class="path_column"><a href="/src/components/Footer" target="_blank">/src/components/Footer</a></td>
-                        <td class="page_name_column">푸터 컴포넌트</td>
-                        <td class="status_column"><span class="status_pending">대기</span></td>
-                        <td>-</td>
-                        <td>소셜 미디어 링크 추가 예정</td>
-                    </tr>
-                </tbody>
-            </table>
+                    <thead>
+                        <tr>
+                            <th>1depth</th>
+                            <th>2depth</th>
+                            <th>3depth</th>
+                            <th>path/file</th>
+                            <th>상태</th>
+                            <th>비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>메인</td>
+                            <td></td>
+                            <td></td>
+                            <td class="path_column"><a href="/index.html" target="_blank">/index.html</a></td>
+                            <td class="status_column"><span class="status_in_progress">진행중</span><span class="status_complete">완료</span</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>회사소개</td>
+                            <td></td>
+                            <td></td>
+                            <td class="path_column"><a href="/about.html" target="_blank">/about.html</a></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>프로그램</td>
+                            <td>영어</td>
+                            <td></td>
+                            <td class="path_column"><a href="/program/english.html" target="_blank">/program/english.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>중국어</td>
+                            <td></td>
+                            <td class="path_column"><a href="/program/chinese.html" target="_blank">/program/chinese.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>수다쟁이한글</td>
+                            <td></td>
+                            <td class="path_column"><a href="/program/korean.html" target="_blank">/program/korean.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>공지사항</td>
+                            <td>리스트</td>
+                            <td></td>
+                            <td class="path_column"><a href="/notice_list.html" target="_blank">/notice_list.html</a></td>
+                            <td class="status_column"><span class="status_in_progress">진행중</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>상세</td>
+                            <td></td>
+                            <td class="path_column"><a href="/notice_view.html" target="_blank">/notice_view.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>자료실</td>
+                            <td>일반자료실</td>
+                            <td>리스트</td>
+                            <td class="path_column"><a href="/data/general.html" target="_blank">/data/general.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>상세</td>
+                            <td class="path_column"><a href="/data/general.html" target="_blank">/data/general.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>학습자료실</td>
+                            <td></td>
+                            <td class="path_column"><a href="/data/learning.html" target="_blank">/data/learning.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>수업자료실</td>
+                            <td></td>
+                            <td class="path_column"><a href="/data/class.html" target="_blank">/data/class.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>학습하기</td>
+                            <td>책 리스트</td>
+                            <td></td>
+                            <td class="path_column"><a href="/data/class.html" target="_blank">/data/class.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>학습선택, 플레이</td>
+                            <td></td>
+                            <td class="path_column"><a href="/data/class.html" target="_blank">/data/class.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>녹음학습</td>
+                            <td></td>
+                            <td class="path_column"><a href="/study_record.html" target="_blank">/study_record.html</a></td>
+                            <td class="status_column"><span class="status_in_progress">진행중</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>마이페이지(학생/강사)</td>
+                            <td></td>
+                            <td></td>
+                            <td class="path_column"><a href="/mypage.html" target="_blank">/mypage.html</a></td>
+                            <td class="status_column"></td>
+                            <td>+도움말팝업</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>학습현황</td>
+                            <td></td>
+                            <td class="path_column"><a href="/mypage/progress.html" target="_blank">/mypage/progress.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>회원정보</td>
+                            <td></td>
+                            <td class="path_column"><a href="/mypage/member.html" target="_blank">/mypage/member.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>지사/기관</td>
+                            <td></td>
+                            <td></td>
+                            <td class="path_column"><a href="/branch.html" target="_blank">/branch.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>쇼핑몰</td>
+                            <td>리스트</td>
+                            <td></td>
+                            <td class="path_column"><a href="/shop.html" target="_blank">/shop.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>상세</td>
+                            <td></td>
+                            <td class="path_column"><a href="/shop.html" target="_blank">/shop.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>주문조희</td>
+                            <td></td>
+                            <td class="path_column"><a href="/shop.html" target="_blank">/shop.html</a></td>
+                            <td class="status_column"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>LMS페이지</td>
+                            <td></td>
+                            <td></td>
+                            <td class="path_column"><a href="/lms.html" target="_blank">/lms.html</a></td>
+                            <td class="status_column"></td>
+                            <td>작업확인</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-
-    <script>
-        
-    </script>
 </body>
 </html> 
