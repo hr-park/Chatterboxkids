@@ -2,13 +2,45 @@
 <div data-include-file="/inc/layout/skipnavi.html" class="includeJs"></div>
 <!-- //[include] skipnavi -->
 
-<header id="header">
-    <h1><a href="/">Chatterboxkids</a></h1>
+<header class="header_wrap">
+  <div class="inner">
+    <a href="/" class="logo">
+      <img src="/images/logo.png" alt="Chatterbox Kids">
+    </a>
+    <nav class="nav">
+      <ul class="menu_list">
+        <li><a href="#" class="menu_link">회사소개</a></li>
+        <li><a href="#" class="menu_link">프로그램</a></li>
+        <li><a href="#" class="menu_link">자료실</a></li>
+        <li><a href="#" class="menu_link">공지사항</a></li>
+      </ul>
+    </nav>
+    <div class="btns">
+      <a href="#" class="btn btn_start"><i class="btn_icon"></i> 학습시작</a>
+      <a href="#" class="btn btn_join">학부모 회원가입</a>
+      <button class="menu_toggle" aria-label="메뉴 열기"><span></span></button>
+    </div>
+  </div>
 </header>
-<nav id="gnb">
-    <ul>
-        <li><a href="#">메뉴1</a></li>
-        <li><a href="#">메뉴2</a></li>
-        <li><a href="#">메뉴3</a></li>
-    </ul>
-</nav>
+
+<style>
+.header_wrap{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.04);padding:0;}
+.header_wrap .inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:80px;padding:0 32px;}
+.header_wrap .logo img{height:48px;}
+.header_wrap .nav{flex:1;}
+.header_wrap .menu_list{display:flex;gap:36px;list-style:none;margin:0 0 0 48px;padding:0;}
+.header_wrap .menu_link{color:#222;font-size:1.1rem;font-weight:600;text-decoration:none;transition:color 0.2s;}
+.header_wrap .menu_link:hover{color:#e53935;}
+.header_wrap .btns{display:flex;align-items:center;gap:12px;}
+.header_wrap .btn{display:inline-flex;align-items:center;font-size:1rem;font-weight:700;border-radius:24px;padding:0 22px;height:44px;text-decoration:none;transition:background 0.2s;}
+.header_wrap .btn_start{background:#e53935;color:#fff;}
+.header_wrap .btn_start .btn_icon{display:inline-block;width:18px;height:18px;background:url('/images/icon_pencil.png') no-repeat center/contain;margin-right:8px;}
+.header_wrap .btn_join{background:#00b6c6;color:#fff;}
+.header_wrap .menu_toggle{display:inline-block;width:36px;height:36px;background:none;border:none;cursor:pointer;position:relative;}
+.header_wrap .menu_toggle span,.header_wrap .menu_toggle span:before,.header_wrap .menu_toggle span:after{display:block;position:absolute;left:8px;width:20px;height:3px;background:#222;border-radius:2px;transition:all 0.2s;}
+.header_wrap .menu_toggle span{top:16px;}
+.header_wrap .menu_toggle span:before{content:'';top:-8px;}
+.header_wrap .menu_toggle span:after{content:'';top:8px;}
+@media (max-width:1024px){.header_wrap .inner{padding:0 12px;}.header_wrap .menu_list{gap:18px;margin-left:12px;}.header_wrap .btns{gap:6px;}}
+@media (max-width:768px){.header_wrap .inner{flex-direction:column;height:auto;padding:0 6px;}.header_wrap .nav{width:100%;}.header_wrap .menu_list{flex-direction:column;gap:0;margin:0;}.header_wrap .btns{width:100%;justify-content:flex-end;}.header_wrap .menu_toggle{display:block;}}
+</style>

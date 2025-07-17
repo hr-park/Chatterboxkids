@@ -17,9 +17,9 @@
         .path_column a{color:#3498db;text-decoration:none;}
         .path_column a:hover{color:#2980b9;text-decoration:underline;}
         .page_name_column{font-weight:500;color:#34495e;}
-        .status_complete{background-color:#27ae60;color:white;padding:3px 6px;border-radius:3px;font-size:13px;}
-        .status_pending{background-color:#f39c12;color:white;padding:3px 6px;border-radius:3px;font-size:13px;}
-        .status_in_progress{background-color:#3498db;color:white;padding:3px 6px;border-radius:3px;font-size:13px;}
+        .status_complete{background-color:#27ae60;color:white;padding:3px 6px;border-radius:3px;font-size:13px;word-break:keep-all;}
+        .status_pending{background-color:#f39c12;color:white;padding:3px 6px;border-radius:3px;font-size:13px;word-break:keep-all;}
+        .status_in_progress{background-color:#3498db;color:white;padding:3px 6px;border-radius:3px;font-size:13px;word-break:keep-all;}
         
         /* 테이블 스크롤 컨테이너 */
         .table_scroll{overflow-x:auto;overflow-y:auto;max-height:85vh;}
@@ -50,6 +50,11 @@
     </style>
 </head>
 <body>
+    <!--
+    <span class="status_in_progress">진행중</span>
+    <span class="status_complete">완료</span>
+    <span class="status_pending">대기</span>
+    -->
     <div class="container">
         <h1>Worklist</h1>
         <div class="table_container">
@@ -71,175 +76,215 @@
                             <td></td>
                             <td></td>
                             <td class="path_column"><a href="/index.html" target="_blank">/index.html</a></td>
-                            <td class="status_column"><span class="status_in_progress">진행중</span><span class="status_complete">완료</span</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>회사소개</td>
-                            <td></td>
-                            <td></td>
-                            <td class="path_column"><a href="/about.html" target="_blank">/about.html</a></td>
                             <td class="status_column"><span class="status_pending">대기</span></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td>프로그램</td>
-                            <td>영어</td>
                             <td></td>
-                            <td class="path_column"><a href="/program/english.html" target="_blank">/program/english.html</a></td>
-                            <td class="status_column"></td>
+                            <td>회사소개</td>
+                            <td></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
                             <td></td>
                         </tr>
                         <tr>
+                            <td></td>
+                            <td>프로그램</td>
+                            <td>소개</td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>영어</td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
                             <td></td>
                             <td>중국어</td>
-                            <td></td>
-                            <td class="path_column"><a href="/program/chinese.html" target="_blank">/program/chinese.html</a></td>
-                            <td class="status_column"></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
                             <td></td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td></td>
                             <td>수다쟁이한글</td>
-                            <td></td>
-                            <td class="path_column"><a href="/program/korean.html" target="_blank">/program/korean.html</a></td>
-                            <td class="status_column"></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
                             <td></td>
                         </tr>
                         <tr>
+                            <td></td>
                             <td>공지사항</td>
                             <td>리스트</td>
-                            <td></td>
-                            <td class="path_column"><a href="/notice_list.html" target="_blank">/notice_list.html</a></td>
-                            <td class="status_column"><span class="status_in_progress">진행중</span></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td>상세</td>
                             <td></td>
-                            <td class="path_column"><a href="/notice_view.html" target="_blank">/notice_view.html</a></td>
-                            <td class="status_column"></td>
+                            <td>상세</td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>자료실</td>
-                            <td>일반자료실</td>
+                            <td>일반/학습/수업자료실</td>
                             <td>리스트</td>
-                            <td class="path_column"><a href="/data/general.html" target="_blank">/data/general.html</a></td>
-                            <td class="status_column"></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
                             <td>상세</td>
-                            <td class="path_column"><a href="/data/general.html" target="_blank">/data/general.html</a></td>
-                            <td class="status_column"></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>학습자료실</td>
-                            <td></td>
-                            <td class="path_column"><a href="/data/learning.html" target="_blank">/data/learning.html</a></td>
-                            <td class="status_column"></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>수업자료실</td>
-                            <td></td>
-                            <td class="path_column"><a href="/data/class.html" target="_blank">/data/class.html</a></td>
-                            <td class="status_column"></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>학습하기</td>
-                            <td>책 리스트</td>
-                            <td></td>
-                            <td class="path_column"><a href="/data/class.html" target="_blank">/data/class.html</a></td>
-                            <td class="status_column"></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>학습선택, 플레이</td>
-                            <td></td>
-                            <td class="path_column"><a href="/data/class.html" target="_blank">/data/class.html</a></td>
-                            <td class="status_column"></td>
+                            <td>영어 책장</td>
+                            <td>리스트</td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td>녹음학습</td>
                             <td></td>
-                            <td class="path_column"><a href="/study_record.html" target="_blank">/study_record.html</a></td>
-                            <td class="status_column"><span class="status_in_progress">진행중</span></td>
+                            <td>학습 화면</td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>중국어 책장</td>
+                            <td>리스트</td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>학습 화면</td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>한글 책장</td>
+                            <td>리스트</td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>학습 화면</td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>마이페이지(학생/강사)</td>
                             <td></td>
                             <td></td>
-                            <td class="path_column"><a href="/mypage.html" target="_blank">/mypage.html</a></td>
-                            <td class="status_column"></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
                             <td>+도움말팝업</td>
                         </tr>
                         <tr>
                             <td></td>
                             <td>학습현황</td>
                             <td></td>
-                            <td class="path_column"><a href="/mypage/progress.html" target="_blank">/mypage/progress.html</a></td>
-                            <td class="status_column"></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
                             <td>회원정보</td>
                             <td></td>
-                            <td class="path_column"><a href="/mypage/member.html" target="_blank">/mypage/member.html</a></td>
-                            <td class="status_column"></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
                             <td></td>
                         </tr>
                         <tr>
+                            <td></td>
+                            <td>주문배송조회</td>
+                            <td></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>적립금</td>
+                            <td></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
                             <td>지사/기관</td>
                             <td></td>
-                            <td></td>
-                            <td class="path_column"><a href="/branch.html" target="_blank">/branch.html</a></td>
-                            <td class="status_column"></td>
-                            <td></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
+                            <td>Admin 바로가기</td>
                         </tr>
                         <tr>
                             <td>쇼핑몰</td>
-                            <td>리스트</td>
+                            <td>상품 리스트</td>
                             <td></td>
-                            <td class="path_column"><a href="/shop.html" target="_blank">/shop.html</a></td>
-                            <td class="status_column"></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>상세</td>
-                            <td></td>
-                            <td class="path_column"><a href="/shop.html" target="_blank">/shop.html</a></td>
-                            <td class="status_column"></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td>주문조희</td>
+                            <td>상품 상세</td>
                             <td></td>
-                            <td class="path_column"><a href="/shop.html" target="_blank">/shop.html</a></td>
-                            <td class="status_column"></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>주문하기</td>
+                            <td></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>장바구니</td>
+                            <td></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
                             <td></td>
                         </tr>
                         <tr>
                             <td>LMS페이지</td>
                             <td></td>
                             <td></td>
-                            <td class="path_column"><a href="/lms.html" target="_blank">/lms.html</a></td>
-                            <td class="status_column"></td>
+                            <td class="path_column"></td>
+                            <td class="status_column"><span class="status_pending">대기</span></td>
                             <td>작업확인</td>
                         </tr>
                     </tbody>

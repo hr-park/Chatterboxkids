@@ -1,3 +1,44 @@
-<footer id="footer">
-    &copy; 2024 Chatterboxkids
+<footer class="footer_wrap">
+    <div class="inner">
+        <div class="top">
+            <ul class="link_list">
+                <li><a href="#" class="link">개인정보처리방침</a></li>
+                <li><a href="#" class="link">이용약관</a></li>
+            </ul>
+            <span class="contact">
+                <i class="icon_call"></i>
+                <span class="contact_number">070-7522-7404</span>
+            </span>
+        </div>
+        <div class="info">
+            씨드러닝 | (주)대표이사 : 강기혁, 이재영<br>
+            (13616) 경기도 성남시 분당구 장자일로 1, C동 1813호(금곡동, 코오롱트리플레스1)<br>
+            Tel : 070-7522-7404 | Fax : 070-8289-7404 | E-mail : <a href="mailto:manager@seed-learning.com" class="email">manager@seed-learning.com</a><br>
+            사업자 등록번호 : 220-87-33426 | 통신판매업신고 : 제2015-경기성남-1064호
+        </div>
+        <div class="copy">
+            © Seed-Learning, Inc. All Rights Reserved
+        </div>
+    </div>
 </footer>
+
+<style>
+.footer_wrap{background:#222;color:#fff;padding:60px 0;font-size:15px;}
+.footer_wrap .top{display:flex;align-items:center;justify-content:space-between;margin:0 auto 18px auto;padding:0 20px;}
+.footer_wrap .link_list{display:flex;align-items:center;gap:12px;}
+.footer_wrap .link{color:#fff;text-decoration:none;font-weight:500;margin-right:12px;}
+.footer_wrap .link:last-child{margin-right:0;}
+.footer_wrap .divider{color:#888;margin:0 8px;}
+.footer_wrap .contact{display:flex;align-items:center;font-size:1.3rem;font-weight:700;}
+.footer_wrap .icon_call{display:inline-block;width:20px;height:20px;background:url('/images/icon_call.png') no-repeat center/contain;margin-right:8px;vertical-align:middle;}
+.footer_wrap .contact_number{color:#fff;}
+.footer_wrap .info{margin:0 auto 10px auto;padding:0 20px;color:#bbb;line-height:1.7;text-align:left;}
+.footer_wrap .email{color:#bbb;text-decoration:underline;}
+.footer_wrap .copy{padding:0 20px;color:#888;font-size:13px;text-align:left;}
+@media (max-width:768px){
+    .footer_wrap .top,
+    .footer_wrap .info,
+    .footer_wrap .copy{flex-direction:column;align-items:flex-start;padding:0 10px;}
+    .footer_wrap .top{flex-direction:column;align-items:flex-start;gap:10px;}
+}
+</style>
