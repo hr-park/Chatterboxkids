@@ -27,33 +27,76 @@
     <!-- [include] header -->
     <div data-include-file="/inc/layout/header.html" class="includeJs"></div>
     <!-- //[include] header -->
-    <div id="container" class="container">
-        <div class="main_swiper swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">슬라이드 1</div>
-              <div class="swiper-slide">슬라이드 2</div>
-              <div class="swiper-slide">슬라이드 3</div>
-              <div class="swiper-slide">슬라이드 4</div>
-            </div>
-            <div class="swiper_pagination"></div>
-            <div class="swiper_button_prev"></div>
-            <div class="swiper_button_next"></div>
+
+    <div class="main_swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="/images/main_slide_01.jpg" alt=""></div>
+            <div class="swiper-slide">슬라이드 2</div>
+            <div class="swiper-slide">슬라이드 3</div>
+            <div class="swiper-slide">슬라이드 4</div>
         </div>
+        <div class="swiper_pagination"></div>
+        <div class="swiper_button_prev"></div>
+        <div class="swiper_button_next"></div>
+    </div>
+    
+    <div class="main_program_banner">
+        <div class="inner">
+            <ul class="program_nav">
+                <li><a href="#" class="title">채터박스키즈 <span class="go_badge">GO</span></a></li>
+                <li><a href="#" class="title"><span class="txt_sm">수다쟁이</span>한글<span class="go_badge">GO</span></a></li>
+                <li><a href="#" class="title"><span class="txt_sm">채터박스키즈</span>중국어<span class="go_badge">GO</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="container" class="main">
         <div class="inner">
             <ul class="program_list">
-                <li class="item">
+                <li class="program_item" data-type="kids">
                     <div class="img_wrap">
-                      <img src="이미지경로1.png" alt="채터박스 키즈">
+                        <img src="/images/img_program_01.png" alt="채터박스 키즈">
                     </div>
                     <div class="text_wrap">
-                      <h3 class="title">채터박스 키즈</h3>
-                      <p class="desc"><b>“채터박스 키즈”는 “수다쟁이 아이들” 이라는 뜻으로, 우리 아이들을 수다쟁이로 만드는 프로그램입니다.</b></p>
-                      <p class="desc_sub">미국 Seed Learning에서 개발한~(생략)</p>
-                      <a href="#" class="program_btn">프로그램 알아보기</a>
+                        <h3 class="title">채터박스 키즈</h3>
+                        <p class="desc"><b>“채터박스 키즈”는 “수다쟁이 아이들” 이라는 뜻으로, 우리 아이들을 수다쟁이로 만드는 프로그램입니다.</b></p>
+                        <p class="sub_desc">미국 Seed Learning에서 개발한~(생략)</p>
+                        <a href="#" class="program_btn">프로그램 알아보기</a>
                     </div>
-                  </li>
-                <li></li>
-                <li></li>
+                </li>
+                <li class="program_item" data-type="phonics">
+                    <div class="img_wrap">
+                        <img src="/images/img_program_02.png" alt="채터박스 키즈">
+                    </div>
+                    <div class="text_wrap">
+                        <h3 class="title">채터박스 키즈</h3>
+                        <p class="desc"><b>“채터박스 키즈”는 “수다쟁이 아이들” 이라는 뜻으로,<br>우리 아이들을 수다쟁이로 만드는 프로그램입니다.</b></p>
+                        <p class="sub_desc">미국 Seed Learning에서 개발한~(생략)<br>미국 Seed Learning에서 개발한~(생략)<br>미국 Seed Learning에서 개발한~(생략)</p>
+                        <a href="#" class="program_btn">프로그램 알아보기</a>
+                    </div>
+                </li>
+                <li class="program_item" data-type="hangeul">
+                    <div class="img_wrap">
+                        <img src="/images/img_program_03.png" alt="채터박스 키즈">
+                    </div>
+                    <div class="text_wrap">
+                        <h3 class="title">채터박스 키즈</h3>
+                        <p class="desc"><b>“채터박스 키즈”는 “수다쟁이 아이들” 이라는 뜻으로, 우리 아이들을 수다쟁이로 만드는 프로그램입니다.</b></p>
+                        <p class="sub_desc">미국 Seed Learning에서 개발한~(생략)</p>
+                        <a href="#" class="program_btn">프로그램 알아보기</a>
+                    </div>
+                </li>
+                <li class="program_item" data-type="chinese">
+                    <div class="img_wrap">
+                        <img src="/images/img_program_04.png" alt="채터박스 키즈">
+                    </div>
+                    <div class="text_wrap">
+                        <h3 class="title">채터박스 키즈</h3>
+                        <p class="desc"><b>“채터박스 키즈”는 “수다쟁이 아이들” 이라는 뜻으로, 우리 아이들을 수다쟁이로 만드는 프로그램입니다.</b></p>
+                        <p class="sub_desc">미국 Seed Learning에서 개발한~(생략)</p>
+                        <a href="#" class="program_btn">프로그램 알아보기</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
@@ -64,15 +107,20 @@
     <script src="/inc/js/include.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const swiper = new Swiper('.swiper', {
+        const swiper = new Swiper('.main_swiper', {
             loop: true,
+            //autoHeight:true,
+            // autoplay: {
+            //     delay:2000,
+            //     disableOnInteraction: false
+            // },
             pagination: {
-                el: '.swiper_pagination',
+                el: '.main_swiper .swiper_pagination',
                 clickable: true
             },
             navigation: {
-                nextEl: '.swiper_button_next',
-                prevEl: '.swiper_button_prev'
+                nextEl: '.main_swiper .swiper_button_next',
+                prevEl: '.main_swiper .swiper_button_prev'
             }
         });
     });
