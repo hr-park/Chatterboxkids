@@ -1,0 +1,18 @@
+/* GmarketSans */
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('/inc/fonts/GmarketSansLight.woff2') format('woff2');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('/inc/fonts/GmarketSansMedium.woff2') format('woff2');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'GmarketSans';
+  src: url('/inc/fonts/GmarketSansBold.woff2') format('woff2');
+  font-weight: 700;
+}

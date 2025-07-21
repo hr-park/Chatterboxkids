@@ -7,18 +7,48 @@
     <a href="/" class="logo">
       <img src="/images/logo.png" alt="Chatterbox Kids">
     </a>
+    <div class="gnb_dim" onclick="javascript:gnbClose()" style="display:none;"></div>
     <nav class="nav">
       <ul class="menu_list">
-        <li><a href="#" class="menu_link">회사소개</a></li>
-        <li><a href="#" class="menu_link">프로그램</a></li>
-        <li><a href="#" class="menu_link">공지사항</a></li>
-        <li><a href="#" class="menu_link">자료실</a></li>
+        <li><a href="javascript://" class="menu_link">회사소개</a></li>
+        <li><a href="javascript://" class="menu_link">프로그램</a></li>
+        <li><a href="javascript://" class="menu_link">공지사항</a></li>
+        <li><a href="javascript://" class="menu_link">자료실</a></li>
+        <li><a href="javascript://" class="btn_learn_start">학습시작</a></li>
       </ul>
-      <a href="#" class="btn btn_start"><i class="btn_icon"></i> 학습시작</a>
     </nav>
     <div class="btns">
-      <!--<a href="#" class="btn btn_join">학부모 회원가입</a>-->
-      <button class="menu_toggle" aria-label="메뉴 열기"><span></span></button>
+      <button type="button" class="menu_toggle" onclick="javascript:gnbOpen()" aria-label="메뉴 열기"><span></span></button>
     </div>
+    <nav class="gnb_side_menu" style="display:none;">
+      <button type="button" class="gnb_close_btn" onclick="javascript:gnbClose()" aria-label="메뉴 닫기" >
+        <span></span>
+      </button>
+      <ul class="gnb_menu">
+        <li>
+          <a href="javascript://" class="gnb_menu_title">회사소개</a>
+        </li>
+        <li>
+          <a href="javascript://" class="gnb_menu_title">프로그램</a>
+          <ul class="gnb_submenu">
+            <li><a href="javascript://">채터박스 키즈 영어</a></li>
+            <li><a href="javascript://">수다쟁이 한글</a></li>
+            <li><a href="javascript://">채터박스 키즈 중국어</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript://" class="gnb_menu_title">공지사항</a>
+        </li>
+        <li>
+          <a href="javascript://" class="gnb_menu_title">자료실</a>
+          <ul class="gnb_submenu">
+            <li><a href="javascript://">일반 자료실</a></li>
+            <li><a href="javascript://">학습 자료실</a></li>
+            <li><a href="javascript://">수업 자료실</a></li>
+          </ul>
+        </li>
+        <li data-device="mo" class="gnb_menu_list learn"><a href="javascript://" class="gnb_menu_title"><span>학습시작</span></a></li>
+      </ul>
+    </nav>
   </div>
 </header>
