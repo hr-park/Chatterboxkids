@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CHATTERBOX</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Chatterboxkids">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chatterboxkids">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="/inc/images/og_image.png">
+    <meta property="og:url" content="https://www.chatterboxkids.net/">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- css / js -->
+    <link rel="stylesheet" href="inc/css/basefont.css">
+    <link rel="stylesheet" href="inc/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="inc/css/common.css">
+    <script src="inc/js/jquery-3.6.4.min.js"></script>
+    <script src="inc/js/swiper-bundle.min.js"></script>
+    <script src="inc/js/common.js"></script>
+</head>
+<body>
+    <ul id="skipToContent">
+        <li><a href="#container">본문 바로가기</a></li>
+        <li><a href="#gnb">주메뉴 바로가기</a></li>
+    </ul>
+    <header class="header_wrap">
+        <div class="inner">
+            <a href="index.html" class="logo"><img src="images/logo.png" alt="Chatterbox Kids"></a>
+            <div class="gnb_dim" onclick="javascript:gnbClose()"></div>
+            <nav id="gnb" class="nav">
+                <ul class="menu_list">
+                    <li><a href="company.html" class="menu_link">회사소개</a></li>
+                    <li><a href="javascript://" class="menu_link">프로그램</a></li>
+                    <li><a href="javascript://" class="menu_link">공지사항</a></li>
+                    <li><a href="javascript://" class="menu_link">자료실</a></li>
+                    <li class="tight_gap"><a href="javascript://" class="btn_learn_start">학습시작</a></li>
+                    <li class="tight_gap">
+                        <a href="javascript://" class="btn_auth login">로그인</a>
+                        <!--<a href="javascript://" class="btn_auth logout">로그아웃</a>-->
+                    </li>
+                </ul>
+            </nav>
+            <button type="button" class="menu_toggle" onclick="javascript:gnbOpen()" aria-label="메뉴 열기"></button>
+            <nav class="gnb_side_menu">
+                <button type="button" class="gnb_close_btn" aria-label="메뉴 닫기" onclick="javascript:gnbClose()"></button>
+                <ul class="gnb_menu">
+                    <li><a href="javascript://" class="gnb_menu_title">회사소개</a></li>
+                    <li>
+                        <a href="javascript://" class="gnb_menu_title">프로그램</a>
+                        <ul class="gnb_submenu">
+                            <li><a href="program_en.html">채터박스 키즈 영어</a></li>
+                            <li><a href="program_ko.html">수다쟁이 한글</a></li>
+                            <li><a href="program_cn.html">채터박스 키즈 중국어</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript://" class="gnb_menu_title">공지사항</a></li>
+                    <li>
+                        <a href="javascript://" class="gnb_menu_title">자료실</a>
+                        <ul class="gnb_submenu">
+                            <li><a href="javascript://">일반 자료실</a></li>
+                            <li><a href="javascript://">학습 자료실</a></li>
+                            <li><a href="javascript://">수업 자료실</a></li>
+                        </ul>
+                    </li>
+                    <li data-device="mo" class="gnb_menu_list learn"><a href="javascript://" class="gnb_menu_title"><span>학습시작</span></a></li>
+                </ul>
+                <div class="btns">
+                    <a href="javascript://" class="btn_min_auth">로그인</a>
+                    <a href="javascript://" class="btn_min_auth">로그아웃</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div id="container">
+        <div class="inner">
+            
+        </div>
+    </div>
+    <!-- Top 버튼 -->
+    <!--<button type="button" id="btnTop" class="btn_top">TOP</button>-->
+    <footer class="footer_wrap">
+        <div class="inner">
+            <div class="link_box">
+                <ul class="link_list">
+                    <li><a href="javascript://" class="link">개인정보처리방침</a></li>
+                    <li><a href="javascript://" class="link">이용약관</a></li>
+                </ul>
+                <span class="contact">
+                    <a href="tel:07075227404" class="tel">070-7522-7404</a>
+                    <span class="logo"><img src="images/logo_seedlearning.png" alt=""></span>
+                </span>
+            </div>
+            <div class="info">
+                주식회사 씨드러닝(Seed Learning, Inc.)<br>
+                7212 Canary Ln., Sachse, TX 750t48 USA<br>
+                (13616) 경기도 성남시 분당구 정자일로 1, <span class="mo_br">C동 1813호(금곡동, 코오롱트리폴리스1)</span><br data-device="pc">
+                Tel : 070-7522-7404 | Fax 070-8289-7404 | <span class="mo_br">E-mail : <a href="jaylee@seed-learning.com" class="email">jaylee@seed-learning.com</a></span><br data-device="pc">
+                사업자 등록번호 : 220-87-33426 | <span class="mo_br">통신판매업신고 : 제2015-경기성남-1064호</span>
+                <p class="copy">&copy; Seed-Learning, Inc. All Rights Reserved</p>
+            </div>
+            <div class="link_box">
+                <ul class="link_list">
+                    <li><a href="company.html" class="link">회사소개</a></li>
+                    <li><a href="javascript://" class="link">프로그램소개</a></li>
+                    <li><a href="javascript://" class="link">공지사항</a></li>
+                    <li><a href="javascript://" class="link">문의하기</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
