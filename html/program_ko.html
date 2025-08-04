@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CHATTERBOX</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Chatterboxkids">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chatterboxkids">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="/inc/images/og_image.png">
+    <meta property="og:url" content="https://www.chatterboxkids.net/">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- css / js -->
+    <link rel="stylesheet" href="inc/css/basefont.css">
+    <link rel="stylesheet" href="inc/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="inc/css/common.css">
+    <script src="inc/js/jquery-3.6.4.min.js"></script>
+    <script src="inc/js/swiper-bundle.min.js"></script>
+    <script src="inc/js/common.js"></script>
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap" class="program ko">
+        <ul id="skipToContent">
+            <li><a href="#container">본문 바로가기</a></li>
+            <li><a href="#gnb">주메뉴 바로가기</a></li>
+        </ul>
+        <!-- header -->
+        <header class="header_wrap">
+            <div class="inner">
+                <h1 class="logo"><a href="index.html">Chatterbox Kids</a></h1>
+                <div class="gnb_dim" onclick="javascript:gnbClose()"></div>
+                <nav id="gnb" class="nav">
+                    <ul class="menu_list">
+                        <li><a href="company.html" class="menu_link">회사소개</a></li>
+                        <li><a href="program_en.html" class="menu_link">프로그램</a></li>
+                        <li><a href="javascript://" class="menu_link">공지사항</a></li>
+                        <li><a href="javascript://" class="menu_link">자료실</a></li>
+                        <li class="tight_gap"><a href="javascript://" class="btn_learn_start">학습시작</a></li>
+                        <li class="tight_gap">
+                            <a href="javascript://" class="btn_auth login">로그인</a>
+                            <!--<a href="javascript://" class="btn_auth logout">로그아웃</a>-->
+                        </li>
+                    </ul>
+                </nav>
+                <button type="button" class="menu_toggle" onclick="javascript:gnbOpen()" aria-label="메뉴 열기"></button>
+                <nav class="gnb_side_menu">
+                    <button type="button" class="gnb_close_btn" aria-label="메뉴 닫기" onclick="javascript:gnbClose()"></button>
+                    <ul class="gnb_menu">
+                        <li><a href="company.html" class="gnb_menu_title">회사소개</a></li>
+                        <li>
+                            <a href="javascript://" class="gnb_menu_title">프로그램</a>
+                            <ul class="gnb_submenu">
+                                <li><a href="program_en.html">채터박스 키즈 영어</a></li>
+                                <li><a href="program_ko.html">수다쟁이 한글</a></li>
+                                <li><a href="program_cn.html">채터박스 키즈 중국어</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript://" class="gnb_menu_title">공지사항</a></li>
+                        <li>
+                            <a href="javascript://" class="gnb_menu_title">자료실</a>
+                            <ul class="gnb_submenu">
+                                <li><a href="javascript://">일반 자료실</a></li>
+                                <li><a href="javascript://">학습 자료실</a></li>
+                                <li><a href="javascript://">수업 자료실</a></li>
+                            </ul>
+                        </li>
+                        <li data-device="mo" class="gnb_menu_list learn"><a href="javascript://" class="gnb_menu_title"><span>학습시작</span></a></li>
+                    </ul>
+                    <div class="btns">
+                        <a href="javascript://" class="btn_min_auth">로그인</a>
+                        <a href="javascript://" class="btn_min_auth">로그아웃</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--// header -->
+        <!-- container -->
+        <div id="container">
+            <div class="inner">
+                <div class="page_depth has_nav">
+                    <h2 class="page_tit">프로그램</h2>
+                    <nav>
+                        <ul>
+                            <li><a href="program_en.html" data-type="en">채터박스 키즈 영어</a></li>
+                            <li><a href="program_ko.html" class="active" data-type="ko">수다쟁이 한글</a></li>
+                            <li><a href="program_cn.html" data-type="cn">채터박스 키즈 중국어</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="banner en">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="images/program/ko/bnr_m.jpg">
+                    <img src="images/program/ko/bnr.jpg" alt="" loading="lazy">
+                </picture>
+            </div>
+            <div class="inner">
+                <section class="section1">
+                    <p class="tit_section">
+                        <picture>
+                            <source media="(max-width: 767px)" srcset="images/program/ko/tit_01_m.png">
+                            <img src="images/program/ko/tit_01.png" alt="왜 수다쟁이 한글일까요?" loading="lazy">
+                        </picture>
+                    </p>
+                    <p class="sub_txt">“수다쟁이 한글”은 과학적인 한글의 원리를 재미있는 학습 영상으로 자연스럽게 깨우쳐 스스로 읽고 쓸 수 있는 프로그램입니다.</p>
+                    <ul class="thumb_list">
+                        <li>
+                            <div class="thums"><img src="images/program/ko/img_01_01.png" alt=""></div>
+                            <div class="txt_box">
+                                <strong class="num">1</strong>
+                                <p class="tit">글자의 이름, 모양, 소리를<br>영상으로 재미있게 배워요</p>
+                                <p class="desc">지루한 단순 암기가 아닌 챈트와 노래로 신나게 한글을 배웁니다.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thums"><img src="images/program/ko/img_01_02.png" alt=""></div>
+                            <div class="txt_box">
+                                <strong class="num">2</strong>
+                                <p class="tit">효과적인 반복 학습이 가능해요</p>
+                                <p class="desc">학습 내용을 챈트, 노래, 게임, 교재 등 다양한 방법으로 반복하며 자연스레 한글을 습득합니다.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thums"><img src="images/program/ko/img_01_03.png" alt=""></div>
+                            <div class="txt_box">
+                                <strong class="num">3</strong>
+                                <p class="tit">체계적이고 균형있게 한글을 익혀요</p>
+                                <p class="desc">낱글자 학습과 통글자 학습을 병행하여 각 접근법의 장점을 살리고 시너지를 냅니다.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thums"><img src="images/program/ko/img_01_04.png" alt=""></div>
+                            <div class="txt_box">
+                                <strong class="num">4</strong>
+                                <p class="tit">어휘력은 물론이고 표현력과 창의력도 키워줘요</p>
+                                <p class="desc">각 낱말과 함께 의성어, 의태어 등 짝꿍 표현을 배워 아이들이 자기 생각을 구체적이고 생생하게 표현할 수 있습니다.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thums"><img src="images/program/ko/img_01_05.png" alt=""></div>
+                            <div class="txt_box">
+                                <strong class="num">5</strong>
+                                <p class="tit">초등 국어를 대비할 수 있어요.</p>
+                                <p class="desc">초등학교 국어 어휘와 주제를 반영하여 읽기, 받아쓰기, 짧은 글쓰기 등 초등 국어와 연계 학습이 가능합니다.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <p class="tit_section">
+                        <picture>
+                            <source media="(max-width: 767px)" srcset="images/program/ko/tit_02_m.png">
+                            <img src="images/program/ko/tit_02.png" alt="아이들은 이렇게 학습해요" loading="lazy">
+                        </picture>
+                    </p>
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="images/program/ko/img_root_m.png">
+                        <img src="images/program/ko/img_root.png" alt="챈트 부르기" loading="lazy">
+                    </picture>
+                </section>
+                <section>
+                    <p class="tit_section">
+                        <picture>
+                            <source media="(max-width: 767px)" srcset="images/program/ko/tit_03_m.png">
+                            <img src="images/program/ko/tit_03.png" alt="수다쟁이 한글 커리큘럼" loading="lazy">
+                        </picture>
+                    </p>
+                    <div class="stage_card card1">
+                        <div class="stage_header">
+                            <span class="badge">1단계</span>
+                            <p class="title">한글 입문 과정</p>
+                            <p class="sub">글자의 모양과 소리를 인식하고 기본 어휘와 표현을 습득합니다.</p>
+                            <p class="desc">재미있는 짝꿍 표현(의성어, 의태어 등)과 함께 낱말을 학습하여 한글에 흥미를 가집니다.</p>
+                        </div>
+                        <div class="box">
+                            <ul class="point_list">
+                                <li>
+                                    <strong>• 낱자, 낱글자 학습(1~8호) :</strong>
+                                    기본 자음, 기본 모음, 가~하, 거~허, 고~호, 구~후, 그~흐, 기~히
+                                </li>
+                                <li>
+                                    <strong>• 통글자 학습(9~11호) :</strong>
+                                    동물, 과일, 채소, 모양, 색깔
+                                </li>
+                            </ul>
+                        </div>
+                     </div>
+                     <div class="stage_card card2">
+                        <div class="stage_header">
+                            <span class="badge">2단계</span>
+                            <p class="title">한글 기초 과정</p>
+                            <p class="sub">낱자가 더해져 글자가 만들어지는 한글의 원리를 이해하고 낱글자를 읽고 쓸 수 있습니다.</p>
+                            <p class="desc">낱말과 짝꿍 표현 학습 후 어휘력과 표현력이 확장됩니다.</p>
+                        </div>
+                        <div class="box">
+                            <ul class="point_list">
+                                <li>
+                                    <strong>• 낱자, 낱글자 학습(1~8호) :</strong>
+                                    기본 모음과 자음, 모음과 자음 결합, 받침, 복잡한 모음, 쌍자음
+                                </li>
+                                <li>
+                                    <strong>• 통글자 학습(9~11호) :</strong>
+                                    바다 생물, 곤충, 교통수단, 여러 가지 탈 것, 사물, 음식
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="stage_card card3">
+                        <div class="stage_header">
+                            <span class="badge">3단계</span>
+                            <p class="title">예비 초등 과정</p>
+                            <p class="sub">쌍받침, 겹받침 등이 들어간 어려운 글자도 읽고 쓸 수 있습니다.</p>
+                            <p class="desc">
+                            초등 국어 교과서 어휘와 주제를 반영하여 예비 초등 준비가 가능합니다.<br>
+                            학습한 낱말과 표현을 창의적으로 활용하여 말하거나 짧은 글을 쓸 수 있습니다.
+                            </p>
+                        </div>
+                        <div class="box">
+                            <ul class="point_list">
+                                 <li>
+                                    <strong>• 낱자, 낱글자 학습(1~8호) :</strong>
+                                    기본 모음과 자음, 받침, 복잡한 모음, 쌍자음, 쌍받침, 겹받침, 맞춤법
+                                </li>
+                                <li>
+                                    <strong>• 통글자 학습(9~11호) :</strong>
+                                    동음이의어, 높임말, 반대말, 속담, 관용어
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <p class="tit_section">
+                        <picture>
+                            <source media="(max-width: 767px)" srcset="images/program/ko/tit_04_m.png">
+                            <img src="images/program/ko/tit_04.png" alt="수다쟁이 한글 교재 구성" loading="lazy">
+                        </picture>
+                    </p>
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="images/program/ko/img_book_set_m.png">
+                        <img src="images/program/ko/img_book_set.png" alt="수다쟁이 한글 교재 구성" loading="lazy">
+                    </picture>
+                </section>
+            </div>
+        </div>
+        <!--// container -->
+        <!-- footer -->
+        <footer class="footer_wrap">
+            <div class="inner">
+                <button type="button" id="btnTop" class="btn_top" onclick="javascript:winTop();">TOP</button><!-- Top 버튼 -->
+                <div class="link_box">
+                    <ul class="link_list">
+                        <li><a href="javascript://" class="link">개인정보처리방침</a></li>
+                        <li><a href="javascript://" class="link">이용약관</a></li>
+                    </ul>
+                    <span class="contact">
+                        <a href="tel:07075227404" class="tel">070-7522-7404</a>
+                        <span class="logo"><img src="images/logo_seedlearning.png" alt="seedlearning"></span>
+                    </span>
+                </div>
+                <div class="info">
+                    주식회사 씨드러닝(Seed Learning, Inc.)<br>
+                    7212 Canary Ln., Sachse, TX 750t48 USA<br>
+                    (13616) 경기도 성남시 분당구 정자일로 1, <span class="mo_br">C동 1813호(금곡동, 코오롱트리폴리스1)</span><br data-device="pc">
+                    Tel : 070-7522-7404 | Fax 070-8289-7404 | <span class="mo_br">E-mail : <a href="jaylee@seed-learning.com" class="email">jaylee@seed-learning.com</a></span><br data-device="pc">
+                    사업자 등록번호 : 220-87-33426 | <span class="mo_br">통신판매업신고 : 제2015-경기성남-1064호</span>
+                    <p class="copy">&copy; Seed-Learning, Inc. All Rights Reserved</p>
+                </div>
+                <div class="link_box">
+                    <ul class="link_list">
+                        <li><a href="company.html" class="link">회사소개</a></li>
+                        <li><a href="javascript://" class="link">프로그램소개</a></li>
+                        <li><a href="javascript://" class="link">공지사항</a></li>
+                        <li><a href="javascript://" class="link">문의하기</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!--// footer -->
+    </div>
+    <!--// wrap -->
+</body>
+</html> 
