@@ -21,6 +21,7 @@ table{border-collapse:collapse;border-spacing:0;}
 a{color:inherit;text-decoration:none;background:none;outline:none;}
 a:active, a:focus{outline:none;}
 img{max-width:100%}
+picture img{display:block}
 
 #container{padding:100px 0}
 .company #container{padding:110px 0 350px;background:url('../../images/company/bg_sub.png') no-repeat 50% 100%}
@@ -34,6 +35,7 @@ img{max-width:100%}
 .inner{max-width:1280px;margin:0 auto;}
 
 .tc{text-align:center}
+.mt30{margin-top:30px}
 
 [data-device="pc"]{display:block !important;}
 [data-device="mo"]{display:none !important;}
@@ -186,7 +188,7 @@ img{max-width:100%}
 .program.ko{--highlight:var(--color_hangeul);}
 .program.cn{--highlight:var(--color_chinese);}
 
-.program .banner{width:100%;margin:50px 0;/*padding-top:54.43%;*/}
+.program .banner{width:100%;margin:50px 0;text-align:center;/*padding-top:54.43%;*/}
 /*.program .banner.en{background:url('../../images/program/en/bnr.jpg') no-repeat 50% 50% / 100% auto}*/
 /*.program .tit_section{position:relative;display:inline-block;padding:2px 45px 2px 24px;line-height:82px;color:#fff;background-image:url('../../images/program/en/bg_tit_section_left.png'), url('../../images/program/en/bg_tit_section.png'), url('../../images/program/en/bg_tit_section_right.png');background-repeat:no-repeat, repeat-x, no-repeat;background-position:0 0, 50% 50%, 100% 0;background-size:auto, auto, auto;}*/
 /*.program section{padding-left:30px;}*/
@@ -234,7 +236,7 @@ img{max-width:100%}
 /*.program .circle:before{content:'';position:absolute;left:-20px;top:0;z-index:-1;display:inline-block;width:100%;height:100%;background-color:#fff5dc;border-radius:50%;}*/
 .program .circle .tit{display:block;font-size:35px;font-weight:700;color:#93462f}
 .program .circle mark{display:inline-block;margin:20px 0;padding:5px 5px;font-size:22px;color:#333;font-weight:500;background-color:#ffefa9;}
-.program .circle .sub_txt{font-size:20px}
+.program .circle .sub_txt{padding:0;font-size:20px}
 
 .program .section1 .card_box:first-child{background:#f5f5f5 url('../../images/program/en/img_01_01.png') no-repeat 50% 100% / 100% auto}
 .program .section1 .card_box:nth-child(2){background:#f5f5f5 url('../../images/program/en/img_01_02.png') no-repeat 50% 100% / 100% auto}
@@ -327,6 +329,7 @@ img{max-width:100%}
   .gnb_menu_title{padding:12px 10px 12px 10px;font-size:14px}
   .gnb_submenu{margin:0}
   .gnb_submenu a{padding:3px 0 3px 10px;font-size:13px;}
+  .gnb_submenu li:last-child a{padding:3px 0 10px 10px;}
   .header_wrap .gnb_close_btn{right:20px;top:20px;width:15px;height:15px;}
   .gnb_side_menu .btn_min_auth{font-size:13px}
 
@@ -371,8 +374,9 @@ img{max-width:100%}
   .program section + section{margin-top:50px}
   .program .banner{margin:0 0 25px}
   .program .sub_txt{font-size:12px}
+  .program .tit_section{margin-bottom:10px}
   .program .tit_section img{max-width:100%}
-  .program .tit_section + .sub_txt{padding-left:10px;margin-top:5px;}
+  .program .tit_section + .sub_txt{padding-left:10px;margin:5px 0 35px;}
   .program .bg_card_wrap{margin-top:25px;gap:15px;flex-direction:column}
   .program .bg_card_wrap .card_box{min-height:320px;padding:25px}
   .program .bg_card_wrap .card_box .tit{margin-bottom:15px;font-size:16px}
