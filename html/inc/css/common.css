@@ -35,6 +35,7 @@ picture img{display:block}
 .inner{max-width:1280px;margin:0 auto;}
 
 .tc{text-align:center}
+.mt10{margin-top:10px}
 .mt30{margin-top:30px}
 
 [data-device="pc"]{display:block !important;}
@@ -204,7 +205,7 @@ picture img{display:block}
 .program .thumb_list li{display:flex;align-items:flex-start;align-items:center;gap:65px;}
 .program .thumb_list > li + li{margin-top:65px}
 .program .thumb_list .thumb{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.program .thumb_list .txt_box{flex:1;}
+.program .thumb_list .txt_box{flex:1;min-width:400px}
 .program .thumb_list .txt_box .num{display:inline-flex;;width:76px;height:76px;margin-bottom:30px;border-radius:50%;align-items:center;justify-content:center;font-size:40px;color:#fff;font-weight:700;background-color:var(--highlight);}
 .program .thumb_list .txt_box .tit{display:block;margin-bottom:25px;font-size:32px;font-weight:700;color:#93462f;}
 .program .thumb_list .txt_box .desc{color:#333;font-size:21px;line-height:1.6;word-break:keep-all;letter-spacing:-.045em}
@@ -226,6 +227,8 @@ picture img{display:block}
 .program .thumb_list.level li:nth-child(2) .txt_box .desc{background-color:#ffd1cf}
 .program .thumb_list.level li:nth-child(3) .txt_box .desc{background-color:#d4efcc}
 .program .thumb_list.level li:nth-child(4) .txt_box .desc{background-color:#cbe4f4}
+
+.program .info_txt{margin-top:100px;color:#777;font-size:23px;text-align:center;word-break:keep-all;line-height:1.4}
 
 .program .circle_box{position:relative;text-align:center;}
 .program .circle_box + .circle_box{margin-top:30px}
@@ -373,7 +376,7 @@ picture img{display:block}
   .program section{padding:0}
   .program section + section{margin-top:50px}
   .program .banner{margin:0 0 25px}
-  .program .sub_txt{font-size:12px}
+  .program .sub_txt{padding:0;font-size:12px}
   .program .tit_section{margin-bottom:10px}
   .program .tit_section img{max-width:100%}
   .program .tit_section + .sub_txt{padding-left:10px;margin:5px 0 35px;}
@@ -385,7 +388,7 @@ picture img{display:block}
   .program .thumb_list li{flex-direction:column;/*align-items:flex-start;*/gap:20px;}
   .program .thumb_list > li + li{margin-top:45px;}
   .program .thumb_list .thums{width:218px}
-  .program .thumb_list .txt_box{text-align:center}
+  .program .thumb_list .txt_box{min-width:100%;text-align:center}
   .program .thumb_list .txt_box .num{width:30px;height:30px;margin-bottom:15px;font-size:16px;}
   .program .thumb_list .txt_box .tit{margin-bottom:15px;font-size:16px}
   .program .thumb_list .txt_box .desc{font-size:12px}
@@ -404,6 +407,9 @@ picture img{display:block}
   .program .thumb_list.level .txt_box .tit{padding-left:30px;margin:10px 0 20px 0;font-size:25px;text-align:left;background-size:26px auto}
   .program .thumb_list.level .txt_box .desc{margin-bottom:0;margin-left:10px;}
   .program .thumb_list.level .dot_list{margin-top:20px;padding-left:15px;}
+
+  .program .info_txt{margin-top:50px;font-size:12px;}
+  .program .info_txt .mo_br{display:block}
 
   .program .circle_box + .circle_box{margin-top:20px}
   .program .circle_row{display:flex;border-radius:0 0 25px 25px;box-shadow:0 10px 0px 0px rgba(255, 205, 80, .25);}
