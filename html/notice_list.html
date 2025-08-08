@@ -17,58 +17,226 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
     <!-- css / js -->
-    <link rel="stylesheet" href="/inc/css/basefont.css">
-<link rel="stylesheet" href="/inc/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="/inc/css/common.css">
-    <script src="/inc/js/common.js"></script>
-    <script src="/inc/js/jquery-3.6.4.min.js"></script>
-    <script src="/inc/js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="inc/css/basefont.css">
+    <link rel="stylesheet" href="inc/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="inc/css/common.css">
+    <script src="inc/js/jquery-3.6.4.min.js"></script>
+    <script src="inc/js/swiper-bundle.min.js"></script>
+    <script src="inc/js/common.js"></script>
 </head>
 <body>
-     <!-- [include] header -->
-     <div data-include-file="/inc/layout/header.html" class="includeJs"></div>
-     <!-- //[include] header -->
-    <div id="container" class="container">
-        <table class="board_table">
-            <caption class="blind">게시판 목록</caption>
-            <colgroup>
-                <col style="width:8%">
-                <col style="width:auto">
-                <col style="width:15%">
-                <col style="width:12%">
-                <col style="width:10%">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th scope="col">번호</th>
-                    <th scope="col">제목</th>
-                    <th scope="col">작성자</th>
-                    <th scope="col">작성일</th>
-                    <th scope="col">조회수</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td class="board_title"><a href="javascript://">샘플 게시글 제목입니다.</a></td>
-                    <td>관리자</td>
-                    <td>2024-07-03</td>
-                    <td>123</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td class="board_title"><a href="javascript://">두번째 게시글 예시</a></td>
-                    <td>홍길동</td>
-                    <td>2024-07-02</td>
-                    <td>45</td>
-                </tr>
-            </tbody>
-        </table>
+    <!-- wrap -->
+    <div id="wrap" class="notice">
+        <ul id="skipToContent">
+            <li><a href="#container">본문 바로가기</a></li>
+            <li><a href="#gnb">주메뉴 바로가기</a></li>
+        </ul>
+        <!-- header -->
+        <header class="header_wrap">
+            <div class="inner">
+                <h1 class="logo"><a href="index.html">Chatterbox Kids</a></h1>
+                <div class="gnb_dim" onclick="javascript:gnbClose()"></div>
+                <nav id="gnb" class="nav">
+                    <ul class="menu_list">
+                        <li><a href="company.html" class="menu_link">회사소개</a></li>
+                        <li><a href="program_en.html" class="menu_link">프로그램</a></li>
+                        <li><a href="notice_list.html" class="menu_link">공지사항</a></li>
+                        <li><a href="javascript://" class="menu_link">자료실</a></li>
+                        <li class="tight_gap"><a href="javascript://" class="btn_learn_start">학습시작</a></li>
+                        <li class="tight_gap">
+                            <a href="javascript://" class="btn_auth login">로그인</a>
+                            <!--<a href="javascript://" class="btn_auth logout">로그아웃</a>-->
+                        </li>
+                    </ul>
+                </nav>
+                <button type="button" class="menu_toggle" onclick="javascript:gnbOpen()" aria-label="메뉴 열기"></button>
+                <nav class="gnb_side_menu">
+                    <button type="button" class="gnb_close_btn" aria-label="메뉴 닫기" onclick="javascript:gnbClose()"></button>
+                    <ul class="gnb_menu">
+                        <li><a href="company.html" class="gnb_menu_title">회사소개</a></li>
+                        <li>
+                            <a href="javascript://" class="gnb_menu_title">프로그램</a>
+                            <ul class="gnb_submenu">
+                                <li><a href="program_en.html">채터박스 키즈 영어</a></li>
+                                <li><a href="program_ko.html">수다쟁이 한글</a></li>
+                                <li><a href="program_cn.html">채터박스 키즈 중국어</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="notice_list.html" class="gnb_menu_title">공지사항</a></li>
+                        <li>
+                            <a href="javascript://" class="gnb_menu_title">자료실</a>
+                            <ul class="gnb_submenu">
+                                <li><a href="javascript://">일반 자료실</a></li>
+                                <li><a href="javascript://">학습 자료실</a></li>
+                                <li><a href="javascript://">수업 자료실</a></li>
+                            </ul>
+                        </li>
+                        <li data-device="mo" class="gnb_menu_list learn"><a href="javascript://" class="gnb_menu_title"><span>학습시작</span></a></li>
+                    </ul>
+                    <div class="btns">
+                        <a href="javascript://" class="btn_min_auth">로그인</a>
+                        <a href="javascript://" class="btn_min_auth">로그아웃</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--// header -->
+        <!-- container -->
+        <div id="container">
+            <div class="inner">
+                <h2 class="page_tit">공지사항</h2>
+                <div class="board_search">
+                    <div class="sel_box">
+                        <select>
+                            <option value="">제목</option>
+                            <option value="">내용</option>
+                        </select>
+                    </div>
+                    <input type="text" placeholder="검색어" />
+                    <button type="button">검색</button>
+                </div>
+                <table class="board_table">
+                    <caption class="blind">공지사항 게시판 목록</caption>
+                    <colgroup>
+                        <col style="width:10%">
+                        <col style="width:auto">
+                        <col style="width:15%">
+                        <col style="width:10%">
+                        <col style="width:15%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">번호</th>
+                            <th scope="col">제목</th>
+                            <th scope="col">첨부파일</th>
+                            <th scope="col">작성자</th>
+                            <th scope="col">작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <tr class="important">
+                            <td><span class="label">공지</span></td>
+                            <td><a href="#" class="subject">2025 체르박스 키즈 별, 배지 생성 기준</a></td>
+                            <td>
+                                <span class="ico_file excel">엑셀파일</span>
+                                <!--<span class="ico_file hwp">hwp 파일</span>
+                                <span class="ico_file pdf">pdf 파일</span>
+                                <span class="ico_file img">image 파일</span>
+                                <span class="ico_file word">word 파일</span>
+                                <span class="ico_file ppt">ppt 파일</span>-->
+                            </td>
+                            <td>슈퍼 관리자</td>
+                            <td>2025-01-03</td>
+                        </tr>
+                        <tr class="important">
+                            <td><span class="label">공지</span></td>
+                            <td><a href="#" class="subject">체크박스 키즈 학습기기 가이드</a></td>
+                            <td><span class="ico_file ppt">PPT파일</span></td>
+                            <td>슈퍼 관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td><a href="#" class="subject">물류 휴무일정(8월 7~8) 공지 드립니다. (문의, 상담 등은 휴무 없음)</a></td>
+                            <td><span class="ico_file word">WORD 파일</span></td>
+                            <td>관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td><a href="#" class="subject">택배 배송지연 안내</a></td>
+                            <td><span class="ico_file img">image 파일</span></td>
+                            <td>관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td><a href="#" class="subject">[필독] 2025 4분기 준비사항</a></td>
+                            <td><span class="ico_file hwp">hwp 파일</span></td>
+                            <td>관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td><a href="#" class="subject">별 생성 기준</a></td>
+                            <td><span class="ico_file pdf">pdf 파일</span></td>
+                            <td>관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td><a href="#" class="subject">3단계 수업방법</a></td>
+                            <td></td>
+                            <td>관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td><a href="#" class="subject">유튜브 동영상보기 제거 방법</a></td>
+                            <td></td>
+                            <td>관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><a href="#" class="subject">3단계 수업방법</a></td>
+                            <td></td>
+                            <td>관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td><a href="#" class="subject">학습페이지와 관리자페이지 이용방법 안내</a></td>
+                            <td></td>
+                            <td>관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination">
+                <a href="javascript://" class="arr btn_prev" disabled>&lt;</a>
+                <a href="javascript://" class="active">1</a>
+                <a href="javascript://">2</a>
+                <a href="javascript://" class="arr btn_next">&gt;</a>
+            </div>
+        </div>
     </div>
-    <!-- [include] footer -->
-    <div data-include-file="/inc/layout/footer.html" class="includeJs"></div>
-    <!-- //[include] footer -->
-
-    <script src="/inc/js/include.js"></script>
+    <!--// container -->
+    <!-- footer -->
+    <footer class="footer_wrap">
+        <div class="inner">
+            <button type="button" id="btnTop" class="btn_top" onclick="javascript:winTop();">TOP</button><!-- Top 버튼 -->
+            <div class="link_box">
+                <ul class="link_list">
+                    <li><a href="javascript://" class="link">개인정보처리방침</a></li>
+                    <li><a href="javascript://" class="link">이용약관</a></li>
+                </ul>
+                <span class="contact">
+                    <a href="tel:07075227404" class="tel">070-7522-7404</a>
+                    <span class="logo"><img src="images/logo_seedlearning.png" alt="seedlearning"></span>
+                </span>
+            </div>
+            <div class="info">
+                주식회사 씨드러닝(Seed Learning, Inc.)<br>
+                7212 Canary Ln., Sachse, TX 750t48 USA<br>
+                (13616) 경기도 성남시 분당구 정자일로 1, <span class="mo_br">C동 1813호(금곡동, 코오롱트리폴리스1)</span><br data-device="pc">
+                Tel : 070-7522-7404 | Fax 070-8289-7404 | <span class="mo_br">E-mail : <a href="jaylee@seed-learning.com" class="email">jaylee@seed-learning.com</a></span><br data-device="pc">
+                사업자 등록번호 : 220-87-33426 | <span class="mo_br">통신판매업신고 : 제2015-경기성남-1064호</span>
+                <p class="copy">&copy; Seed-Learning, Inc. All Rights Reserved</p>
+            </div>
+            <div class="link_box">
+                <ul class="link_list">
+                    <li><a href="company.html" class="link">회사소개</a></li>
+                    <li><a href="javascript://" class="link">프로그램소개</a></li>
+                    <li><a href="notice_list.html" class="link">공지사항</a></li>
+                    <li><a href="javascript://" class="link">문의하기</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!--// footer -->
+</div>
+<!--// wrap -->
 </body>
 </html> 

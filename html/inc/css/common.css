@@ -20,12 +20,14 @@ blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
 table{border-collapse:collapse;border-spacing:0;}
 a{color:inherit;text-decoration:none;background:none;outline:none;}
 a:active, a:focus{outline:none;}
+button,select,input{font-family:'GmarketSans', sans-serif}
 img{max-width:100%}
 picture img{display:block}
 
 #container{padding:100px 0}
-.company #container{padding:110px 0 350px;background:url('../../images/company/bg_sub.png') no-repeat 50% 100%}
 .main #container{overflow:hidden;padding:0 0 50px 0;background-image:url('../../images/main/bg_main_01.png'), url('../../images/main/bg_main_02.png');background-repeat:no-repeat, no-repeat;background-position:60px 48%, right 60px top 60%;}
+.company #container{padding:110px 0 350px;background:url('../../images/company/bg_sub.png') no-repeat 50% 100%}
+
 
 #skipToContent{position:absolute;top:0;left:0;width:100%;z-index:1000;height:1px;overflow:hidden;}
 #skipToContent:focus-within{height:auto;overflow:visible;}
@@ -41,12 +43,20 @@ picture img{display:block}
 [data-device="pc"]{display:block !important;}
 [data-device="mo"]{display:none !important;}
 
+.ico_file{display:inline-block;width:28px;height:28px;text-indent:-9999px;background:url('../../images/ico_file.png') no-repeat 50% 50%;vertical-align:middle;}
+.ico_file.excel{background-position:0 0}
+.ico_file.ppt{background-position:0 -28px}
+.ico_file.word{background-position:0 -56px}
+.ico_file.img{background-position:0 -84px}
+.ico_file.hwp{background-position:0 -112px}
+.ico_file.pdf{background-position:0 -140px}
 
 /*header*/
 .header_wrap{overflow:hidden;/*position:absolute;left:0;top:0;width:100%;z-index:1000;*/}
 .main .header_wrap{position:absolute;left:0;top:0;z-index:1000;width:100%;}
 .company .header_wrap{background:#f3dccc url('../../images/bg_header_sub.png') no-repeat 50% 0}
 .program .header_wrap{background:#f3dccc url('../../images/program/bg_header.png') no-repeat 50% 0}
+.notice .header_wrap{background:#f3dccc url('../../images/notice/bg_header.png') no-repeat 50% 100%}
 
 /*.header_wrap.fixed{background-color:rgba(255, 255, 255, .4);border-bottom:1px solid #ddd}*/
 .header_wrap .inner{position:relative;padding:0 25px;height:132px;/*height:6.87vw;min-height:90px;*/margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
@@ -146,14 +156,42 @@ picture img{display:block}
 .main .program_quick_links .go_badge{display:inline-flex;align-items:center;justify-content:center;height:20px;padding:0 5px;margin-left:10px;background:#2b2b2b;color:#fff;font-size:12px;font-weight:700;border-radius:10px;vertical-align:middle;}
 
 /* board */
-.board_table{width:100%;border-collapse:collapse;font-size:16px;}
-.board_table th,.board_table td{padding:12px 10px;border-bottom:1px solid #e0e0e0;text-align:center;}
-.board_table th{background:#f8f8f8;font-weight:700;color:#222;}
-.board_table td{color:#444;}
-.board_table .board_title{text-align:left;}
-.board_table .board_title a{color:#222;text-decoration:none;display:block;}
-.board_table .board_title a:hover{text-decoration:underline;}
+.board_table{width:100%;border-collapse:collapse;font-size:16px;border-top:2px solid #333}
+.board_table th,
+.board_table td{padding:20px 10px;border-bottom:1px solid #bfbfbf;text-align:center;color:#333;font-size:21px;}
+.board_table thead th{padding:24px 10px;border-bottom:1px solid #333;background:#fffdf7;font-weight:700;color:#333;}
+.board_table tr.important .subject{font-weight:600}
 .board_table tbody tr:hover{background:#f5f7fa;}
+.board_table .label { display: inline-block; background-color: #000; color: #fff; padding:5px 10px 2px 10px; border-radius:999px; font-size: 19px; }
+.board_table .subject{display:block;color:#222;text-decoration:none;text-align:left;font-size:21px}
+.board_table .subject:hover{text-decoration:underline;}
+
+
+
+.title { font-size: 28px; color: #d84d4d; margin-bottom: 10px; }
+.emoji-row { font-size: 24px; margin-bottom: 20px; }
+
+.board_search { display: flex; gap: 10px; padding:20px 0; justify-content: flex-end;}
+.board_search .sel_box { position: relative; }
+.board_search .sel_box::before { content: ""; position: absolute; top: 50%; right: 16px; transform: translateY(-50%); width: 8px; height: 6px; background: #333; clip-path: polygon(0 0, 100% 0, 50% 100%); pointer-events: none; }
+.board_search .sel_box select { appearance: none; -webkit-appearance: none; -moz-appearance: none;padding: 10px 35px 10px 20px;border: 1px solid #ccc; border-radius: 999px; background-color: white; font-size: 21px; cursor: pointer; }
+
+.board_search input[type="text"] { padding: 10px 20px 10px 30px; border: 1px solid #ccc; border-radius: 999px; font-size:21px; width: 200px; outline: none; }
+.board_search input::placeholder { color: #ccc; }
+.board_search button { padding:10px 22px; border: none; border-radius: 999px; background-color: #333; color: white; font-size:21px; cursor: pointer; font-weight:500}
+.board_search button:hover { background-color: #555; }
+
+
+
+
+.pagination { margin-top:50px; display: flex; justify-content: center; gap: 10px; }
+.pagination a{ padding: 6px 8px; cursor: pointer;color:#bababa;background:none;border:0 none;font-size:21px;}
+.pagination a.active,
+.pagination a.arr{color:#333}
+.pagination a[disabled] {color:#bababa;cursor: not-allowed; }
+
+.notice .board_search{background:url('../../images/notice/bg_table.png') no-repeat left 0 bottom 10px;}
+
 
 .board_view{max-width:800px;margin:0 auto;padding:32px 20px;background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
 .board_view_title{font-size:2rem;font-weight:700;color:#222;margin-bottom:18px;text-align:left;}
@@ -442,8 +480,13 @@ picture img{display:block}
   .program .stage_card .point_list li + li{margin-top:15px;}
   .program .stage_card .point_list strong{display:block;margin-right:4px;font-size:12px;}
 
+  .board_search .sel_box select{font-size:12px;padding:8px 20px 8px 15px}
+  .board_search .sel_box::before{width:4px;height:3px;right:10px;}
+  .board_search input[type="text"]{font-size:12px;padding:4px 20px 4px 30px}
+  .board_search button{font-size:12px;padding:8px 15px}
 
-
+  .notice #container{padding:30px 0 100px}
+  .notice .board_search{background:none}
 
   .btn_primary.bg_yl{box-shadow:inset 0 -5px 0 #f3b10a}
   .btn_primary.bg_salmon{box-shadow:inset 0 -5px 0 #f16d4a}
