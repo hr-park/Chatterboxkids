@@ -87,25 +87,121 @@
         <!-- container -->
         <div id="container">
             <div class="inner">
-                <h2 class="page_tit">공지사항</h2>
-                <div class="board_view">
-                    <h2 class="board_view_title">샘플 공지사항 제목입니다.</h2>
-                    <div class="board_view_meta">
-                        <span class="board_view_writer">관리자</span>
-                        <span class="board_view_date">2024-07-03</span>
-                        <span class="board_view_hits">조회수 123</span>
+                <h2 class="page_tit">자료실</h2>
+                <div class="board_search">
+                    <div class="sel_box">
+                        <select>
+                            <option value="">제목</option>
+                            <option value="">내용</option>
+                        </select>
                     </div>
-                    <div class="board_view_content">
-                        <p>이곳은 공지사항 상세 내용이 들어가는 영역입니다.<br>여러 줄의 텍스트와 이미지, 첨부파일 등이 올 수 있습니다.</p>
-                    </div>
-                    <div class="board_view_nav">
-                        <a href="javascript://" class="board_view_prev">이전글: 이전 게시글 제목</a>
-                        <a href="javascript://" class="board_view_next">다음글: 다음 게시글 제목</a>
-                    </div>
-                    <div class="board_view_btns">
-                        <a href="notice_list.html" class="board_view_list_btn">목록</a>
-                    </div>
+                    <input type="text" placeholder="검색어" />
+                    <button type="button">검색</button>
                 </div>
+                <table class="board_table">
+                    <caption class="blind">공지사항 게시판 목록</caption>
+                    <colgroup>
+                        <col style="width:10%" data-device="pc">
+                        <col style="width:auto">
+                        <col style="width:15%">
+                        <col style="width:10%" data-device="pc">
+                        <col style="width:15%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" data-device="pc">번호</th>
+                            <th scope="col">제목</th>
+                            <th scope="col">첨부파일</th>
+                            <th scope="col" data-device="pc">작성자</th>
+                            <th scope="col">작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <tr class="important">
+                            <td data-device="pc"><span class="label">공지</span></td>
+                            <td><a href="#" class="subject">2025 체르박스 키즈 별, 배지 생성 기준</a></td>
+                            <td>
+                                <span class="ico_file excel">엑셀파일</span>
+                                <!--<span class="ico_file hwp">hwp 파일</span>
+                                <span class="ico_file pdf">pdf 파일</span>
+                                <span class="ico_file img">image 파일</span>
+                                <span class="ico_file word">word 파일</span>
+                                <span class="ico_file ppt">ppt 파일</span>-->
+                            </td>
+                            <td data-device="pc">슈퍼 관리자</td>
+                            <td>2025-01-03</td>
+                        </tr>
+                        <tr class="important">
+                            <td data-device="pc"><span class="label">공지</span></td>
+                            <td><a href="#" class="subject">체크박스 키즈 학습기기 가이드</a></td>
+                            <td><span class="ico_file ppt">PPT파일</span></td>
+                            <td data-device="pc">슈퍼 관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">16</td>
+                            <td><a href="#" class="subject">물류 휴무일정(8월 7~8) 공지 드립니다. (문의, 상담 등은 휴무 없음)</a></td>
+                            <td><span class="ico_file word">WORD 파일</span></td>
+                            <td data-device="pc">관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">15</td>
+                            <td><a href="#" class="subject">택배 배송지연 안내</a></td>
+                            <td><span class="ico_file img">image 파일</span></td>
+                            <td data-device="pc">관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">14</td>
+                            <td><a href="#" class="subject">[필독] 2025 4분기 준비사항</a></td>
+                            <td><span class="ico_file hwp">hwp 파일</span></td>
+                            <td data-device="pc">관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">13</td>
+                            <td><a href="#" class="subject">별 생성 기준</a></td>
+                            <td><span class="ico_file pdf">pdf 파일</span></td>
+                            <td data-device="pc">관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">12</td>
+                            <td><a href="#" class="subject">3단계 수업방법</a></td>
+                            <td></td>
+                            <td data-device="pc">관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">11</td>
+                            <td><a href="#" class="subject">유튜브 동영상보기 제거 방법</a></td>
+                            <td></td>
+                            <td data-device="pc">관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">10</td>
+                            <td><a href="#" class="subject">3단계 수업방법</a></td>
+                            <td></td>
+                            <td data-device="pc">관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">9</td>
+                            <td><a href="#" class="subject">학습페이지와 관리자페이지 이용방법 안내</a></td>
+                            <td></td>
+                            <td data-device="pc">관리자</td>
+                            <td>2025-00-00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination">
+                <a href="javascript://" class="arr btn_prev" disabled>&lt;</a>
+                <a href="javascript://" class="active">1</a>
+                <a href="javascript://">2</a>
+                <a href="javascript://" class="arr btn_next">&gt;</a>
             </div>
         </div>
     </div>
@@ -146,4 +242,4 @@
 </div>
 <!--// wrap -->
 </body>
-</html>
+</html> 
