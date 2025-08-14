@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CHATTERBOX</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Chatterboxkids">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chatterboxkids">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="/inc/images/og_image.png">
+    <meta property="og:url" content="https://www.chatterboxkids.net/">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <!-- css / js -->
+    <link rel="stylesheet" href="inc/css/basefont.css">
+    <link rel="stylesheet" href="inc/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="inc/css/common.css">
+    <script src="inc/js/jquery-3.6.4.min.js"></script>
+    <script src="inc/js/swiper-bundle.min.js"></script>
+    <script src="inc/js/common.js"></script>
+    <style>
+        .study{width:100%;height:100vh;}
+        .study.en{background:url('images/study/bg_en.png') no-repeat 50% 0% / 100% auto}
+    </style>
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap" class="study en">
+        <!-- header -->
+        <header class="study_header">
+            <div class="inner">
+                <h1 class="logo"><a href="index.html">영어</a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="#">영어</a></li>
+                        <li><a href="#">한글</a></li>
+                        <li><a href="#">중국어</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!--// header -->
+        <div id="container">
+            <div class="inner">
+                <ul class="sel_lv_list">
+                    <li><a href="#">PRE-K</a></li>
+                    <li><a href="#">PRE-K</a></li>
+                    <li><a href="#">PRE-K</a></li>
+                </ul>
+                <ul class="book_list">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--// container -->
+</div>
+<!--// wrap -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // URL 파라미터 가져오기
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentType = urlParams.get('lang');
+
+    // 모든 메뉴 링크에서 active 클래스 제거
+    document.querySelectorAll('.page_depth nav a').forEach(link => {
+        link.classList.remove('active');
+    });
+
+    // 현재 타입과 일치하는 링크에 active 클래스 추가
+    if (currentType) {
+    const activeLink = document.querySelector(`[data-type="${currentType}"]`);
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
+    }else{
+        // 기본적으로 첫 번째 메뉴에 active 클래스 추가
+        const firstLink = document.querySelector('.page_depth nav li:first-child a');
+        if (firstLink) {
+            firstLink.classList.add('active');
+        }
+    }
+
+     // 📌 파라미터 유지한 채 view 페이지 링크 설정
+    document.querySelectorAll('.subject').forEach(link => {
+        let baseUrl = link.getAttribute('href');
+        if (window.location.search) {
+            link.setAttribute('href', baseUrl + window.location.search);
+        }
+    });
+});
+</script>
+</body>
+</html> 
