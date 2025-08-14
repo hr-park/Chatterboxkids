@@ -29,7 +29,7 @@
 </head>
 <body>
     <!-- wrap -->
-    <div id="wrap" class="notice">
+    <div id="wrap" class="data">
         <ul id="skipToContent">
             <li><a href="#container">본문 바로가기</a></li>
             <li><a href="#gnb">주메뉴 바로가기</a></li>
@@ -58,7 +58,7 @@
                     <ul class="gnb_menu">
                         <li><a href="company.html" class="gnb_menu_title">회사소개</a></li>
                         <li>
-                            <a href="javascript://" class="gnb_menu_title">프로그램</a>
+                            <a href="program_en.html" class="gnb_menu_title">프로그램</a>
                             <ul class="gnb_submenu">
                                 <li><a href="program_en.html">채터박스 키즈 영어</a></li>
                                 <li><a href="program_ko.html">수다쟁이 한글</a></li>
@@ -87,25 +87,46 @@
         <!-- container -->
         <div id="container">
             <div class="inner">
-                <h2 class="page_tit">자료실</h2>
-                <div class="board_view">
-                    <h2 class="board_view_title">샘플 공지사항 제목입니다.</h2>
-                    <div class="board_view_meta">
-                        <span class="board_view_writer">관리자</span>
-                        <span class="board_view_date">2024-07-03</span>
-                        <span class="board_view_hits">조회수 123</span>
-                    </div>
-                    <div class="board_view_content">
-                        <p>이곳은 공지사항 상세 내용이 들어가는 영역입니다.<br>여러 줄의 텍스트와 이미지, 첨부파일 등이 올 수 있습니다.</p>
-                    </div>
-                    <div class="board_view_nav">
-                        <a href="javascript://" class="board_view_prev">이전글: 이전 게시글 제목</a>
-                        <a href="javascript://" class="board_view_next">다음글: 다음 게시글 제목</a>
-                    </div>
-                    <div class="board_view_btns">
-                        <a href="notice_list.html" class="board_view_list_btn">목록</a>
-                    </div>
+                <div class="page_depth has_nav">
+                    <h2 class="page_tit">자료실</h2>
+                    <nav>
+                        <ul>
+                            <li><a href="data_list.html?type=1" data-type="1">일반자료실</a></li>
+                            <li><a href="data_list.html?type=2" data-type="2">학습자료실</a></li>
+                            <li><a href="data_list.html?type=3" data-type="3">수업자료실</a></li>
+                        </ul>
+                    </nav>
                 </div>
+                <table class="board_view">
+                    <caption class="blind">자료실 상세내용</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">제목</th>
+                            <td colspan="7" class="subject tl">채터박스키즈 뱃지 pdf파일_2025</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" data-device="pc">조회수</th>
+                            <td data-device="pc">1407</td>
+                            <th scope="row">작성일</th>
+                            <td>2025-00-00</td>
+                            <th scope="row" data-device="pc">작성자</th>
+                            <td data-device="pc">슈퍼관리자</td>
+                            <th scope="row">첨부파일</th>
+                            <td>
+                                <span class="ico_file pdf">pdf 파일</span>
+                                <!--<span class="ico_file hwp">hwp 파일</span>
+                                <span class="ico_file excel">엑셀파일</span>
+                                <span class="ico_file img">image 파일</span>
+                                <span class="ico_file word">word 파일</span>
+                                <span class="ico_file ppt">ppt 파일</span>-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="8" class="contents">채터박스키즈 뱃지 pdf파일_2025<br><br><br><br><br></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn_box"><a href="data_list.html" class="btn_round">목록으로</a></div>
             </div>
         </div>
     </div>
@@ -135,7 +156,7 @@
             <div class="link_box">
                 <ul class="link_list">
                     <li><a href="company.html" class="link">회사소개</a></li>
-                    <li><a href="javascript://" class="link">프로그램소개</a></li>
+                    <li><a href="program_en.html" class="link">프로그램소개</a></li>
                     <li><a href="notice_list.html" class="link">공지사항</a></li>
                     <li><a href="javascript://" class="link">문의하기</a></li>
                 </ul>
@@ -145,5 +166,34 @@
     <!--// footer -->
 </div>
 <!--// wrap -->
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // URL 파라미터 가져오기
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentType = urlParams.get('type');
+
+    // 모든 메뉴 링크에서 active 클래스 제거
+    document.querySelectorAll('.page_depth nav a').forEach(link => {
+        link.classList.remove('active');
+    });
+
+    // 현재 타입과 일치하는 링크에 active 클래스 추가
+    if (currentType) {
+    const activeLink = document.querySelector(`[data-type="${currentType}"]`);
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
+    }else{
+        console.log('11');
+        // 기본적으로 첫 번째 메뉴에 active 클래스 추가
+        const firstLink = document.querySelector('.page_depth nav li:first-child a');
+        if (firstLink) {
+            firstLink.classList.add('active');
+        }
+    }
+});
+</script>
 </body>
 </html>
