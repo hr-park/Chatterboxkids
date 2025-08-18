@@ -27,8 +27,21 @@
     <script src="inc/js/swiper-bundle.min.js"></script>
     <script src="inc/js/common.js"></script>
     <style>
-        .study{width:100%;height:100vh;}
-        .study.en{background:url('images/study/bg_en.png') no-repeat 50% 0% / 100% auto}
+
+
+
+.sel_lv_list{display:flex;align-items:center;justify-content:center;gap:30px;}
+.sel_lv_list .btn_lv{padding:10px 30px 20px 30px;border-radius:20px;color:#fff;font-weight:700;font-size:20px;background:#bcbcbc;text-shadow:2px 2px 4px rgba(0, 0, 0, 0.15),0px 0px 1px rgba(255, 255, 255, 0.1);box-shadow:inset 0 -10px 0 #8c8c8c}
+.sel_lv_list .btn_lv.active{background:#ffcd50;box-shadow:inset 0 -10px 0 #f3b10a}
+
+.book_list{display:flex;flex-wrap:wrap;padding-top:130px;gap:50px;}
+.book_list{background-image: url('images/study/bg_bookshelf.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: center;background-position:0 200%}
+.book_list li{flex: 0 0 140px;}
+.book_list .book_num{display:inline-block;padding:8px 20px;background:#4b4b4b;color:#fff;border-radius:0 0 10px 10px}
+        
     </style>
 </head>
 <body>
@@ -37,12 +50,12 @@
         <!-- header -->
         <header class="study_header">
             <div class="inner">
-                <h1 class="logo"><a href="index.html">영어</a></h1>
+                <h1>채터박스키즈 영어</h1>
                 <nav>
                     <ul>
-                        <li><a href="#">영어</a></li>
-                        <li><a href="#">한글</a></li>
-                        <li><a href="#">중국어</a></li>
+                        <li><a href="#" class="active" data-type="en">채터박스키즈 영어</a></li>
+                        <li><a href="#" data-type="ko">수다쟁이 한글</a></li>
+                        <li><a href="#" data-type="cn">채터박스키즈 중국어</a></li>
                     </ul>
                 </nav>
             </div>
@@ -51,12 +64,16 @@
         <div id="container">
             <div class="inner">
                 <ul class="sel_lv_list">
-                    <li><a href="#">PRE-K</a></li>
-                    <li><a href="#">PRE-K</a></li>
-                    <li><a href="#">PRE-K</a></li>
+                    <li class="active"><a href="#" class="btn_lv active">PRE-K</a></li>
+                    <li><a href="#" class="btn_lv">Level 1</a></li>
+                    <li><a href="#" class="btn_lv">Level 2</a></li>
+                    <li><a href="#" class="btn_lv">Level 3</a></li>
                 </ul>
-                <ul class="book_list">
-
+                <ul id="bookList" class="book_list">
+                    <li>
+                        <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book">
+                        <p class="book_num">5</p>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -64,6 +81,25 @@
     <!--// container -->
 </div>
 <!--// wrap -->
+<script>
+const bookList = document.getElementById('bookList');
+
+for (let i = 1; i <= 10; i++) {
+    const li = document.createElement('li');
+
+    const img = document.createElement('img');
+    img.src = 'http://manager.chatterboxkids.net/pages/upload/PreK5.png';
+    img.className = 'book';
+
+    const p = document.createElement('p');
+    p.className = 'book_num';
+    p.textContent = i; // 번호를 1~10으로 출력
+
+    li.appendChild(img);
+    li.appendChild(p);
+    bookList.appendChild(li);
+}
+</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -72,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentType = urlParams.get('lang');
 
     // 모든 메뉴 링크에서 active 클래스 제거
-    document.querySelectorAll('.page_depth nav a').forEach(link => {
+    document.querySelectorAll('nav a').forEach(link => {
         link.classList.remove('active');
     });
 
@@ -84,19 +120,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     }else{
         // 기본적으로 첫 번째 메뉴에 active 클래스 추가
-        const firstLink = document.querySelector('.page_depth nav li:first-child a');
+        const firstLink = document.querySelector('nav li:first-child a');
         if (firstLink) {
             firstLink.classList.add('active');
         }
     }
-
-     // 📌 파라미터 유지한 채 view 페이지 링크 설정
-    document.querySelectorAll('.subject').forEach(link => {
-        let baseUrl = link.getAttribute('href');
-        if (window.location.search) {
-            link.setAttribute('href', baseUrl + window.location.search);
-        }
-    });
 });
 </script>
 </body>

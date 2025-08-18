@@ -256,9 +256,9 @@ table col[data-device="pc"]{display:table-column !important;}
 .dot_list > li:before{content:'';position:absolute;left:0;top:7px;display:inline-block;width:6px;height:6px;margin-right:10px;background:#333;border-radius:50%;}
 .dot_list > li + li{margin-top:20px}
 
-.program.en{--highlight:var(--color_kids);}
-.program.ko{--highlight:var(--color_hangeul);}
-.program.cn{--highlight:var(--color_chinese);}
+.en{--highlight:var(--color_kids);}
+.ko{--highlight:var(--color_hangeul);}
+.cn{--highlight:var(--color_chinese);}
 
 .program .banner{width:100%;margin:50px 0;text-align:center;/*padding-top:54.43%;*/}
 /*.program .banner.en{background:url('../../images/program/en/bnr.jpg') no-repeat 50% 50% / 100% auto}*/
@@ -338,6 +338,22 @@ table col[data-device="pc"]{display:table-column !important;}
 .program .stage_card .point_list li{line-height:1.4}
 .program .stage_card .point_list li + li{margin-top:30px;}
 .program .stage_card .point_list strong{display:inline-block;margin-right:4px;font-weight:500;font-size:23px;color:#61b126}
+
+/* study */
+.study{width:100%;height:100vh;}
+.study.en{background:#fff url('../../images/study/bg_en.png') no-repeat 50% 0% / 100% auto}
+
+.study_header{display:flex;}
+.study_header .inner{display:flex;width:100%;height:50px;margin-top:50px;align-items:center;justify-content:space-between;}
+.study_header h1{padding-left:50px;color:#cb3e37;font-weight:300;font-size:40px;background:url('../../images/study/ico_tit_leaf.png') no-repeat 0 0 / 38px auto}
+.study_header nav ul{display:flex;align-items:center;gap:65px;}
+.study_header nav a{color:#bababa;font-size:23px;letter-spacing:-.06em;font-weight:400;}
+.study_header nav a.active{position:relative;padding-top:25px;color:var(--highlight);border-bottom:1px solid var(--highlight);}
+.study_header nav a.active:before{content:'';position:absolute;left:50%;top:0;z-index:1;display:inline-block;width:54px;height:18px;transform:translate(-50%, 0);background:url('../../images/img_btn_sparkle.png') no-repeat 50% 50% / 100% auto;}
+
+
+
+
 
 @media (max-width:1300px){
   .inner{padding:0 15px;}
