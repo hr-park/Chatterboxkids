@@ -47,8 +47,8 @@
         <div id="container">
             <div class="inner">
                 <ul class="sel_lv_list">
-                    <li class="active"><a href="#" class="btn_lv active">PRE-K</a></li>
-                    <li><a href="#" class="btn_lv">Level 1</a></li>
+                    <li class="prek"><a href="#" class="btn_lv">PRE-K</a></li>
+                    <li><a href="#" class="btn_lv active">Level 1</a></li>
                     <li><a href="#" class="btn_lv">Level 2</a></li>
                     <li><a href="#" class="btn_lv">Level 3</a></li>
                 </ul>
@@ -107,32 +107,41 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    const preKItem = document.querySelector('.sel_lv_list li.prek');
+    if (currentType == '1') {
+        // PRE-K 보이기
+        if (preKItem) preKItem.style.display = '';
+    } else {
+        // PRE-K 숨기기
+        if (preKItem) preKItem.style.display = 'none';
+    }
+
     // 2. wrap에 언어 클래스 추가
     if (wrap) {
         let langClass = '';
         let pageTitleHtml = '';
-        let btnLv = document.querySelector('.btn_lv');
+        //let btnLv = document.querySelectorAll('.btn_lv');
 
         switch(currentType) {
             case '1':
                 langClass = 'en';
                 pageTitleHtml = '채터박스키즈 영어';
-                btnLv.classList.add('ylw');
+                //btnLv.forEach(el => el.classList.add('ylw'));
                 break;
             case '2':
                 langClass = 'ko';
                 pageTitleHtml = '수다쟁이 한글';
-                btnLv.classList.add('gr');
+                //btnLv.classList.add('gr');
                 break;
             case '3':
                 langClass = 'cn';
                 pageTitleHtml = '채터박스키즈 중국어';
-                btnLv.classList.add('blue');
+                //btnLv.classList.add('blue');
                 break;
             default:
                 langClass = 'en';
                 pageTitleHtml = '채터박스키즈 영어';
-                btnLv.classList.add('ylw');
+                //btnLv.classList.add('ylw');
         }
         if (langClass) {
             wrap.classList.add(langClass);

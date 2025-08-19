@@ -26,249 +26,98 @@
     <script src="inc/js/jquery-3.6.4.min.js"></script>
     <script src="inc/js/swiper-bundle.min.js"></script>
     <script src="inc/js/common.js"></script>
+    <style>
+        .study_wrap .top{display:flex;gap:40px;}
+        .study_wrap .info_wrap{width:610px;padding:40px 35px 20px 35px;flex-shrink:0;border:1px solid #cbcbcb;background:#fff;}
+        .study_wrap .info_wrap .title{display:block;color:#dc2c2c;font-size:40px;font-weight:300}
+        .study_wrap .info_wrap .desc{margin-top:auto;font-size:15px;line-height:1.4;}
+
+        .study_wrap .thumb_box{display:flex;gap:25px;}
+        .study_wrap .thumb_box  > div{display:flex;flex-direction: column;}
+        .study_wrap .thumb_box .thumb p{display:inline-block;padding:2px 5px;margin-top:10px;color:#fff;font-size:13px;font-weight:500;background:#333;}
+
+        .study_wrap .info_wrap .btn_box{display:flex;gap:20px;padding-top:10px;justify-content:flex-end}
+        .study_wrap .btn_box a{
+        display: inline-block;
+  padding: 10px 20px;
+  background-color: #b3b3b3;  /* 회색 배경 */
+  color: #fff;                /* 흰색 글씨 */
+  text-decoration: none;       /* 밑줄 제거 */
+  border-radius: 999px;        /* pill 모양 */
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;}
+
+        .study_wrap .activity_btn_wrap{padding:30px;}
+        .study_wrap .activity_btn_wrap ul{display:flex;flex-wrap:wrap;gap:50px 10px}
+
+        .btn_activicy{padding:10px 20px 15px 20px;border-radius:20px;color:#fff;font-weight:700;font-size:15px;background:#bcbcbc;text-shadow:2px 2px 4px rgba(0, 0, 0, 0.15),0px 0px 1px rgba(255, 255, 255, 0.1);box-shadow:inset 0 -5px 0 #8c8c8c}
+        .btn_activicy.active{background:#dc2c2c;box-shadow:inset 0 -5px 0 #a01c14}
+
+
+        .player_box { position: relative; width: 100%; padding-top: 56.25%; margin-top: 40px; border: 1px solid #cbcbcb; overflow: hidden; }
+        .player_box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+    </style>
 </head>
 <body>
     <ul id="skipToContent">
         <li><a href="#container">본문 바로가기</a></li>
         <li><a href="#gnb">주메뉴 바로가기</a></li>
     </ul>
-    <header class="header_wrap">
-        <div class="inner">
-            <a href="index.html" class="logo"><img src="images/logo.png" alt="Chatterbox Kids"></a>
-            <div class="gnb_dim" onclick="javascript:gnbClose()"></div>
-            <nav id="gnb" class="nav">
-                <ul class="menu_list">
-                    <li><a href="company.html" class="menu_link">회사소개</a></li>
-                    <li><a href="program_en.html" class="menu_link">프로그램</a></li>
-                    <li><a href="notice_list.html" class="menu_link">공지사항</a></li>
-                    <li><a href="data_list.html" class="menu_link">자료실</a></li>
-                    <li class="tight_gap"><a href="javascript://" class="btn_learn_start">학습시작</a></li>
-                    <li class="tight_gap">
-                        <a href="javascript://" class="btn_auth login">로그인</a>
-                        <!--<a href="javascript://" class="btn_auth logout">로그아웃</a>-->
-                    </li>
-                </ul>
-            </nav>
-            <button type="button" class="menu_toggle" onclick="javascript:gnbOpen()" aria-label="메뉴 열기"></button>
-            <nav class="gnb_side_menu">
-                <button type="button" class="gnb_close_btn" aria-label="메뉴 닫기" onclick="javascript:gnbClose()"></button>
-                <ul class="gnb_menu">
-                    <li><a href="company.html" class="gnb_menu_title">회사소개</a></li>
-                    <li>
-                        <a href="program_en.html" class="gnb_menu_title">프로그램</a>
-                        <ul class="gnb_submenu">
-                            <li><a href="program_en.html">채터박스 키즈 영어</a></li>
-                            <li><a href="program_ko.html">수다쟁이 한글</a></li>
-                            <li><a href="program_cn.html">채터박스 키즈 중국어</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="notice_list.html" class="gnb_menu_title">공지사항</a></li>
-                    <li>
-                        <a href="data_list.html" class="gnb_menu_title">자료실</a>
-                        <ul class="gnb_submenu">
-                            <li><a href="data_list.html?type=1">일반 자료실</a></li>
-                            <li><a href="data_list.html?type=2">학습 자료실</a></li>
-                            <li><a href="data_list.html?type=3">수업 자료실</a></li>
-                        </ul>
-                    </li>
-                    <li data-device="mo" class="gnb_menu_list learn"><a href="javascript://" class="gnb_menu_title"><span>학습시작</span></a></li>
-                </ul>
-                <div class="btns">
-                    <a href="javascript://" class="btn_min_auth">로그인</a>
-                    <a href="javascript://" class="btn_min_auth">로그아웃</a>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <!--// header -->
-    <!-- container -->
-    <div id="container">
-        <div class="inner">
-            <!-- 내용 -->
-            <div class="">
+    <!-- wrap -->
+    <div id="wrap" class="study">
+        <div id="container">
+            <div class="inner">
                 <div class="study_wrap">
-                    <div class="box">
+                    <!-- top -->
+                    <div class="top">
                         <div class="info_wrap">
-                            <div class="top">
-                                <select name="cateseq2" class="select" onchange="">
-                                    <option value="7" >Step 0</option>
-                                    <option value="8" selected>Step 1</option>
-                                </select>
-                                <select name="cateseq3" class="select" onchange="">
-                                    <option value="">선택</option>
-                                    <option value="12" selected>Level 1</option>
-                                </select>
-                            </div>
-                            <div class="middle" id="z2">
-                                <div class="con">
-                                    <strong class="txt_t">Up and Down</strong>
-                                    <span class="txt_s">A little girl has fun playing with toys that go up and down.</span>
-                                    <p class="bt_record" id="z3">
-                                        <a href="javascript:fnc_goRecordNew('2795','28');" class="bt">녹음하기</a> 
-									    <a href="/etc/flash_card.asp?cateseq4=28" target="_blank">Flash Card</a>
-									</p>
+                            <div class="thumb_box">
+                                <div class="thumb">
+                                    <img src="http://manager.chatterboxkids.net/pages/upload/PreK6.png" alt="">
+                                    <p>Book 01-01</p>
+                                </div>
+                                <div>
+                                    <p class="title">Colors</p>
+                                    <p class="desc">이건 무슨 색깔일까요?<br>우리 주변에 있는 색깔들을 배워보아요.</p>
                                 </div>
                             </div>
+                            <div class="btn_box">
+                                <a href="#" class="btn_prev">이전 교재</a>
+                                <a href="#" class="btn_next">다음 교재</a>
+                            </div>
+                        </div>
+                        <div class="activity_btn_wrap">
+                            <ul>
+                                <li><a href="#" class="btn_activicy active">챈트 1</a></li>
+                                <li><a href="#" class="btn_activicy">챈트 1</a></li>
+                                <li><a href="#" class="btn_activicy">챈트 1</a></li>
+                                <li><a href="#" class="btn_activicy">챈트 1</a></li>
+                                <li><a href="#" class="btn_activicy">챈트 1</a></li>
+                                <li><a href="#" class="btn_activicy">챈트 1</a></li>
+                                <li><a href="#" class="btn_activicy">챈트 1</a></li>
+                                <li><a href="#" class="btn_activicy">챈트 1</a></li>
+                                <li><a href="#" class="btn_activicy">챈트 1</a></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="box">
-                        <div class="frame_wrap" id="vvip1">
-                            <iframe width="560" height="315" src="player.asp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="vrc"></iframe>
-                        </div>
+                    <!--// top -->
+                    <div class="player_box">
+                        <iframe
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
-                </div>
-                <h3 class="ss_tit">학습이력</h3>
-                <div class="table_line">
-                    <table class="board-list" cellspacing="0" cellpadding="0" summary="게시판 리스트">
-                        <caption>
-                            게시판 리스트
-                        </caption>
-                        <colgroup>
-                            <col width="10%">
-                            <col width="%">
-                            <col width="24%">
-                            <col width="20%">
-                            <col width="20%">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Activities</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Total Time(Sec)</th>
-                                <th scope="col">Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-							<tr>
-								<td>1</td>
-								<td>Activity 1</td>
-								<td>Read</td>
-								<td><strong class="point_c">1분 53초</strong></td>
-								<td>2025-02-12 오전 11:29:44</td>
-							</tr>
-                        </tbody>
-                    </table>
-                </div>
-                <h3 class="ss_tit">녹음이력</h3>
-                <p class="ico_note point_c pb10">
-                    녹음 가능 시간은 <strong>최대 5분</strong>이며 5분이 지나면 <strong>녹음이 종료됩니다.</strong><br>
-                    녹음 파일은 <strong>최대 7일</strong> 간 다운로드 및 재생이 가능하며 7일이 지나면 자동으로 삭제 됩니다.
-                </p>
-                <div class="table_line">
-                    <table class="board-list" cellspacing="0" cellpadding="0" summary="게시판 리스트">
-                        <caption>
-                            게시판 리스트
-                        </caption>
-                        <colgroup>
-                            <col width="10%">
-                            <col width="18%">
-                            <col width="18%">
-                            <col width="%">
-                            <col width="18%">
-                            <col width="18%">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">녹음일</th>
-                                <th scope="col">듣기</th>
-                                <th scope="col">다운로드</th>
-                                <th scope="col">삭제</th>
-                                <th scope="col">삭제예정일</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                </div>
-                <h3 class="ss_tit">Learn More</h3>
-                <p class="ico_note point_c pb10">학습명을 클릭하시고 학습을 진행하세요.</p>
-                <div class="table_line">
-                    <table class="board-list" cellspacing="0" cellpadding="0" summary="게시판 리스트">
-                        <caption>
-                            게시판 리스트
-                        </caption>
-                        <colgroup>
-                            <col width="7%">
-                            <col width="23%">
-							<col width="9%">
-							<col width="9%">
-							<col width="9%">
-							<col width="17%">
-                            <col width="%">
-                       </colgroup>
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">학습명</th>
-                                <th scope="col">점수</th>
-                                <th scope="col">포인트</th>
-								<th scope="col">총문제수</th>
-                                <th scope="col">틀린문제수/맞은문제수</th>
-                                <th scope="col">최근학습일</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td><a href="https://new.bookclubs.co.kr/api/learnings/2795/open?auth_key=5e7b86d43815ee01666d5ac44f7a404b&aca_code=seedlearning&api_url=https://www.ssoclass.com/api/learning/&user_id=root@chatterboxkids.net&step=word-preview&study_code="" target="_blank" style="color:green;">word-preview</a></td>
-                                <td>-</td>
-								<td>-</td>
-								<td>-</td>
-								<td>-</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </div>
             <!-- //내용 -->
         </div>
     </div>
     <!--// container -->
-    <!-- footer -->
-    <footer class="footer_wrap">
-        <div class="inner">
-            <button type="button" id="btnTop" class="btn_top" onclick="javascript:winTop();">TOP</button><!-- Top 버튼 -->
-            <div class="link_box">
-                <ul class="link_list">
-                    <li><a href="javascript://" class="link">개인정보처리방침</a></li>
-                    <li><a href="javascript://" class="link">이용약관</a></li>
-                </ul>
-                <span class="contact">
-                    <a href="tel:07075227404" class="tel">070-7522-7404</a>
-                    <span class="logo"><img src="images/logo_seedlearning.png" alt="seedlearning"></span>
-                </span>
-            </div>
-            <div class="info">
-                주식회사 씨드러닝(Seed Learning, Inc.)<br>
-                7212 Canary Ln., Sachse, TX 750t48 USA<br>
-                (13616) 경기도 성남시 분당구 정자일로 1, <span class="mo_br">C동 1813호(금곡동, 코오롱트리폴리스1)</span><br data-device="pc">
-                Tel : 070-7522-7404 | Fax 070-8289-7404 | <span class="mo_br">E-mail : <a href="jaylee@seed-learning.com" class="email">jaylee@seed-learning.com</a></span><br data-device="pc">
-                사업자 등록번호 : 220-87-33426 | <span class="mo_br">통신판매업신고 : 제2015-경기성남-1064호</span>
-                <p class="copy">&copy; Seed-Learning, Inc. All Rights Reserved</p>
-            </div>
-            <div class="link_box">
-                <ul class="link_list">
-                    <li><a href="company.html" class="link">회사소개</a></li>
-                    <li><a href="program_en.html" class="link">프로그램소개</a></li>
-                    <li><a href="notice_list.html" class="link">공지사항</a></li>
-                    <li><a href="javascript://" class="link">문의하기</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-    <!--// footer -->
-    <script>
-    function fnc_goRecordNew(cateseq4,r_cateseq4) {
-        height = screen.availHeight;
-        width  = screen.availWidth;
-        height2 = screen.availHeight - 200;
-        var newwin = window.open('/record/record.asp?w='+width+'&h='+height2+'&r_cateseq4='+r_cateseq4+'&cateseq4='+cateseq4,'recordWin','width=' + width+ ',height=' + height + ',left=0,top=0,fullscreen=yes,scrollbars=yes');
-        newwin.focus();		
-    }
-    </script>
 </body>
 </html> 
