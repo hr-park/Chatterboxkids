@@ -27,7 +27,6 @@
     <script src="inc/js/swiper-bundle.min.js"></script>
     <script src="inc/js/common.js"></script>
     <style>
-        body, html {height: 100%}
         .loading_area {position:fixed; width:100%; height:100%; z-index:9999999;}
         .loading_area #bg {background-color:#000; display:block; height:100%; left:0;  opacity:0.5; filter:alpha(opacity=50); position:fixed; top:0; width:100%; z-index:9999;}
         .loading_area .loading_img { position:fixed; left:50%; top:50%; z-index: 99999}
@@ -42,24 +41,6 @@
             95% {left: 120%;}
             to {left: 100%;}
         }
-
-        /* 녹음 */
-        .record_wrap {height: 100%; box-sizing: border-box; padding: 20px; background: #f3f4f8; position: relative;}
-        .record_wrap .record_inner_wrap {height:calc(100% - 140px); background: #fff; box-sizing: border-box; border-radius:20px;}
-        .record_wrap .record_inner {padding:40px; height: 100%; box-sizing: border-box;}
-        .record_wrap .iframe_wrap {height: 100%; position: relative;}
-        .record_wrap .iframe_wrap > iframe {width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; }
-
-        .control_area {position: relative; background: #fff; border-radius:0px 0px 20px 20px; margin-top: -10px;  min-height:94px; padding:40px; padding-top: 0px }
-        .control_area .time {position: absolute; left:40px; top:0px; font-size:20px; color: #999999; line-height: 140%; font-weight: 400; }
-        .control_area .time .mont {display: block; line-height: 130%; font-size:52px; color: #87b570; font-weight:700; }
-        .control_area .btn_upload {position:absolute; right:40px; top:0px;}
-
-        .btn_group {text-align: center;}
-        .btn_group a {display: inline-block; vertical-align: top; position:relative; margin: 0px 5px}
-        .btn_group a .pa {position:absolute; left:0px; top:0px; display:none;}
-        .btn_group a.on img {opacity:0;}
-        .btn_group a.on .pa {opacity:1; display:block;}
     </style>
     <script>
     function aaa(el){
@@ -75,34 +56,98 @@
     </script>
 </head>
 <body>
-    <div>
-        <div class="inner">
-            <!-- loading -->
-            <div class="loading_area" id="loading_area" style="display:none">
-                <div class="loader"></div>
-                <div id="bg"></div>
-            </div>
-            <!-- //loading -->
-            <div class="record_wrap">
-                <div class="record_inner_wrap">
-                    <div class="record_inner">
-                        <div class="iframe_wrap">
-                            <iframe id="iframe1" src="" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" oallowfullscreen="true" msallowfullscreen="true"></iframe>
-                        </div>
+   <div id="wrap" class="record_wrap">
+        <div id="container">
+            <div class="inner">
+                <!-- loading -->
+                <div class="loading_area" id="loading_area" style="display:none">
+                    <div class="loader"></div>
+                    <div id="bg"></div>
+                </div>
+                <!-- //loading -->
+                <div class="player_box">
+                    <iframe id="iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" oallowfullscreen="true" msallowfullscreen="true"></iframe>
+                </div>
+                <div class="control_area">
+                    <div class="msg_box">
+                        <!--<p>여기를 눌러서 녹음하세요.</p>-->
+                        <p>녹음 중입니다. 말하기가 끝나면 누르세요.</p>
                     </div>
-                    <div class="control_area">
-                        <div class="time"><strong class="mont" id="timeout">00 : 00</strong>최대 05:00</div>
-                        <div class="btn_group">
-                            <span id="r1"><a href="javascript://" id="recordButton">녹음</a></span>
-                            <span id="r2" style="display:none;"><a href="javascript://">녹음</a></span>
-                            <span id="s1"><a href="javascript://">스톱</a></span>
-                            <span id="s2" style="display:none;"><a href="javascript://" id="stopButton">스톱</a></span>
-                        </div>
-                        <div class="btn_upload">
-                            <a href="javascript://" id="upload">업로드</a>
-                        </div>
+                    <div class="btn_group">
+                        <button type="button" id="btnRecord" class="btn_record">녹음</button>
+                        <button type="button" id="btnStop" class="btn_stop" style="display:none">스톱</button>
+                    </div>
+                    <div class="time_box">
+                        <div class="time"><strong class="current">00:00</strong>/ 05:00</div>
+                        <a href="javascript://" id="btnUpload" class="btn_upload">업로드</a>
                     </div>
                 </div>
+                <div class="tit_box">
+                    <p class="tit">녹음 이력</p>
+                    <p class="desc">녹음 파일은 최대 5개까지 7일 간 다운로드 및 재생이 가능하며 7일이 지나면 자동으로 삭제 됩니다.</p>
+                </div>
+                <table class="board_list">
+                    <caption class="blind">공지사항 게시판 목록</caption>
+                    <colgroup>
+                        <col style="width:10%" data-device="pc">
+                        <col style="width:auto">
+                        <col style="width:15%">
+                        <col style="width:10%" data-device="pc">
+                        <col style="width:15%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" data-device="pc">번호</th>
+                            <th scope="col">녹음일</th>
+                            <th scope="col">듣기</th>
+                            <th scope="col">다운로드</th>
+                            <th scope="col">삭제</th>
+                            <th scope="col" data-device="pc">삭제 예정일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-device="pc">5</td>
+                            <td>2025-07-28 오후 10:00:00</td>
+                            <td><button type="button" class="btn_board btn_play">듣기</button></td>
+                            <td><button type="button" class="btn_board btn_download">다운로드</button></td>
+                            <td><button type="button" class="btn_board btn_delete">삭제</button></td>
+                            <td data-device="pc">2025-01-03</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">4</td>
+                            <td>2025-07-28 오후 10:00:00</td>
+                            <td><button type="button" class="btn_board btn_play">듣기</button></td>
+                            <td><button type="button" class="btn_board btn_download">다운로드</button></td>
+                            <td><button type="button" class="btn_board btn_delete">삭제</button></td>
+                            <td data-device="pc">2025-01-03</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">3</td>
+                            <td>2025-07-28 오후 10:00:00</td>
+                            <td><button type="button" class="btn_board btn_play">듣기</button></td>
+                            <td><button type="button" class="btn_board btn_download">다운로드</button></td>
+                            <td><button type="button" class="btn_board btn_delete">삭제</button></td>
+                            <td data-device="pc">2025-01-03</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">2</td>
+                            <td>2025-07-28 오후 10:00:00</td>
+                            <td><button type="button" class="btn_board btn_play">듣기</button></td>
+                            <td><button type="button" class="btn_board btn_download">다운로드</button></td>
+                            <td><button type="button" class="btn_board btn_delete">삭제</button></td>
+                            <td data-device="pc">2025-01-03</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">1</td>
+                            <td>2025-07-28 오후 10:00:00</td>
+                            <td><button type="button" class="btn_board btn_play">듣기</button></td>
+                            <td><button type="button" class="btn_board btn_download">다운로드</button></td>
+                            <td><button type="button" class="btn_board btn_delete">삭제</button></td>
+                            <td data-device="pc">2025-01-03</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -118,11 +163,11 @@
     <script src="inc/js/WebAudioRecorder.min.js"></script>
     <script src="inc/js/record.js"></script>
     <script>
-        var timer;
-        var isRunning = false;
+        let timer;
+        let isRunning = false;
         function sendAuthNum() {
-            var leftSec = 300,
-            display = document.querySelector('#timeout');
+            let leftSec = 300,
+            display = document.querySelector('.time .current');
             if (isRunning){
                 clearInterval(timer);
             }
@@ -130,7 +175,7 @@
         }
 
         function startTimer(count, display) {
-            var minutes, seconds;
+            let minutes, seconds;
             timer = setInterval(function () {
             minutes = parseInt(count / 60, 10);
             seconds = parseInt(count % 60, 10);
