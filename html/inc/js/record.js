@@ -126,7 +126,13 @@ function stopRecording() {
 	console.log("stopRecording() called");
 	document.getElementById('upload').innerHTML = '<span>파일생성중...</span>';	
 	//stop microphone access
-	gumStream.getAudioTracks()[0].stop();
+	//gumStream.getAudioTracks()[0].stop();
+
+	if (gumStream && gumStream.getAudioTracks().length > 0) {
+		gumStream.getAudioTracks()[0].stop();
+	} else {
+		console.warn('오디오 트랙이 존재하지 않습니다.');
+	}
 
 	s1.style.display = 'none';
 	//s2.style.display = 'none';

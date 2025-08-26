@@ -50,7 +50,7 @@
                         <span id="s1" style="display:none;"><button type="button" id="stopButton" class="btn_stop">스톱</button></span>
                     </div>
                     <div class="time_box">
-                        <div class="time"><strong class="current">00:00</strong>/ 05:00</div>
+                        <div class="time"><strong id="timeout" class="current">00:00</strong>/ 05:00</div>
                         <a href="javascript://" id="upload" class="btn_upload">업로드</a>
                     </div>
                 </div>
@@ -137,29 +137,37 @@
     <script>
         let timer;
         let isRunning = false;
+
         function sendAuthNum() {
             let leftSec = 300,
-            display = document.querySelector('.time .current');
-            if (isRunning){
-                clearInterval(timer);
+                display = document.querySelector('#timeout');
+
+            if (!display) return;
+
+            if (isRunning) {
+                stopTimer();
             }
+
+            isRunning = true;
             startTimer(leftSec, display);
         }
+
 
         function startTimer(count, display) {
             let minutes, seconds;
             timer = setInterval(function () {
-            minutes = parseInt(count / 60, 10);
-            seconds = parseInt(count % 60, 10);
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
-            display.textContent = minutes + " : " + seconds;
-            // 타이머 끝
-            if (--count < 0) {
-                alert('녹음이 종료되었습니다.\n파일을 업로드 해 주세요.');
-                stopRecording();
-                isRunning = false;
-            }
+                minutes = parseInt(count / 60, 10);
+                seconds = parseInt(count % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + " : " + seconds;
+                
+                // 타이머 끝
+                if (--count < 0) {
+                    alert('녹음이 종료되었습니다.\n파일을 업로드 해 주세요.');
+                    stopRecording();
+                    isRunning = false;
+                }
             }, 1000);
         }
 
