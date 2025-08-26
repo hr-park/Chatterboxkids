@@ -26,34 +26,6 @@
     <script src="inc/js/jquery-3.6.4.min.js"></script>
     <script src="inc/js/swiper-bundle.min.js"></script>
     <script src="inc/js/common.js"></script>
-    <style>
-        .loading_area {position:fixed; width:100%; height:100%; z-index:9999999;}
-        .loading_area #bg {background-color:#000; display:block; height:100%; left:0;  opacity:0.5; filter:alpha(opacity=50); position:fixed; top:0; width:100%; z-index:9999;}
-        .loading_area .loading_img { position:fixed; left:50%; top:50%; z-index: 99999}
-
-        .loader {height: 4px; width: 100%; position: absolute; left:0px; top: 0px;z-index: 99999; overflow: hidden; background-color: #ddd;}
-        .loader:before{display: block; position: absolute; content: ""; left: -200px; width: 200px; height: 4px; background-color: #d53f41; animation: loading 2s linear infinite;}
-        @keyframes loading {
-            from {left: -200px; width: 30%;}
-            50% {width: 30%;}
-            70% {width: 70%;}
-            80% { left: 50%;}
-            95% {left: 120%;}
-            to {left: 100%;}
-        }
-    </style>
-    <script>
-    function aaa(el){
-        $("#loading_area").css({"display":"block"});
-        $("#loading_area").delay(500).fadeOut();
-        $(el).toggleClass("on");
-    }
-        $(document).ready(function(){
-            $(".r_bt").click(function(){
-                $(this).toggleClass("on");
-            });
-        });
-    </script>
 </head>
 <body>
    <div id="wrap" class="record_wrap">
@@ -70,21 +42,21 @@
                 </div>
                 <div class="control_area">
                     <div class="msg_box">
-                        <!--<p>여기를 눌러서 녹음하세요.</p>-->
-                        <p>녹음 중입니다. 말하기가 끝나면 누르세요.</p>
+                        <p id="t1">여기를 눌러서 녹음하세요.</p>
+                        <p id="t2" style="display:none">녹음 중입니다. 말하기가 끝나면 누르세요.</p>
                     </div>
                     <div class="btn_group">
-                        <button type="button" id="btnRecord" class="btn_record">녹음</button>
-                        <button type="button" id="btnStop" class="btn_stop" style="display:none">스톱</button>
+                        <span id="r1"><button type="button" id="recordButton" class="btn_record">녹음</button></span>
+                        <span id="s1" style="display:none;"><button type="button" id="stopButton" class="btn_stop">스톱</button></span>
                     </div>
                     <div class="time_box">
                         <div class="time"><strong class="current">00:00</strong>/ 05:00</div>
-                        <a href="javascript://" id="btnUpload" class="btn_upload">업로드</a>
+                        <a href="javascript://" id="upload" class="btn_upload">업로드</a>
                     </div>
                 </div>
                 <div class="tit_box">
                     <p class="tit">녹음 이력</p>
-                    <p class="desc">녹음 파일은 최대 5개까지 7일 간 다운로드 및 재생이 가능하며 7일이 지나면 자동으로 삭제 됩니다.</p>
+                    <p class="desc">녹음 파일은 최대 5개까지 7일간 다운로드 및 재생이 가능하며 7일이 지나면 자동으로 삭제 됩니다.</p>
                 </div>
                 <table class="board_list">
                     <caption class="blind">공지사항 게시판 목록</caption>
@@ -152,8 +124,8 @@
         </div>
     </div>
 
-    <input type="hidden" name="r_cateseq4" id="r_cateseq4" value="28">
-    <input type="hidden" name="cateseq4" id="cateseq4" value="2795">
+    <input type="hidden" name="r_cateseq4" id="r_cateseq4" value="">
+    <input type="hidden" name="cateseq4" id="cateseq4" value="">
 	<select id="encodingTypeSelect" style="display:none;">
 	  <option value="wav">Waveform Audio (.wav)</option>
 	  <option value="mp3">MP3 (MPEG-1 Audio Layer III) (.mp3)</option>

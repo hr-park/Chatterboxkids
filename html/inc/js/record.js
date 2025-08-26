@@ -1,3 +1,5 @@
+//app.js
+
 //webkitURL is deprecated but nevertheless
 URL = window.URL || window.webkitURL;
 
@@ -15,9 +17,11 @@ var encodingTypeSelect = document.getElementById("encodingTypeSelect");
 var recordButton = document.getElementById("recordButton");
 var stopButton = document.getElementById("stopButton");
 var s1 = document.getElementById("s1");
-var s2 = document.getElementById("s2");
+//var s2 = document.getElementById("s2");
 var r1 = document.getElementById("r1");
-var r2 = document.getElementById("r2");
+//var r2 = document.getElementById("r2");
+const t1 = document.getElementById("t1");
+const t2 = document.getElementById("t2");
 
 //add events to those 2 buttons
 recordButton.addEventListener("click", startRecording);
@@ -97,16 +101,21 @@ function startRecording() {
 		 __log("Recording started");
 
 		s1.style.display = 'none';
-		s2.style.display = '';
-		r1.style.display = 'none';
-		r2.style.display = '';
+		//s2.style.display = '';
+		r1.style.display = '';
+		//r2.style.display = '';
+		t1.style.display = '';
+		t2.style.display = 'none';
 
 	}).catch(function(err) {
 		stopTimer();
 		s1.style.display = '';
-		s2.style.display = 'none';
-		r1.style.display = '';
-		r2.style.display = 'none';
+		//s2.style.display = 'none';
+		r1.style.display = 'none';
+		//r2.style.display = 'none';
+		t1.style.display = 'none';
+		t2.style.display = '';
+
 		alert('마이크 연결을 확인해 주세요.');
 		return;
 
@@ -119,10 +128,13 @@ function stopRecording() {
 	//stop microphone access
 	gumStream.getAudioTracks()[0].stop();
 
-	s1.style.display = '';
-	s2.style.display = 'none';
+	s1.style.display = 'none';
+	//s2.style.display = 'none';
 	r1.style.display = '';
-	r2.style.display = 'none';
+	//r2.style.display = 'none';
+	t1.style.display = '';
+	t2.style.display = 'none';
+
 	
 	//tell the recorder to finish the recording (stop recording + encode the recorded audio)
 	recorder.finishRecording();

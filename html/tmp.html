@@ -32,55 +32,66 @@
         <li><a href="#container">본문 바로가기</a></li>
         <li><a href="#gnb">주메뉴 바로가기</a></li>
     </ul>
-    <header class="header_wrap">
-        <div class="inner">
-            <a href="index.html" class="logo"><img src="images/logo.png" alt="Chatterbox Kids"></a>
-            <div class="gnb_dim" onclick="javascript:gnbClose()"></div>
-            <nav id="gnb" class="nav">
-                <ul class="menu_list">
-                    <li><a href="company.html" class="menu_link">회사소개</a></li>
-                    <li><a href="program_en.html" class="menu_link">프로그램</a></li>
-                    <li><a href="notice_list.html" class="menu_link">공지사항</a></li>
-                    <li><a href="data_list.html" class="menu_link">자료실</a></li>
-                    <li class="tight_gap"><a href="javascript://" class="btn_learn_start">학습시작</a></li>
-                    <li class="tight_gap">
-                        <a href="javascript://" class="btn_auth login">로그인</a>
-                        <!--<a href="javascript://" class="btn_auth logout">로그아웃</a>-->
-                    </li>
-                </ul>
-            </nav>
-            <button type="button" class="menu_toggle" onclick="javascript:gnbOpen()" aria-label="메뉴 열기"></button>
-            <nav class="gnb_side_menu">
-                <button type="button" class="gnb_close_btn" aria-label="메뉴 닫기" onclick="javascript:gnbClose()"></button>
-                <ul class="gnb_menu">
-                    <li><a href="company.html" class="gnb_menu_title">회사소개</a></li>
-                    <li>
-                        <a href="program_en.html" class="gnb_menu_title">프로그램</a>
-                        <ul class="gnb_submenu">
-                            <li><a href="program_en.html">채터박스 키즈 영어</a></li>
-                            <li><a href="program_ko.html">수다쟁이 한글</a></li>
-                            <li><a href="program_cn.html">채터박스 키즈 중국어</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="notice_list.html" class="gnb_menu_title">공지사항</a></li>
-                    <li>
-                        <a href="data_list.html" class="gnb_menu_title">자료실</a>
-                        <ul class="gnb_submenu">
-                            <li><a href="data_list.html?type=1">일반 자료실</a></li>
-                            <li><a href="data_list.html?type=2">학습 자료실</a></li>
-                            <li><a href="data_list.html?type=3">수업 자료실</a></li>
-                        </ul>
-                    </li>
-                    <li data-device="mo" class="gnb_menu_list learn"><a href="javascript://" class="gnb_menu_title"><span>학습시작</span></a></li>
-                </ul>
-                <div class="btns">
-                    <a href="javascript://" class="btn_min_auth">로그인</a>
-                    <a href="javascript://" class="btn_min_auth">로그아웃</a>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <!--// header -->
+    <!-- header -->
+        <header class="header_wrap">
+            <div class="inner">
+                <h1 class="logo"><a href="index.html">Chatterbox Kids</a></h1>
+                <div class="gnb_dim" onclick="javascript:gnbClose()"></div>
+                <nav id="gnb" class="nav">
+                    <ul class="menu_list">
+                        <li><a href="company.html" class="menu_link">회사소개</a></li>
+                        <li><a href="program_en.html" class="menu_link">프로그램</a></li>
+                        <li><a href="notice_list.html" class="menu_link">공지사항</a></li>
+                        <li><a href="data_list.html" class="menu_link">자료실</a></li>
+                        <li class="tight_gap"><a href="javascript://" class="btn_learn_start">학습시작</a></li>
+                        <li class="tight_gap"><a href="login.html" class="btn_auth login">로그인</a></li>
+                    </ul>
+                </nav>
+
+                <a href="javascript://" class="btn_learn_start" data-device="tablet" style="display:none !important">학습시작</a>
+                <a href="login.html" class="btn_auth login" data-device="tablet">로그인</a>
+
+                <button type="button" class="menu_toggle" onclick="javascript:gnbOpen()" aria-label="메뉴 열기"></button>
+                <nav class="gnb_side_menu">
+                    <button type="button" class="gnb_close_btn" aria-label="메뉴 닫기" onclick="javascript:gnbClose()"></button>
+                    <ul class="gnb_menu">
+                        <li>
+                            <div class="my_stamp">
+                                <strong class="name">김예지님</strong>
+                                <ul class="stamp_list step2"><!-- step1~4-->
+                                    <li class="completed">완료</li>
+                                    <li class="completed">완료</li>
+                                    <li>미완료</li>
+                                    <li>미완료</li>
+                                    <li>미완료</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="company.html" class="gnb_menu_title">회사소개</a></li>
+                        <li>
+                            <a href="program_en.html" class="gnb_menu_title">프로그램</a>
+                            <ul class="gnb_submenu">
+                                <li><a href="program_en.html">채터박스 키즈 영어</a></li>
+                                <li><a href="program_ko.html">수다쟁이 한글</a></li>
+                                <li><a href="program_cn.html" onclick="alert('준비중입니다.'); return false;">채터박스 키즈 중국어</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="notice_list.html" class="gnb_menu_title">공지사항</a></li>
+                        <li>
+                            <a href="data_list.html" class="gnb_menu_title">자료실</a>
+                            <ul class="gnb_submenu">
+                                <li><a href="data_list.html?type=1">일반 자료실</a></li>
+                                <li><a href="data_list.html?type=2">학습 자료실</a></li>
+                                <li><a href="data_list.html?type=3">수업 자료실</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="mypage.html" class="gnb_menu_title">마이페이지</a></li>
+                    </ul>
+                    <a href="javascript://" class="btn_logout">로그아웃</a>
+                </nav>
+            </div>
+        </header>
+        <!--// header -->
     <!-- container -->
     <div id="container">
         <div class="inner">
