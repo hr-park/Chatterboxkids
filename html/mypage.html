@@ -45,7 +45,7 @@
                         <li><a href="program_en.html" class="menu_link">프로그램</a></li>
                         <li><a href="notice_list.html" class="menu_link">공지사항</a></li>
                         <li><a href="data_list.html" class="menu_link">자료실</a></li>
-                        <li class="tight_gap"><a href="javascript://" class="btn_learn_start">학습시작</a></li>
+                        <li class="tight_gap"><a href="book_list.html?lang=1" class="btn_learn_start" target="_blank">학습시작</a></li>
                         <li class="tight_gap"><a href="login.html" class="btn_auth login">로그인</a></li>
                     </ul>
                 </nav>
@@ -61,11 +61,11 @@
                             <div class="my_stamp">
                                 <strong class="name">김예지님</strong>
                                 <ul class="stamp_list step2"><!-- step1~4-->
-                                    <li class="completed">완료</li>
-                                    <li class="completed">완료</li>
-                                    <li>미완료</li>
-                                    <li>미완료</li>
-                                    <li>미완료</li>
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
                                 </ul>
                             </div>
                         </li>
@@ -98,34 +98,201 @@
         <div id="container">
             <div class="inner">
                 <h2 class="page_tit">마이 페이지</h2>
-                <ul class="stamp_list step1">
-                    <li class="completed">완료</li>
-                    <li class="completed">완료</li>
-                    <li>미완료</li>
-                    <li>미완료</li>
-                    <li>미완료</li>
-                </ul>
-                <ul class="stamp_list step2">
-                    <li class="completed">완료</li>
-                    <li class="completed">완료</li>
-                    <li>미완료</li>
-                    <li>미완료</li>
-                    <li>미완료</li>
-                </ul>
-                <ul class="stamp_list step3">
-                    <li class="completed">완료</li>
-                    <li class="completed">완료</li>
-                    <li>미완료</li>
-                    <li>미완료</li>
-                    <li>미완료</li>
-                </ul>
-                <ul class="stamp_list step4">
-                    <li class="completed">완료</li>
-                    <li class="completed">완료</li>
-                    <li>미완료</li>
-                    <li>미완료</li>
-                    <li>미완료</li>
-                </ul>
+
+                <div class="top_info">
+                    <p><strong class="name">김예지</strong>님, 환영합니다.</p>
+                    <button class="btn_stamp_info">스탬프&배지 획득 방법</button>
+                </div>
+                <div class="row">
+                    <!-- box -->
+                    <article class="box">
+                        <h3 class="tit1">내가 획득한 스탬프</h3>
+                        <div class="step_wrap">
+                            <!-- step 1 -->
+                            <div>
+                                <div class="tit_box">
+                                    <strong class="tit_step">Step 1</strong>
+                                    <p>5일 학습 당 1개씩 생성</p>
+                                </div>
+                                <ul class="stamp_list step1 completed"><!-- 완료된 리스트에 completed 클래스 -->
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li class="completed"><span class="img">완료</span></li>
+                                </ul>
+                            </div>
+                            <!-- step 2 -->
+                            <div>
+                                <div class="tit_box">
+                                    <strong class="tit_step">Step 2</strong>
+                                    <p>7일 학습 당 1개씩 생성</p>
+                                </div>
+                                <ul class="stamp_list step2">
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li><span class="img">미완료</span><span class="status_ing">진행중</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                </ul>
+                            </div>
+                            <!-- step 3 -->
+                            <div>
+                                <div class="tit_box">
+                                    <strong class="tit_step">Step 3</strong>
+                                    <p>15일 학습 당 1개씩 생성</p>
+                                </div>
+                                <ul class="stamp_list step3">
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                </ul>
+                            </div>
+                            <!-- step 4 -->
+                            <div>
+                                <div class="tit_box">
+                                    <strong class="tit_step">Step 4</strong>
+                                    <p>20일 학습 당 1개씩 생성</p>
+                                </div>
+                                <ul class="stamp_list step4">
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- box -->
+                </div>
+                <div class="row">
+                    <article class="box">
+                        <h3 class="tit2">내가 획득한 배지</h3>
+                        <ul class="badge_list">
+                            <li class="completed">
+                                <label>Welcome</label>
+                                <span class="img">완료</span>
+                            </li>
+                            <li class="completed">
+                                <label>step 1</label>
+                                <span class="img">완료</span>
+                            </li>
+                            <li>
+                                <label>step 2</label>
+                                <span class="img">미완료</span>
+                                <span class="status_ing">진행중</span>
+                            </li>
+                            <li>
+                                <label>step 3</label>
+                                <span class="img">미완료</span>
+                            </li>
+                            <li>
+                                <label>step 4</label>
+                                <span class="img">미완료</span>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="row half">
+                    <div class="left">
+                        <!-- box -->
+                        <article class="box">
+                            <h3 class="tit3">달성률</h3>
+                            <div class="donut_row">
+                                <div class="donut_box">
+                                    <div class="txt">
+                                        <strong>스탬프 달성률</strong>
+                                        <p>스탬프 목표까지 남은 일수 · 1일</p>
+                                    </div>
+                                    <div class="donut" style="--p:86"><small>86%</small></div>
+                                </div>
+                                <div class="donut_box">
+                                    <div class="txt">
+                                        <strong>학습일 달성률</strong>
+                                        <p>남은 일수 : 291일</p>
+                                    </div>
+                                    <div class="donut" style="--p:3"><small>3%</small></div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="box time_info">
+                            <span class="label">총 누적 학습시간</span>
+                            <span class="val">00시간 00분 00초</span>
+                        </article>
+                        <article class="box time_info">
+                            <span class="label">월간 누적 학습시간</span>
+                            <span class="val">00시간 00분 00초</span>
+                        </article>
+                    </div>
+                    <div class="right">
+                        <!-- box -->
+                        <article class="box rank_box">
+                            <h3 class="tit4">나의 랭킹 <span>예지유치원</span></h3>
+                            <ol class="rank_list">
+                                <li>
+                                    <div class="info"><span class="badge gold"><i>1위</i></span><span class="name">유서준</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge silver"><i>2위</i></span><span class="name">이다인</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge bronze"><i>3위</i></span><span class="name">윤채원</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge gray"><i>4위</i></span><span class="name">안서아</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li class="is_me">
+                                    <div class="info"><span class="badge me"><i>5위</i></span><span class="name">김예지</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge gray"><i>6위</i></span><span class="name">변우빈</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge gray"><i>7위</i></span><span class="name">이지수</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge gray"><i>8위</i></span><span class="name">이솔</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge gray"><i>9위</i></span><span class="name">김지수</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge gray"><i>10위</i></span><span class="name">이해솔</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li class="sep">·<br>·<br>·</li>
+                                <li class="real_me">
+                                    <div class="info">
+                                        <span class="badge real_me"><i>ME</i></span>
+                                        <span class="me_rank"><i>5위</i></span>
+                                        <span class="name">김예지</span>
+                                    </div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                            </ol>
+                            <!--<div class="me-bar">
+                                <div class="left">
+                                    <span class="me-tag">ME</span>
+                                    <span class="rank">5위</span>
+                                    <span class="me-name">김예지</span>
+                                </div>
+                                <span class="time">00시간 00분 00초</span>
+                            </div>-->
+                        </article>
+                    </div>
+                </div>
             </div>
         </div>
         <!--// container -->
