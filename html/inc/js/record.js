@@ -69,7 +69,7 @@ function startRecording() {
 		encodingTypeSelect.disabled = true;
 
 		recorder = new WebAudioRecorder(input, {
-		  workerDir: "/inc/js/", // must end with slash
+		  workerDir: "/html/inc/js/", // must end with slash
 		  encoding: encodingType,
 		  numChannels:2, //2 is the default, mp3 encoding supports only 2
 		  onEncoderLoading: function(recorder, encoding) {
@@ -100,12 +100,12 @@ function startRecording() {
 
 		 __log("Recording started");
 
-		s1.style.display = 'none';
+		s1.style.display = '';
 		//s2.style.display = '';
-		r1.style.display = '';
+		r1.style.display = 'none';
 		//r2.style.display = '';
-		t1.style.display = '';
-		t2.style.display = 'none';
+		t1.style.display = 'none';
+		t2.style.display = '';
 
 	}).catch(function(err) {
 		console.error("getUserMedia error:", err);
@@ -117,7 +117,7 @@ function startRecording() {
 		t1.style.display = '';
 		t2.style.display = 'none';
 
-		alert('마이크 연결을 확인해 주세요.');
+		alert('마이크 연결을 확인해 주세요.'); 
 		return;
 
 	});
@@ -171,7 +171,7 @@ function createDownloadLink(blob,encoding) {
 	li.appendChild(link);
 
 	var upload = document.getElementById('upload');
-	upload.innerHTML = '<span>업로드</span>';
+	upload.innerHTML = '<span class="front">업로드</span>';
 	var lv_upload = '';
 	upload.addEventListener("click", function(event){
 
@@ -221,6 +221,14 @@ function pauseRecording(){
 }
 
 //helper function
+// function __log(e, data) {
+// 	log.innerHTML += "\n" + e + " " + (data || '');
+// }
+
 function __log(e, data) {
-	log.innerHTML += "\n" + e + " " + (data || '');
+    if (typeof log !== "undefined" && log !== null) {
+        log.innerHTML += "\n" + e + " " + (data || '');
+    } else {
+        console.log(e, data || '');
+    }
 }

@@ -81,7 +81,7 @@
                         <tr>
                             <td data-device="pc">5</td>
                             <td>2025-07-28 오후 10:00:00</td>
-                            <td><button type="button" class="btn_board btn_play">듣기</button></td>
+                            <td><button type="button" class="btn_board btn_play" onclick="fnc_goPlay()">듣기</button></td>
                             <td><button type="button" class="btn_board btn_download">다운로드</button></td>
                             <td><button type="button" class="btn_board btn_delete">삭제</button></td>
                             <td data-device="pc">2025-01-03</td>
@@ -89,7 +89,7 @@
                         <tr>
                             <td data-device="pc">4</td>
                             <td>2025-07-28 오후 10:00:00</td>
-                            <td><button type="button" class="btn_board btn_play">듣기</button></td>
+                            <td><button type="button" class="btn_board btn_play" onclick="fnc_goPlay()">듣기</button></td>
                             <td><button type="button" class="btn_board btn_download">다운로드</button></td>
                             <td><button type="button" class="btn_board btn_delete">삭제</button></td>
                             <td data-device="pc">2025-01-03</td>
@@ -97,7 +97,7 @@
                         <tr>
                             <td data-device="pc">3</td>
                             <td>2025-07-28 오후 10:00:00</td>
-                            <td><button type="button" class="btn_board btn_play">듣기</button></td>
+                            <td><button type="button" class="btn_board btn_play" onclick="fnc_goPlay()">듣기</button></td>
                             <td><button type="button" class="btn_board btn_download">다운로드</button></td>
                             <td><button type="button" class="btn_board btn_delete">삭제</button></td>
                             <td data-device="pc">2025-01-03</td>
@@ -105,7 +105,7 @@
                         <tr>
                             <td data-device="pc">2</td>
                             <td>2025-07-28 오후 10:00:00</td>
-                            <td><button type="button" class="btn_board btn_play">듣기</button></td>
+                            <td><button type="button" class="btn_board btn_play" onclick="fnc_goPlay()">듣기</button></td>
                             <td><button type="button" class="btn_board btn_download">다운로드</button></td>
                             <td><button type="button" class="btn_board btn_delete">삭제</button></td>
                             <td data-device="pc">2025-01-03</td>
@@ -113,7 +113,7 @@
                         <tr>
                             <td data-device="pc">1</td>
                             <td>2025-07-28 오후 10:00:00</td>
-                            <td><button type="button" class="btn_board btn_play">듣기</button></td>
+                            <td><button type="button" class="btn_board btn_play" onclick="fnc_goPlay()">듣기</button></td>
                             <td><button type="button" class="btn_board btn_download">다운로드</button></td>
                             <td><button type="button" class="btn_board btn_delete">삭제</button></td>
                             <td data-device="pc">2025-01-03</td>
@@ -123,6 +123,11 @@
             </div>
         </div>
     </div>
+
+    <audio width="0" height="0" id="mcr" name="mcr" style="display:none;">
+        <source src="" type="audio/mpeg">
+        Your browser does not support the video tag.
+    </audio>
 
     <input type="hidden" name="r_cateseq4" id="r_cateseq4" value="">
     <input type="hidden" name="cateseq4" id="cateseq4" value="">
@@ -135,6 +140,20 @@
     <script src="inc/js/WebAudioRecorder.min.js"></script>
     <script src="inc/js/record.js"></script>
     <script>
+        function fnc_goPlay(filename) {
+            //Messi.load('/common/player.asp?filename='+filename,{title: 'Portfolio', modal: true, titleClass: 'info'});
+        }
+
+        const audio = document.getElementById("mcr");
+        function fnc_goMusic() {
+            if ($("#mcr")[0].paused == false) {
+                $("#mcr")[0].pause();
+            } else {
+                $("#mcr")[0].play();
+            }
+
+        }
+        
         let timer;
         let isRunning = false;
 

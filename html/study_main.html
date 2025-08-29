@@ -29,16 +29,16 @@
 </head>
 <body>
     <!-- wrap -->
-    <div id="wrap" class="study">
+    <div id="wrap" class="study_main">
         <!-- header -->
         <header class="study_header">
             <div class="inner">
                 <h1 id="pageTitle"></h1>
                 <nav>
                     <ul>
-                        <li><a href="book_list.html?lang=1" class="active" data-type="en">채터박스키즈 영어</a></li>
-                        <li><a href="book_list.html?lang=2" data-type="ko">수다쟁이 한글</a></li>
-                        <li><a href="book_list.html?lang=3" data-type="cn">채터박스키즈 중국어</a></li>
+                        <li><a href="study_main.html?lang=1" class="active" data-type="en">채터박스키즈 영어</a></li>
+                        <li><a href="study_main.html?lang=2" data-type="ko">수다쟁이 한글</a></li>
+                        <li><a href="study_main.html?lang=3" data-type="cn">채터박스키즈 중국어</a></li>
                     </ul>
                 </nav>
             </div>
@@ -92,11 +92,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const li = document.createElement('li');
             li.innerHTML = `
                 <div class="book_lv">
-                    <a href="#">
+                    <a href="study.html" target="_blank">
                         <span class="sub_num">${i}-1</span>
                         <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book" />
                     </a>
-                    <a href="#">
+                    <a href="study.html" target="_blank">
                         <span class="sub_num">${i}-2</span>
                         <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book" />
                     </a>
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }else{  
         for (let i = 1; i <= 10; i++) {
             const li = document.createElement('li');
-            li.innerHTML = `<a href="#">
+            li.innerHTML = `<a href="study.html" target="_blank">
                     <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book">
                 </a>
                 <p class="book_num">${i}</p>
