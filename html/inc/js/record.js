@@ -108,13 +108,14 @@ function startRecording() {
 		t2.style.display = 'none';
 
 	}).catch(function(err) {
+		console.error("getUserMedia error:", err);
 		stopTimer();
-		s1.style.display = '';
+		s1.style.display = 'none';
 		//s2.style.display = 'none';
-		r1.style.display = 'none';
+		r1.style.display = '';
 		//r2.style.display = 'none';
-		t1.style.display = 'none';
-		t2.style.display = '';
+		t1.style.display = '';
+		t2.style.display = 'none';
 
 		alert('마이크 연결을 확인해 주세요.');
 		return;
@@ -124,7 +125,7 @@ function startRecording() {
 
 function stopRecording() {
 	console.log("stopRecording() called");
-	document.getElementById('upload').innerHTML = '<span>파일생성중...</span>';	
+	document.getElementById('upload').innerHTML = '<span class="front">파일생성중...</span>';	
 	//stop microphone access
 	//gumStream.getAudioTracks()[0].stop();
 

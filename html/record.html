@@ -51,7 +51,7 @@
                     </div>
                     <div class="time_box">
                         <div class="time"><strong id="timeout" class="current">00:00</strong>/ 05:00</div>
-                        <a href="javascript://" id="upload" class="btn_upload">업로드</a>
+                        <a href="javascript://" id="upload" class="btn_ico_pushable btn_upload"><span class="front">업로드</span></a>
                     </div>
                 </div>
                 <div class="tit_box">
@@ -72,7 +72,7 @@
                             <th scope="col" data-device="pc">번호</th>
                             <th scope="col">녹음일</th>
                             <th scope="col">듣기</th>
-                            <th scope="col">다운로드</th>
+                            <th scope="col" class="nowrap">다운로드</th>
                             <th scope="col">삭제</th>
                             <th scope="col" data-device="pc">삭제 예정일</th>
                         </tr>
@@ -138,38 +138,35 @@
         let timer;
         let isRunning = false;
 
+        function stopTimer() {
+            clearInterval(timer);
+            isRunning = false;
+        }
+
         function sendAuthNum() {
-            let leftSec = 300,
-                display = document.querySelector('#timeout');
-
+            let leftSec = 300;
+            const display = document.querySelector('#timeout');
             if (!display) return;
-
-            if (isRunning) {
-                stopTimer();
-            }
-
+            if (isRunning) stopTimer();
             isRunning = true;
             startTimer(leftSec, display);
         }
 
-
         function startTimer(count, display) {
-            let minutes, seconds;
-            timer = setInterval(function () {
-                minutes = parseInt(count / 60, 10);
-                seconds = parseInt(count % 60, 10);
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-                display.textContent = minutes + " : " + seconds;
-                
-                // 타이머 끝
+            console.log(display);
+            timer = setInterval(() => {
+                let minutes = String(Math.floor(count/60)).padStart(2,'0');
+                let seconds = String(count%60).padStart(2,'0');
+                display.textContent = minutes + ':' + seconds;
                 if (--count < 0) {
-                    alert('녹음이 종료되었습니다.\n파일을 업로드 해 주세요.');
-                    stopRecording();
+                    clearInterval(timer);
                     isRunning = false;
+                    console.log("타이머 종료");
+                    alert('녹음이 종료되었습니다.\n파일을 업로드 해 주세요.');
                 }
-            }, 1000);
+            },1000);
         }
+
 
         function stopTimer() {
             clearInterval(timer);

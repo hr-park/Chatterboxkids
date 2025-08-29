@@ -47,10 +47,10 @@
         <div id="container">
             <div class="inner">
                 <ul class="sel_lv_list">
-                    <li class="prek"><a href="#" class="btn_lv">PRE-K</a></li>
-                    <li><a href="#" class="btn_lv active">Level 1</a></li>
-                    <li><a href="#" class="btn_lv">Level 2</a></li>
-                    <li><a href="#" class="btn_lv">Level 3</a></li>
+                    <li class="prek"><a href="#" class="btn_pushable btn_lv"><span class="front">PRE-K</span></a></li>
+                    <li><a href="#" class="btn_pushable btn_lv active"><span class="front">Level 1</span></a></li>
+                    <li><a href="#" class="btn_pushable btn_lv"><span class="front">Level 2</span></a></li>
+                    <li><a href="#" class="btn_pushable btn_lv"><span class="front">Level 3</span></a></li>
                 </ul>
                 <ul id="bookList" class="book_list">
                     <!--<li>
@@ -178,6 +178,34 @@ document.addEventListener('DOMContentLoaded', function() {
             pageTitle.innerHTML = pageTitleHtml;
         }
     }
+
+    function updateBookshelfBg(listSelector, columns) {
+        const lists = document.querySelectorAll(listSelector);
+        lists.forEach(list => {
+            const items = Array.from(list.querySelectorAll('li'));
+            if (!items.length) return;
+
+            // 첫 행 높이 측정
+            const firstRowHeight = Math.max(...items.slice(0, columns).map(li => li.offsetHeight));
+
+            // CSS 변수로 높이 적용
+            list.style.setProperty('--row-height', firstRowHeight + 'px');
+        });
+        }
+
+        function refreshBookshelfBg() {
+        if (window.innerWidth < 768) {
+            updateBookshelfBg('.book_list', 3);     // 모바일 일반 리스트 3개/row
+            updateBookshelfBg('.book_list.lv', 2);  // 모바일 lv 리스트 2개/row
+        } else {
+            updateBookshelfBg('.book_list', 6);     // PC 일반 리스트 6개/row
+            updateBookshelfBg('.book_list.lv', 4);  // PC lv 리스트 4개/row
+        }
+     }
+
+    // 초기 실행 & 리사이즈 대응
+    window.addEventListener('load', refreshBookshelfBg);
+    window.addEventListener('resize', refreshBookshelfBg);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
