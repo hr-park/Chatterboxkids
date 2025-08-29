@@ -79,7 +79,7 @@
 <!--// wrap -->
 <script>
 
-
+/* 퍼블 화면 확인용 개발 작업 시 지워주세요!! */
 document.addEventListener('DOMContentLoaded', function() {
     // URL 파라미터 가져오기
     const urlParams = new URLSearchParams(window.location.search);
@@ -153,28 +153,23 @@ document.addEventListener('DOMContentLoaded', function() {
     if (wrap) {
         let langClass = '';
         let pageTitleHtml = '';
-        //let btnLv = document.querySelectorAll('.btn_lv');
 
         switch(currentType) {
             case '1':
                 langClass = 'en';
                 pageTitleHtml = '채터박스키즈 영어';
-                //btnLv.forEach(el => el.classList.add('ylw'));
                 break;
             case '2':
                 langClass = 'ko';
                 pageTitleHtml = '수다쟁이 한글';
-                //btnLv.classList.add('gr');
                 break;
             case '3':
                 langClass = 'cn';
                 pageTitleHtml = '채터박스키즈 중국어';
-                //btnLv.classList.add('blue');
                 break;
             default:
                 langClass = 'en';
                 pageTitleHtml = '채터박스키즈 영어';
-                //btnLv.classList.add('ylw');
         }
         if (langClass) {
             wrap.classList.add(langClass);

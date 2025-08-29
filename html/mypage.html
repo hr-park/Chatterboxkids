@@ -114,7 +114,7 @@
                                     <strong class="tit_step">Step 1</strong>
                                     <p>5일 학습 당 1개씩 생성</p>
                                 </div>
-                                <ul class="stamp_list step1 completed"><!-- 완료된 리스트에 completed 클래스 -->
+                                <ul class="stamp_list step1 completed"><!-- 완료된 stamp_list에 completed 클래스 -->
                                     <li class="completed"><span class="img">완료</span></li>
                                     <li class="completed"><span class="img">완료</span></li>
                                     <li class="completed"><span class="img">완료</span></li>
@@ -282,14 +282,6 @@
                                     <span class="time">00시간 00분 00초</span>
                                 </li>
                             </ol>
-                            <!--<div class="me-bar">
-                                <div class="left">
-                                    <span class="me-tag">ME</span>
-                                    <span class="rank">5위</span>
-                                    <span class="me-name">김예지</span>
-                                </div>
-                                <span class="time">00시간 00분 00초</span>
-                            </div>-->
                         </article>
                     </div>
                 </div>
@@ -332,7 +324,54 @@
     </div>
     <!--// wrap -->
     <script>
-   
+        // 랭킹 리스트, 스탬프 완료 딱지, 도넛 애니메이션
+        const rankItems = document.querySelectorAll('.rank_list li');
+        const stamps = document.querySelectorAll('.stamp_list.completed');
+        const donuts = document.querySelectorAll('.donut');
+
+        // 하나의 Observer 생성
+        const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            const target = entry.target;
+
+            // 랭킹 리스트 li 처리
+            if (target.matches('.rank_list li')) {
+                const index = Array.from(rankItems).indexOf(target);
+                target.style.animationDelay = `${index * 0.1}s`;
+                target.classList.add('animate');
+            }
+
+            // stamp_list.completed 처리
+            if (target.matches('.stamp_list.completed')) {
+                target.classList.add('animate');
+            }
+
+            // 도넛 애니메이션 처리
+            if (target.matches('.donut')) {
+                const donut = target;
+                const targetP = parseInt(donut.style.getPropertyValue('--p')) || 0;
+                let current = 0;
+
+                const step = () => {
+                    if (current <= targetP) {
+                    donut.style.setProperty('--p', current);
+                    current++;
+                    requestAnimationFrame(step);
+                    }
+                };
+                step();
+            }
+
+            observer.unobserve(target); // 한 번만 실행
+        });
+        }, { threshold: 0.1 });
+
+        // 요소 등록
+        rankItems.forEach(item => observer.observe(item));
+        stamps.forEach(item => observer.observe(item));
+        donuts.forEach(item => observer.observe(item));
     </script>
 </body>
 </html> 
