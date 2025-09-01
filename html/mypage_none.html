@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, date=no>
+    <title>CHATTERBOX</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Chatterboxkids">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chatterboxkids">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="/inc/images/og_image.png">
+    <meta property="og:url" content="https://www.chatterboxkids.net/">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <!-- css / js -->
+    <link rel="stylesheet" href="inc/css/basefont.css">
+    <link rel="stylesheet" href="inc/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="inc/css/common.css">
+    <script src="inc/js/jquery-3.6.4.min.js"></script>
+    <script src="inc/js/swiper-bundle.min.js"></script>
+    <script src="inc/js/common.js"></script>
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap" class="mypage">
+        <ul id="skipToContent">
+            <li><a href="#container">본문 바로가기</a></li>
+            <li><a href="#gnb">주메뉴 바로가기</a></li>
+        </ul>
+        <!-- header -->
+        <header class="header_wrap">
+            <div class="inner">
+                <h1 class="logo"><a href="index.html">Chatterbox Kids</a></h1>
+                <div class="gnb_dim" onclick="javascript:gnbClose()"></div>
+                <nav id="gnb" class="nav">
+                    <ul class="menu_list">
+                        <li><a href="company.html" class="menu_link">회사소개</a></li>
+                        <li><a href="program_en.html" class="menu_link">프로그램</a></li>
+                        <li><a href="notice_list.html" class="menu_link">공지사항</a></li>
+                        <li><a href="data_list.html" class="menu_link">자료실</a></li>
+                        <li class="tight_gap"><a href="study_main.html?lang=1" class="btn_learn_start" target="_blank">학습시작</a></li>
+                        <li class="tight_gap"><a href="login.html" class="btn_auth login">로그인</a></li>
+                    </ul>
+                </nav>
+
+                <a href="javascript://" class="btn_learn_start" data-device="tablet" style="display:none !important">학습시작</a>
+                <a href="login.html" class="btn_auth login" data-device="tablet">로그인</a>
+
+                <button type="button" class="menu_toggle" onclick="javascript:gnbOpen()" aria-label="메뉴 열기"></button>
+                <nav class="gnb_side_menu">
+                    <button type="button" class="gnb_close_btn" aria-label="메뉴 닫기" onclick="javascript:gnbClose()"></button>
+                    <ul class="gnb_menu">
+                        <li>
+                            <div class="my_stamp">
+                                <strong class="name">김예지님</strong>
+                                <ul class="stamp_list step2"><!-- step1~4-->
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="company.html" class="gnb_menu_title">회사소개</a></li>
+                        <li>
+                            <a href="program_en.html" class="gnb_menu_title">프로그램</a>
+                            <ul class="gnb_submenu">
+                                <li><a href="program_en.html">채터박스 키즈 영어</a></li>
+                                <li><a href="program_ko.html">수다쟁이 한글</a></li>
+                                <li><a href="program_cn.html" onclick="alert('준비중입니다.'); return false;">채터박스 키즈 중국어</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="notice_list.html" class="gnb_menu_title">공지사항</a></li>
+                        <li>
+                            <a href="data_list.html" class="gnb_menu_title">자료실</a>
+                            <ul class="gnb_submenu">
+                                <li><a href="data_list.html?type=1">일반 자료실</a></li>
+                                <li><a href="data_list.html?type=2">학습 자료실</a></li>
+                                <li><a href="data_list.html?type=3">수업 자료실</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="mypage.html" class="gnb_menu_title">마이페이지</a></li>
+                    </ul>
+                    <a href="javascript://" class="btn_logout">로그아웃</a>
+                </nav>
+            </div>
+        </header>
+        <!--// header -->
+        <!-- container -->
+        <div id="container">
+            <div class="inner">
+                <h2 class="page_tit">마이 페이지</h2>
+
+                <div class="top_info">
+                    <p><strong class="name">김예지</strong>님, 환영합니다.</p>
+                    <button class="btn_stamp_info">스탬프&배지 획득 방법</button>
+                </div>
+                <div class="row">
+                    <!-- box -->
+                    <article class="box">
+                        <h3 class="tit1">내가 획득한 스탬프</h3>
+                        <div class="step_wrap">
+                            <!-- step 1 -->
+                            <div>
+                                <div class="tit_box">
+                                    <strong class="tit_step">Step 1</strong>
+                                    <p>5일 학습 당 1개씩 생성</p>
+                                </div>
+                                <ul class="stamp_list step1 completed"><!-- 완료된 stamp_list에 completed 클래스 -->
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li class="completed"><span class="img">완료</span></li>
+                                </ul>
+                            </div>
+                            <!-- step 2 -->
+                            <div>
+                                <div class="tit_box">
+                                    <strong class="tit_step">Step 2</strong>
+                                    <p>7일 학습 당 1개씩 생성</p>
+                                </div>
+                                <ul class="stamp_list step2">
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li><span class="img">미완료</span><span class="status_ing">진행중</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                </ul>
+                            </div>
+                            <!-- step 3 -->
+                            <div>
+                                <div class="tit_box">
+                                    <strong class="tit_step">Step 3</strong>
+                                    <p>15일 학습 당 1개씩 생성</p>
+                                </div>
+                                <ul class="stamp_list step3">
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                </ul>
+                            </div>
+                            <!-- step 4 -->
+                            <div>
+                                <div class="tit_box">
+                                    <strong class="tit_step">Step 4</strong>
+                                    <p>20일 학습 당 1개씩 생성</p>
+                                </div>
+                                <ul class="stamp_list step4">
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- box -->
+                </div>
+                <div class="row">
+                    <article class="box">
+                        <h3 class="tit2">내가 획득한 배지</h3>
+                        <ul class="badge_list">
+                            <li class="completed">
+                                <label>Welcome</label>
+                                <span class="img">완료</span>
+                            </li>
+                            <li class="completed">
+                                <label>step 1</label>
+                                <span class="img">완료</span>
+                            </li>
+                            <li>
+                                <label>step 2</label>
+                                <span class="img">미완료</span>
+                                <span class="status_ing">진행중</span>
+                            </li>
+                            <li>
+                                <label>step 3</label>
+                                <span class="img">미완료</span>
+                            </li>
+                            <li>
+                                <label>step 4</label>
+                                <span class="img">미완료</span>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="row half">
+                    <div class="left">
+                        <!-- box -->
+                        <article class="box">
+                            <h3 class="tit3">달성률</h3>
+                            <div class="donut_row">
+                                <div class="donut_box">
+                                    <div class="txt">
+                                        <strong>스탬프 달성률</strong>
+                                        <p>스탬프 목표까지 남은 일수 · 1일</p>
+                                    </div>
+                                    <div class="donut" style="--p:0"><small>0%</small></div>
+                                </div>
+                                <div class="donut_box">
+                                    <div class="txt">
+                                        <strong>학습일 달성률</strong>
+                                        <p>남은 일수 : 291일</p>
+                                    </div>
+                                    <div class="donut" style="--p:0"><small>0%</small></div>
+                                </div>
+                            </div>
+                        </article>
+                        <!-- 나의 랭킹이 있는 자리 / 나의 랭킹이 없는 경우에는 아래로.. -->
+                        <!--<article class="box time_info">
+                            <span class="label">총 누적 학습시간</span>
+                            <span class="val">00시간 00분 00초</span>
+                        </article>
+                        <article class="box time_info">
+                            <span class="label">월간 누적 학습시간</span>
+                            <span class="val">00시간 00분 00초</span>
+                        </article>-->
+                    </div>
+                    <div class="right flex_column"><!-- 나의 랭킹이 없는 경우 :: flex_column 클래스 추가 -->
+                        <!-- 나의 랭킹이 없는 경우 -->
+                        <article class="box time_info">
+                            <span class="label">총 누적 학습시간</span>
+                            <span class="val">00시간 00분 00초</span>
+                        </article>
+                        <article class="box time_info">
+                            <span class="label">월간 누적 학습시간</span>
+                            <span class="val">00시간 00분 00초</span>
+                        </article>
+                        <!-- box -->
+                        <!-- 나의 랭킹이 없는 경우도 있음.. -->
+                        <!--<article class="box rank_box">
+                            <h3 class="tit4">나의 랭킹 <span>예지유치원</span></h3>
+                            <ol class="rank_list">
+                                <li>
+                                    <div class="info"><span class="badge gold"><i>1위</i></span><span class="name">유서준</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge silver"><i>2위</i></span><span class="name">이다인</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge bronze"><i>3위</i></span><span class="name">윤채원</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge gray"><i>4위</i></span><span class="name">안서아</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li class="is_me">
+                                    <div class="info"><span class="badge me"><i>5위</i></span><span class="name">김예지</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge gray"><i>6위</i></span><span class="name">변우빈</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge gray"><i>7위</i></span><span class="name">이지수</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge gray"><i>8위</i></span><span class="name">이솔</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge gray"><i>9위</i></span><span class="name">김지수</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li>
+                                    <div class="info"><span class="badge gray"><i>10위</i></span><span class="name">이해솔</span></div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                                <li class="sep">·<br>·<br>·</li>
+                                <li class="real_me">
+                                    <div class="info">
+                                        <span class="badge real_me"><i>ME</i></span>
+                                        <span class="me_rank"><i>5위</i></span>
+                                        <span class="name">김예지</span>
+                                    </div>
+                                    <span class="time">00시간 00분 00초</span>
+                                </li>
+                            </ol>
+                        </article>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--// container -->
+        <!-- footer -->
+        <footer class="footer_wrap">
+            <div class="inner">
+                <button type="button" id="btnTop" class="btn_top" onclick="javascript:winTop();">TOP</button><!-- Top 버튼 -->
+                <div class="link_box">
+                    <ul class="link_list">
+                        <li><a href="javascript://" class="link">개인정보처리방침</a></li>
+                        <li><a href="javascript://" class="link">이용약관</a></li>
+                    </ul>
+                    <span class="contact">
+                        <a href="tel:07075227404" class="tel">070-7522-7404</a>
+                        <span class="logo"><img src="images/logo_seedlearning.png" alt="seedlearning"></span>
+                    </span>
+                </div>
+                <div class="info">
+                    주식회사 씨드러닝(Seed Learning, Inc.)<br>
+                    7212 Canary Ln., Sachse, TX 750t48 USA<br>
+                    (13616) 경기도 성남시 분당구 정자일로 1, <span class="mo_br">C동 1813호(금곡동, 코오롱트리폴리스1)</span><br data-device="pc">
+                    Tel : 070-7522-7404 | Fax 070-8289-7404 | <span class="mo_br">E-mail : <a href="jaylee@seed-learning.com" class="email">jaylee@seed-learning.com</a></span><br data-device="pc">
+                    사업자 등록번호 : 220-87-33426 | <span class="mo_br">통신판매업신고 : 제2015-경기성남-1064호</span>
+                    <p class="copy">&copy; Seed-Learning, Inc. All Rights Reserved</p>
+                </div>
+                <div class="link_box">
+                    <ul class="link_list">
+                        <li><a href="company.html" class="link">회사소개</a></li>
+                        <li><a href="program_en.html" class="link">프로그램소개</a></li>
+                        <li><a href="notice_list.html" class="link">공지사항</a></li>
+                        <li><a href="javascript://" class="link">문의하기</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!--// footer -->
+    </div>
+    <!--// wrap -->
+    <script>
+        // 랭킹 리스트, 스탬프 완료 딱지, 도넛 애니메이션
+        const rankItems = document.querySelectorAll('.rank_list li');
+        const stamps = document.querySelectorAll('.stamp_list.completed');
+        const donuts = document.querySelectorAll('.donut');
+
+        // 하나의 Observer 생성
+        const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+
+            const target = entry.target;
+
+            // 랭킹 리스트 li 처리
+            if (target.matches('.rank_list li')) {
+                const index = Array.from(rankItems).indexOf(target);
+                target.style.animationDelay = `${index * 0.1}s`;
+                target.classList.add('animate');
+            }
+
+            // stamp_list.completed 처리
+            if (target.matches('.stamp_list.completed')) {
+                target.classList.add('animate');
+            }
+
+            // 도넛 애니메이션 처리
+            if (target.matches('.donut')) {
+                const donut = target;
+                const targetP = parseInt(donut.style.getPropertyValue('--p')) || 0;
+                let current = 0;
+
+                const step = () => {
+                    if (current <= targetP) {
+                    donut.style.setProperty('--p', current);
+                    current++;
+                    requestAnimationFrame(step);
+                    }
+                };
+                step();
+            }
+
+            observer.unobserve(target); // 한 번만 실행
+        });
+        }, { threshold: 0.1 });
+
+        // 요소 등록
+        rankItems.forEach(item => observer.observe(item));
+        stamps.forEach(item => observer.observe(item));
+        donuts.forEach(item => observer.observe(item));
+    </script>
+</body>
+</html> 

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, date=no>
+    <title>CHATTERBOX</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Chatterboxkids">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chatterboxkids">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="/inc/images/og_image.png">
+    <meta property="og:url" content="https://www.chatterboxkids.net/">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <!-- css / js -->
+    <link rel="stylesheet" href="inc/css/basefont.css">
+    <link rel="stylesheet" href="inc/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="inc/css/common.css">
+    <script src="inc/js/jquery-3.6.4.min.js"></script>
+    <script src="inc/js/swiper-bundle.min.js"></script>
+    <script src="inc/js/common.js"></script>
+</head>
+<body>
+   <div id="wrap" class="record_wrap">
+        <div id="container">
+            <div class="inner">
+                <!-- loading -->
+                <div class="loading_area" id="loading_area" style="display:none">
+                    <div class="loader"></div>
+                    <div id="bg"></div>
+                </div>
+                <!-- //loading -->
+                <div class="player_box">
+                    <iframe id="iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" oallowfullscreen="true" msallowfullscreen="true"></iframe>
+                </div>
+                <div class="control_area">
+                    <div class="msg_box">
+                        <p id="t1">여기를 눌러서 녹음하세요.</p>
+                        <p id="t2" style="display:none">녹음 중입니다. 말하기가 끝나면 누르세요.</p>
+                    </div>
+                    <div class="btn_group">
+                        <span id="r1"><button type="button" id="recordButton" class="btn_record">녹음</button></span>
+                        <span id="s1" style="display:none;"><button type="button" id="stopButton" class="btn_stop">스톱</button></span>
+                    </div>
+                    <div class="time_box">
+                        <div class="time"><strong id="timeout" class="current">00:00</strong>/ 05:00</div>
+                        <a href="javascript://" id="upload" class="btn_ico_pushable btn_upload" style="display:none"><span class="front">업로드</span></a>
+                    </div>
+                </div>
+                <div class="tit_box">
+                    <p class="tit">녹음 이력</p>
+                    <p class="desc">녹음 파일은 최대 5개까지 7일간 다운로드 및 재생이 가능하며 7일이 지나면 자동으로 삭제 됩니다.</p>
+                </div>
+                <table class="board_list">
+                    <caption class="blind">공지사항 게시판 목록</caption>
+                    <colgroup>
+                        <col style="width:10%" data-device="pc">
+                        <col style="width:auto">
+                        <col style="width:15%">
+                        <col style="width:10%" data-device="pc">
+                        <col style="width:15%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" data-device="pc">번호</th>
+                            <th scope="col">녹음일</th>
+                            <th scope="col">듣기</th>
+                            <th scope="col" class="nowrap">다운로드</th>
+                            <th scope="col">삭제</th>
+                            <th scope="col" data-device="pc">삭제 예정일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-device="pc">5</td>
+                            <td>2025-07-28 오후 10:00:00</td>
+                            <td><button type="button" class="btn_board btn_play" onclick="fnc_goPlay()">듣기</button></td>
+                            <td><button type="button" class="btn_board btn_download">다운로드</button></td>
+                            <td><button type="button" class="btn_board btn_delete">삭제</button></td>
+                            <td data-device="pc">2025-01-03</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">4</td>
+                            <td>2025-07-28 오후 10:00:00</td>
+                            <td><button type="button" class="btn_board btn_play" onclick="fnc_goPlay()">듣기</button></td>
+                            <td><button type="button" class="btn_board btn_download">다운로드</button></td>
+                            <td><button type="button" class="btn_board btn_delete">삭제</button></td>
+                            <td data-device="pc">2025-01-03</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">3</td>
+                            <td>2025-07-28 오후 10:00:00</td>
+                            <td><button type="button" class="btn_board btn_play" onclick="fnc_goPlay()">듣기</button></td>
+                            <td><button type="button" class="btn_board btn_download">다운로드</button></td>
+                            <td><button type="button" class="btn_board btn_delete">삭제</button></td>
+                            <td data-device="pc">2025-01-03</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">2</td>
+                            <td>2025-07-28 오후 10:00:00</td>
+                            <td><button type="button" class="btn_board btn_play" onclick="fnc_goPlay()">듣기</button></td>
+                            <td><button type="button" class="btn_board btn_download">다운로드</button></td>
+                            <td><button type="button" class="btn_board btn_delete">삭제</button></td>
+                            <td data-device="pc">2025-01-03</td>
+                        </tr>
+                        <tr>
+                            <td data-device="pc">1</td>
+                            <td>2025-07-28 오후 10:00:00</td>
+                            <td><button type="button" class="btn_board btn_play" onclick="fnc_goPlay()">듣기</button></td>
+                            <td><button type="button" class="btn_board btn_download">다운로드</button></td>
+                            <td><button type="button" class="btn_board btn_delete">삭제</button></td>
+                            <td data-device="pc">2025-01-03</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <audio width="0" height="0" id="mcr" name="mcr" style="display:none;">
+        <source src="" type="audio/mpeg">
+        Your browser does not support the video tag.
+    </audio>
+
+    <input type="hidden" name="r_cateseq4" id="r_cateseq4" value="">
+    <input type="hidden" name="cateseq4" id="cateseq4" value="">
+	<select id="encodingTypeSelect" style="display:none;">
+	  <option value="wav">Waveform Audio (.wav)</option>
+	  <option value="mp3">MP3 (MPEG-1 Audio Layer III) (.mp3)</option>
+	  <option value="ogg">Ogg Vorbis (.ogg)</option>
+	</select>
+
+    <script src="inc/js/WebAudioRecorder.min.js"></script>
+    <script src="inc/js/record.js"></script>
+    <script>
+        function fnc_goPlay(filename) {
+            //Messi.load('/common/player.asp?filename='+filename,{title: 'Portfolio', modal: true, titleClass: 'info'});
+        }
+
+        const audio = document.getElementById("mcr");
+        function fnc_goMusic() {
+            if ($("#mcr")[0].paused == false) {
+                $("#mcr")[0].pause();
+            } else {
+                $("#mcr")[0].play();
+            }
+
+        }
+        
+        let timer;
+        let isRunning = false;
+
+        function stopTimer() {
+            clearInterval(timer);
+            isRunning = false;
+        }
+
+        function sendAuthNum() {
+            let leftSec = 300;
+            const display = document.querySelector('#timeout');
+            if (!display) return;
+            if (isRunning) stopTimer();
+            isRunning = true;
+            startTimer(leftSec, display);
+        }
+
+        function startTimer(count, display) {
+            console.log(display);
+            timer = setInterval(() => {
+                let minutes = String(Math.floor(count/60)).padStart(2,'0');
+                let seconds = String(count%60).padStart(2,'0');
+                display.textContent = minutes + ':' + seconds;
+                if (--count < 0) {
+                    clearInterval(timer);
+                    isRunning = false;
+                    console.log("타이머 종료");
+                    alert('녹음이 종료되었습니다.\n파일을 업로드 해 주세요.');
+                }
+            },1000);
+        }
+
+
+        function stopTimer() {
+            clearInterval(timer);
+        }
+    </script>
+</body>
+</html> 

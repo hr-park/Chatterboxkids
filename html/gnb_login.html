@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, date=no>
+    <title>CHATTERBOX</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Chatterboxkids">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chatterboxkids">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="/inc/images/og_image.png">
+    <meta property="og:url" content="https://www.chatterboxkids.net/">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <!-- css / js -->
+    <link rel="stylesheet" href="inc/css/basefont.css">
+    <link rel="stylesheet" href="inc/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="inc/css/common.css">
+    <script src="inc/js/jquery-3.6.4.min.js"></script>
+    <script src="inc/js/swiper-bundle.min.js"></script>
+    <script src="inc/js/common.js"></script>
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap" class="mypage">
+        <ul id="skipToContent">
+            <li><a href="#container">본문 바로가기</a></li>
+            <li><a href="#gnb">주메뉴 바로가기</a></li>
+        </ul>
+        <!-- header -->
+        <header class="header_wrap">
+            <div class="inner">
+                <h1 class="logo"><a href="index.html">Chatterbox Kids</a></h1>
+                <div class="gnb_dim" onclick="javascript:gnbClose()"></div>
+                <nav id="gnb" class="nav">
+                    <ul class="menu_list">
+                        <li><a href="company.html" class="menu_link">회사소개</a></li>
+                        <li><a href="program_en.html" class="menu_link">프로그램</a></li>
+                        <li><a href="notice_list.html" class="menu_link">공지사항</a></li>
+                        <li><a href="data_list.html" class="menu_link">자료실</a></li>
+                        <li class="tight_gap"><a href="study_main.html?lang=1" class="btn_learn_start" target="_blank">학습시작</a></li>
+                    </ul>
+                </nav>
+                <a href="javascript://" class="btn_learn_start" data-device="tablet">학습시작</a>
+                <button type="button" class="menu_toggle" onclick="javascript:gnbOpen()" aria-label="메뉴 열기"></button>
+                <nav class="gnb_side_menu">
+                    <button type="button" class="gnb_close_btn" aria-label="메뉴 닫기" onclick="javascript:gnbClose()"></button>
+                    <ul class="gnb_menu">
+                        <li>
+                            <div class="my_stamp">
+                                <strong class="name">김예지님</strong>
+                                <ul class="stamp_list step2">
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li class="completed"><span class="img">완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                    <li><span class="img">미완료</span></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="company.html" class="gnb_menu_title">회사소개</a></li>
+                        <li>
+                            <a href="program_en.html" class="gnb_menu_title">프로그램</a>
+                            <ul class="gnb_submenu">
+                                <li><a href="program_en.html">채터박스 키즈 영어</a></li>
+                                <li><a href="program_ko.html">수다쟁이 한글</a></li>
+                                <li><a href="program_cn.html" onclick="alert('준비중입니다.'); return false;">채터박스 키즈 중국어</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="notice_list.html" class="gnb_menu_title">공지사항</a></li>
+                        <li>
+                            <a href="data_list.html" class="gnb_menu_title">자료실</a>
+                            <ul class="gnb_submenu">
+                                <li><a href="data_list.html?type=1">일반 자료실</a></li>
+                                <li><a href="data_list.html?type=2">학습 자료실</a></li>
+                                <li><a href="data_list.html?type=3">수업 자료실</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="mypage.html" class="gnb_menu_title">마이페이지</a></li>
+                    </ul>
+                    <a href="javascript://" class="btn_logout">로그아웃</a>
+                </nav>
+            </div>
+        </header>
+        <!--// header -->
+        <!-- container -->
+        <div id="container">
+            <div class="inner">
+                <h2 class="page_tit">GNB</h2>
+            </div>
+        </div>
+        <!--// container -->
+        <!-- footer -->
+        <footer class="footer_wrap">
+            <div class="inner">
+                <button type="button" id="btnTop" class="btn_top" onclick="javascript:winTop();">TOP</button><!-- Top 버튼 -->
+                <div class="link_box">
+                    <ul class="link_list">
+                        <li><a href="javascript://" class="link">개인정보처리방침</a></li>
+                        <li><a href="javascript://" class="link">이용약관</a></li>
+                    </ul>
+                    <span class="contact">
+                        <a href="tel:07075227404" class="tel">070-7522-7404</a>
+                        <span class="logo"><img src="images/logo_seedlearning.png" alt="seedlearning"></span>
+                    </span>
+                </div>
+                <div class="info">
+                    주식회사 씨드러닝(Seed Learning, Inc.)<br>
+                    7212 Canary Ln., Sachse, TX 750t48 USA<br>
+                    (13616) 경기도 성남시 분당구 정자일로 1, <span class="mo_br">C동 1813호(금곡동, 코오롱트리폴리스1)</span><br data-device="pc">
+                    Tel : 070-7522-7404 | Fax 070-8289-7404 | <span class="mo_br">E-mail : <a href="jaylee@seed-learning.com" class="email">jaylee@seed-learning.com</a></span><br data-device="pc">
+                    사업자 등록번호 : 220-87-33426 | <span class="mo_br">통신판매업신고 : 제2015-경기성남-1064호</span>
+                    <p class="copy">&copy; Seed-Learning, Inc. All Rights Reserved</p>
+                </div>
+                <div class="link_box">
+                    <ul class="link_list">
+                        <li><a href="company.html" class="link">회사소개</a></li>
+                        <li><a href="program_en.html" class="link">프로그램소개</a></li>
+                        <li><a href="notice_list.html" class="link">공지사항</a></li>
+                        <li><a href="javascript://" class="link">문의하기</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!--// footer -->
+    </div>
+    <!--// wrap -->
+</script>
+</body>
+</html> 

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, date=no>
+    <title>CHATTERBOX</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Chatterboxkids">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Chatterboxkids">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="/inc/images/og_image.png">
+    <meta property="og:url" content="https://www.chatterboxkids.net/">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <!-- css / js -->
+    <link rel="stylesheet" href="inc/css/basefont.css">
+    <link rel="stylesheet" href="inc/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="inc/css/common.css">
+    <script src="inc/js/jquery-3.6.4.min.js"></script>
+    <script src="inc/js/swiper-bundle.min.js"></script>
+    <script src="inc/js/common.js"></script>
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap" class="study_main">
+        <!-- header -->
+        <header class="study_header">
+            <div class="inner">
+                <h1 id="pageTitle"></h1>
+                <nav>
+                    <ul>
+                        <li><a href="study_main.html?lang=1" class="active" data-type="en">채터박스키즈 영어</a></li>
+                        <li><a href="study_main.html?lang=2" data-type="ko">수다쟁이 한글</a></li>
+                        <li><a href="study_main.html?lang=3" data-type="cn">채터박스키즈 중국어</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!--// header -->
+        <div id="container">
+            <div class="inner">
+                <ul class="sel_lv_list">
+                    <li class="prek"><a href="#" class="btn_pushable btn_lv"><span class="front">PRE-K</span></a></li>
+                    <li><a href="#" class="btn_pushable btn_lv active"><span class="front">Level 1</span></a></li>
+                    <li><a href="#" class="btn_pushable btn_lv"><span class="front">Level 2</span></a></li>
+                    <li><a href="#" class="btn_pushable btn_lv"><span class="front">Level 3</span></a></li>
+                </ul>
+                <div id="bookListWrap" class="book_list_wrap"> <!-- 월별 2권인 경우에는 lv 클래스 추가 -->
+                    <ul id="bookList" class="book_list"> <!-- 월별 2권인 경우에는 lv 클래스 추가 -->
+                        <!--<li>
+                            <a href="#">
+                                <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book">
+                                <span class="label_recent">최근 학습</span>
+                            </a>
+                            <p class="book_num">5</p>
+                        </li>
+                        <li>
+                            <div class="book_lv">
+                                <a href="#">
+                                    <span class="sub_num">${i}-1</span>
+                                    <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book" />
+                                    <span class="label_recent">최근 학습</span>
+                                </a>
+                                <a href="#">
+                                    <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book" />
+                                </a>
+                            </div>
+                            <p class="book_num">Book 1</p>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--// container -->
+</div>
+<!--// wrap -->
+<script>
+
+/* 퍼블 화면 확인용 개발 작업 시 지워주세요!! */
+document.addEventListener('DOMContentLoaded', function() {
+    // URL 파라미터 가져오기
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentType = urlParams.get('lang');
+
+    const bookListWrap = document.getElementById('bookListWrap');
+    const bookList = document.getElementById('bookList');
+    if(currentType == '2'){
+        bookListWrap.classList.add('lv');
+        bookList.classList.add('lv');
+
+        for (let i = 1; i <= 12; i++) {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <div class="book_lv">
+                    <a href="study.html" target="_blank">
+                        <span class="sub_num">${i}-1</span>
+                        <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book" />
+                        ${i === 1 ? '<span class="label_recent">최근 학습</span>' : ''}
+                    </a>
+                    <a href="study.html" target="_blank">
+                        <span class="sub_num">${i}-2</span>
+                        <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book" />
+                    </a>
+                </div>
+                <p class="book_num">Book ${i}</p>
+            `;
+            bookList.appendChild(li);
+        }
+    }else{  
+        for (let i = 1; i <= 12; i++) {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="study.html" target="_blank">
+                                <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book">
+                                ${i === 1 ? '<span class="label_recent">최근 학습</span>' : ''}
+                            </a>
+                        <p class="book_num">${i}</p>
+            `;
+            bookList.appendChild(li);
+        }
+
+    }
+
+    // 모든 메뉴 링크에서 active 클래스 제거
+    document.querySelectorAll('nav a').forEach(link => {
+        link.classList.remove('active');
+    });
+
+    const wrap = document.getElementById('wrap');
+    const pageTitle = document.getElementById('pageTitle');
+
+    // 1. nav 메뉴 active 클래스 처리
+    if (currentType) {
+        const activeLink = document.querySelector(`nav li:nth-child(${currentType}) a`);
+        if (activeLink) {
+            activeLink.classList.add('active');
+        }
+    } else {
+        // 기본적으로 첫 번째 메뉴에 active 클래스 추가
+        const firstLink = document.querySelector('nav li:first-child a');
+        if (firstLink) {
+            firstLink.classList.add('active');
+        }
+    }
+
+    const preKItem = document.querySelector('.sel_lv_list li.prek');
+    if (currentType == '1') {
+        // PRE-K 보이기
+        if (preKItem) preKItem.style.display = '';
+    } else {
+        // PRE-K 숨기기
+        if (preKItem) preKItem.style.display = 'none';
+    }
+
+    // 2. wrap에 언어 클래스 추가
+    if (wrap) {
+        let langClass = '';
+        let pageTitleHtml = '';
+
+        switch(currentType) {
+            case '1':
+                langClass = 'en';
+                pageTitleHtml = '채터박스키즈 영어';
+                break;
+            case '2':
+                langClass = 'ko';
+                pageTitleHtml = '수다쟁이 한글';
+                break;
+            case '3':
+                langClass = 'cn';
+                pageTitleHtml = '채터박스키즈 중국어';
+                break;
+            default:
+                langClass = 'en';
+                pageTitleHtml = '채터박스키즈 영어';
+        }
+        if (langClass) {
+            wrap.classList.add(langClass);
+        }
+        if (pageTitleHtml) {
+            pageTitle.innerHTML = pageTitleHtml;
+        }
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const headerTitle = document.querySelector('.study_header h1');
+  const studyHeader = document.querySelector('.study_header');
+
+  headerTitle.addEventListener('click', () => {
+    studyHeader.classList.toggle('on');
+  });
+});
+</script>
+</body>
+</html> 
