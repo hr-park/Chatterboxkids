@@ -239,7 +239,7 @@ table col[data-device="pc"]{display:table-column !important;}
 .board_list .label{display:inline-block;background-color:#000;color:#fff;padding:5px 10px 2px 10px;border-radius:999px;font-size:19px;}
 .board_list .subject{display:block;color:#222;text-decoration:none;text-align:left;font-size:21px}
 
-.board_view{width:100%;font-size:16px;border-top:2px solid #333;border-collapse:separate;}
+.board_view{width:100%;font-size:16px;border-top:2px solid #333;}
 .board_view th,
 .board_view td{padding:22px 10px;border-bottom:1px solid #bfbfbf;text-align:center;color:#333;font-size:21px;}
 .board_view th{background-color:#fffdf7;font-weight:600;word-break:keep-all}
@@ -725,6 +725,7 @@ table col[data-device="pc"]{display:table-column !important;}
   table th[data-device="pc"],
   table col[data-device="pc"]{
     display:none !important;
+    border-bottom:0 none;
   }
 
   .study_header .inner{height:50px;margin-top:50px;}
