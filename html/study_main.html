@@ -52,25 +52,27 @@
                     <li><a href="#" class="btn_pushable btn_lv"><span class="front">Level 2</span></a></li>
                     <li><a href="#" class="btn_pushable btn_lv"><span class="front">Level 3</span></a></li>
                 </ul>
-                <ul id="bookList" class="book_list">
-                    <!--<li>
-                        <a href="#">
-                            <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book">
-                        </a>
-                        <p class="book_num">5</p>
-                    </li>
-                    <li>
-                        <div class="book_lv">
+                <div id="bookListWrap" class="book_list_wrap">
+                    <ul id="bookList" class="book_list">
+                        <!--<li>
                             <a href="#">
-                                <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book" />
+                                <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book">
                             </a>
-                            <a href="#">
-                                <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book" />
-                            </a>
-                        </div>
-                        <p class="book_num">Book 1</p>
-                    </li>-->
-                </ul>
+                            <p class="book_num">5</p>
+                        </li>
+                        <li>
+                            <div class="book_lv">
+                                <a href="#">
+                                    <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book" />
+                                </a>
+                                <a href="#">
+                                    <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book" />
+                                </a>
+                            </div>
+                            <p class="book_num">Book 1</p>
+                        </li>-->
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -85,10 +87,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const currentType = urlParams.get('lang');
 
+    const bookListWrap = document.getElementById('bookListWrap');
     const bookList = document.getElementById('bookList');
     if(currentType == '2'){
+        bookListWrap.classList.add('lv');
         bookList.classList.add('lv');
-        for (let i = 1; i <= 10; i++) {
+
+        for (let i = 1; i <= 12; i++) {
             const li = document.createElement('li');
             li.innerHTML = `
                 <div class="book_lv">
@@ -106,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bookList.appendChild(li);
         }
     }else{  
-        for (let i = 1; i <= 10; i++) {
+        for (let i = 1; i <= 12; i++) {
             const li = document.createElement('li');
             li.innerHTML = `<a href="study.html" target="_blank">
                     <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book">
@@ -179,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function updateBookshelfBg(listSelector, columns) {
+    /*function updateBookshelfBg(listSelector, columns) {
         const lists = document.querySelectorAll(listSelector);
         lists.forEach(list => {
             const items = Array.from(list.querySelectorAll('li'));
@@ -201,11 +206,11 @@ document.addEventListener('DOMContentLoaded', function() {
             updateBookshelfBg('.book_list', 6);     // PC 일반 리스트 6개/row
             updateBookshelfBg('.book_list.lv', 4);  // PC lv 리스트 4개/row
         }
-     }
+     }*/
 
     // 초기 실행 & 리사이즈 대응
-    window.addEventListener('load', refreshBookshelfBg);
-    window.addEventListener('resize', refreshBookshelfBg);
+    //window.addEventListener('load', refreshBookshelfBg);
+    //window.addEventListener('resize', refreshBookshelfBg);
 });
 
 document.addEventListener('DOMContentLoaded', () => {

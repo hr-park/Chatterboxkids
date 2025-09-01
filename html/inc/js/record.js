@@ -22,6 +22,7 @@ var r1 = document.getElementById("r1");
 //var r2 = document.getElementById("r2");
 const t1 = document.getElementById("t1");
 const t2 = document.getElementById("t2");
+const uploadButton = document.getElementById("upload"); 
 
 //add events to those 2 buttons
 recordButton.addEventListener("click", startRecording);
@@ -106,7 +107,7 @@ function startRecording() {
 		//r2.style.display = '';
 		t1.style.display = 'none';
 		t2.style.display = '';
-
+		uploadButton.style.display = '';
 	}).catch(function(err) {
 		console.error("getUserMedia error:", err);
 		stopTimer();
@@ -116,6 +117,7 @@ function startRecording() {
 		//r2.style.display = 'none';
 		t1.style.display = '';
 		t2.style.display = 'none';
+		uploadButton.style.display = 'none';
 
 		alert('마이크 연결을 확인해 주세요.'); 
 		return;

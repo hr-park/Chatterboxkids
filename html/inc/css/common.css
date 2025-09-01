@@ -394,27 +394,30 @@ table col[data-device="pc"]{display:table-column !important;}
 .study_header nav a.active{position:relative;padding-top:25px;color:var(--highlight);border-bottom:1px solid var(--highlight);}
 .study_header nav a.active:before{content:'';position:absolute;left:50%;top:0;z-index:1;display:inline-block;width:54px;height:18px;transform:translate(-50%, 0);background:url('../../images/img_btn_sparkle.png') no-repeat 50% 50% / 100% auto;}
 .sel_lv_list{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:30px;}
-.book_list{overflow:hidden;position:relative;display:flex;flex-wrap:wrap;padding:125px 100px 0;gap:7.8vw 4%;}
-.book_list li{text-align:center}
-.book_list li::after{content:"";position:absolute;left:0;width:100%;height:20px;background:url("../../images/study/bg_bookshelf.png") no-repeat center;background-size:100% auto}
-.book_list li:nth-child(6n)::after{left:calc(-100% * 5 - 4% * 5);width:calc(100% * 6 + 4% * 5);bottom:calc(-7.8vw / 2);}
-.book_list li:nth-last-child(-n + 6):nth-child(6n)::after{display:none;}
-.book_list li{flex:0 0 calc(16.666% - 5.9%);}
+
+.book_list_wrap{/*padding:0 100px 100px 100px;*/margin:125px 0 0;}
+.book_list_wrap:not(.lv){background:url("../../images/study/bg_bookshelf.png") no-repeat 50% 0 / 100% 100%}
+.book_list{overflow:hidden;position:relative;max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;/*gap:90px 4%;*/gap:80px 48px;}
+.book_list li{flex: 0 0 calc((100% - 5 * 48px) / 6);text-align:center}
 .book_list li a{display:block;}
-.book_list.lv li{flex:0 0 calc(25% - 8.2%);}
+.book_list li a img{display:block}
+
+/*.book_list li::after{content:"";position:absolute;left:0;width:100%;height:20px;background:url("../../images/study/bg_bookshelf.png") no-repeat center;background-size:100% auto}
+.book_list li:nth-child(6n)::after{left:calc(-100% * 5 - 4% * 5);width:calc(100% * 6 + 4% * 5);bottom:calc(-7.8vw / 2);}
+.book_list li:nth-last-child(-n + 6):nth-child(6n)::after{display:none;}*/
+
+
+.book_list_wrap.lv{background:url("../../images/study/bg_bookshelf_lv.png") no-repeat 50% 0 / 100% 100%;}
+.book_list.lv{gap:40px 65px;}
+.book_list.lv li{gap:40px 65px;flex: 0 0 calc((100% - 3 * 65px) / 4);}
 .book_list.lv li a{text-align:left;}
 .book_list .sub_num{display:inline-block;margin-bottom:8px;padding:3px 10px;background:#e7e7e7;color:#555;border-radius:30px}
 .book_list .book_lv{display:flex;gap:18px}
-.book_list .book_num{display:inline-block;margin-top:10px;padding:6px 14px;background:#4b4b4b;color:#fff;border-radius:0 0 10px 10px;font-size:13px;font-weight:700;box-shadow:0 2px 4px rgba(0,0,0,0.3)}
+.book_list .book_num{display:inline-block;margin-top:20px;padding:6px 14px;background:#4b4b4b;color:#fff;border-radius:0 0 10px 10px;font-size:13px;font-weight:700;box-shadow:0 2px 4px rgba(0,0,0,0.3)}
 
 
 .study_main.ko .study_header h1{background:url('../../images/study/ico_tit_ko.png') no-repeat 0 50% / 38px auto}
 .study_main.cn .study_header h1{background:url('../../images/study/ico_tit_cn.png') no-repeat 0 50% / 38px auto}
-/*
-.study.ko .btn_lv.active{background:#81c54f;box-shadow:inset 0 -10px 0 #6db23a}
-.study.cn .btn_lv.active{background:#6dc3f7;box-shadow:inset 0 -10px 0 #4ea9e0}
-*/
-
 
 .study_main.ko .btn_pushable.btn_lv.active{background:#6db23a}
 .study_main.ko .btn_pushable.btn_lv.active .front{background:#81c54f;}
@@ -727,14 +730,19 @@ table col[data-device="pc"]{display:table-column !important;}
   .study_header nav ul{gap:20px}
   .study_header nav a{font-size:18px}
 
-  .book_list{padding:120px 0 0}
+  .book_list_wrap{margin:80px 0 0;}
+  .book_list{max-width:720px;gap:29px 24px}
+
+  .book_list_wrap:not(.lv){background-image:url('../../images/study/bg_bookshelf_tab.png');background-repeat:repeat-y;background-size:720px auto;background-position:50% 0;}
+  .book_list_wrap:not(.lv) li{flex:0 0 100px}
+
+  .book_list_wrap.lv{background:url("../../images/study/bg_bookshelf_lv_tab.png") no-repeat 50% 0;background-repeat:no-repeat;background-size:720px auto;}
+  .book_list.lv{gap:41px 24px}
+  .book_list.lv li{flex:0 0 147px}
 
   .record_wrap .control_area{flex-direction:column;}
   .record_wrap .tit_box{flex-direction:column;align-items:flex-start;gap:5px}
   .record_wrap .time_box{margin-left:0}
-
-    
-
 }
 
 @media (max-width:767px){
@@ -989,36 +997,20 @@ table col[data-device="pc"]{display:table-column !important;}
   
 
   
-  .book_list{overflow:visible;padding:40px 0 0 0;gap:2vw 24px;}
+  .book_list{overflow:visible;/*padding:40px 0 0 0;gap:2vw 24px;*/}
   .book_list .sub_num{margin-bottom:5px;padding:2px 5px;font-size:10px}
   .book_list .book_lv{gap:5px}
-  .book_list .book_num{padding:4px 10px;border-radius:0 0 5px 5px;font-size:12px}
+  .book_list .book_num{padding:4px 10px;margin-top:15px;border-radius:0 0 5px 5px;font-size:10px}
 
-  .book_list,
-  .book_list.lv {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2vw 16px;/* row-gap, column-gap */
-    padding-bottom: 20px;/* 책장 이미지 높이 여백 */
-    position: relative;
+  .book_list_wrap{margin:40px -15px 0;}
+  .book_list{max-width:310px;gap:20px 20px}
 
-    /* 책장 배경 */
-    background-image: url("../../images/study/bg_bookshelf.png");
-    background-repeat: repeat-y;      /* 한 줄마다 반복 */
-    background-position: 50% bottom;
-    background-size: 100% var(--row-height, 20px);/* JS에서 row-height 적용 */
-  }
+  .book_list_wrap:not(.lv){background-image:url('../../images/study/bg_bookshelf_m.png');background-size:auto 694px;}
+  .book_list:not(.lv) li{flex:0 0 90px}
 
-  .book_list li,
-  .book_list.lv li {
-    position: relative;
-    text-align: center;
-  }
-
-  .book_list li{flex: 0 0 calc((100% - 5 * 4%) / 6);}
-  .book_list.lv li{flex: 0 0 calc((100% - 3 * 2%) / 4);}
-
-
+  .book_list_wrap.lv{background:url("../../images/study/bg_bookshelf_lv_m.png") no-repeat 50% 7px;background-size:auto 1044px;}
+  .book_list.lv{gap:21px 16px}
+  .book_list.lv li{flex:0 0 147px}
 
   .study_header .inner{position:relative;height:50px;margin-top:0;}
   .study_header h1{position:relative;padding:0 15px 0 25px;font-size:20px;background-size:20px !important;cursor:pointer}
@@ -1033,13 +1025,6 @@ table col[data-device="pc"]{display:table-column !important;}
   .study_header nav a.active:before{display:none}
   .study_main #container{padding:10px 0 140px}
 
-/*
-  .study.ko .sel_lv_list .btn_lv.active{box-shadow:inset 0 -5px 0 #6db23a}
-  .study.cn .sel_lv_list .btn_lv.active{box-shadow:inset 0 -5px 0 #4ea9e0}
-
-  .study.ko .study_header h1{background-size:20px;}
-  .study.cn .study_header h1{background-size:20px;}
-*/
     .study #container{padding:15px 0 50px}
     .study_wrap .top{flex-direction:column;gap:20px}    
     .study_wrap .info_wrap{width:100%;padding:25px 15px}
