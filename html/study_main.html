@@ -52,18 +52,21 @@
                     <li><a href="#" class="btn_pushable btn_lv"><span class="front">Level 2</span></a></li>
                     <li><a href="#" class="btn_pushable btn_lv"><span class="front">Level 3</span></a></li>
                 </ul>
-                <div id="bookListWrap" class="book_list_wrap">
-                    <ul id="bookList" class="book_list">
+                <div id="bookListWrap" class="book_list_wrap"> <!-- 월별 2권인 경우에는 lv 클래스 추가 -->
+                    <ul id="bookList" class="book_list"> <!-- 월별 2권인 경우에는 lv 클래스 추가 -->
                         <!--<li>
                             <a href="#">
                                 <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book">
+                                <span class="label_recent">최근 학습</span>
                             </a>
                             <p class="book_num">5</p>
                         </li>
                         <li>
                             <div class="book_lv">
                                 <a href="#">
+                                    <span class="sub_num">${i}-1</span>
                                     <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book" />
+                                    <span class="label_recent">최근 학습</span>
                                 </a>
                                 <a href="#">
                                     <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book" />
@@ -100,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="study.html" target="_blank">
                         <span class="sub_num">${i}-1</span>
                         <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book" />
+                        ${i === 1 ? '<span class="label_recent">최근 학습</span>' : ''}
                     </a>
                     <a href="study.html" target="_blank">
                         <span class="sub_num">${i}-2</span>
@@ -114,9 +118,10 @@ document.addEventListener('DOMContentLoaded', function() {
         for (let i = 1; i <= 12; i++) {
             const li = document.createElement('li');
             li.innerHTML = `<a href="study.html" target="_blank">
-                    <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book">
-                </a>
-                <p class="book_num">${i}</p>
+                                <img src="http://manager.chatterboxkids.net/pages/upload/PreK5.png" class="book">
+                                ${i === 1 ? '<span class="label_recent">최근 학습</span>' : ''}
+                            </a>
+                        <p class="book_num">${i}</p>
             `;
             bookList.appendChild(li);
         }
@@ -183,34 +188,6 @@ document.addEventListener('DOMContentLoaded', function() {
             pageTitle.innerHTML = pageTitleHtml;
         }
     }
-
-    /*function updateBookshelfBg(listSelector, columns) {
-        const lists = document.querySelectorAll(listSelector);
-        lists.forEach(list => {
-            const items = Array.from(list.querySelectorAll('li'));
-            if (!items.length) return;
-
-            // 첫 행 높이 측정
-            const firstRowHeight = Math.max(...items.slice(0, columns).map(li => li.offsetHeight));
-
-            // CSS 변수로 높이 적용
-            list.style.setProperty('--row-height', firstRowHeight + 'px');
-        });
-        }
-
-        function refreshBookshelfBg() {
-        if (window.innerWidth < 768) {
-            updateBookshelfBg('.book_list', 3);     // 모바일 일반 리스트 3개/row
-            updateBookshelfBg('.book_list.lv', 2);  // 모바일 lv 리스트 2개/row
-        } else {
-            updateBookshelfBg('.book_list', 6);     // PC 일반 리스트 6개/row
-            updateBookshelfBg('.book_list.lv', 4);  // PC lv 리스트 4개/row
-        }
-     }*/
-
-    // 초기 실행 & 리사이즈 대응
-    //window.addEventListener('load', refreshBookshelfBg);
-    //window.addEventListener('resize', refreshBookshelfBg);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
