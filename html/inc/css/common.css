@@ -270,7 +270,7 @@ table col[data-device="pc"]{display:table-column !important;}
 .program .tit_section + .sub_txt{margin-top:-40px;}
 .program .bg_card_wrap{display:flex;gap:25px;margin-top:55px;}
 .program .bg_card_wrap .card_box{flex:1;min-height:620px;padding:50px;background:#f5f5f5;border-radius:40px;}
-.program .bg_card_wrap .card_box .tit{margin-bottom:25px;font-size:32px;font-weight:700;color:#93462f;}
+.program .bg_card_wrap .card_box .tit{margin-bottom:25px;font-size:32px;font-weight:700;color:#93462f;word-break:keep-all}
 .program .bg_card_wrap .card_box .desc{color:#333;font-size:21px;line-height:1.6;word-break:keep-all}
 .program .thumb_list{padding-left:30px;margin-top:75px;}
 .program .thumb_list li{display:flex;align-items:flex-start;align-items:center;gap:65px;}
@@ -312,8 +312,24 @@ table col[data-device="pc"]{display:table-column !important;}
 .program .circle mark{display:inline-block;margin:20px 0;padding:5px 5px;font-size:22px;color:#333;font-weight:500;background-color:#ffefa9;}
 .program .circle .sub_txt{padding:0;font-size:20px}
 
-.program .section1 .card_box:first-child{background:#f5f5f5 url('../../images/program/en/img_01_01.png') no-repeat 50% 100% / 100% auto}
-.program .section1 .card_box:nth-child(2){background:#f5f5f5 url('../../images/program/en/img_01_02.png') no-repeat 50% 100% / 100% auto}
+.program.en .card_box:first-child{background:#f5f5f5 url('../../images/program/en/img_01_01.png') no-repeat 50% 100% / 100% auto}
+.program.en .card_box:nth-child(2){background:#f5f5f5 url('../../images/program/en/img_01_02.png') no-repeat 50% 100% / 100% auto}
+
+.program.cn .card_box{padding:50px 20px 50px 50px}
+.program.cn .card_box:first-child{background:#f5f5f5 url('../../images/program/cn/img_01_01.png') no-repeat 50% 100% / 100% auto}
+.program.cn .card_box:nth-child(2){background:#f5f5f5 url('../../images/program/cn/img_01_02.png') no-repeat 50% 100% / 100% auto}
+.program.cn .card_box:nth-child(3){background:#f5f5f5 url('../../images/program/cn/img_01_03.png') no-repeat 50% 100% / 100% auto}
+.program.cn .bg_card_wrap .card_box .tit,
+.program.cn .thumb_list .txt_box .tit,
+.program.cn .circle .tit{color:#6046a1}
+.program.cn .thumb_list.contents .txt_box .tit,
+.program.cn .thumb_list.level .txt_box .tit{color:#333}
+.program.cn .circle{background-color:rgba(104, 190, 234, .15);box-shadow:-20px 0 0 rgba(04, 190, 234, .25);}
+.program.cn .circle.kids{box-shadow:20px 0 0 rgba(104, 190, 234, .25)}
+.program.cn .circle mark{background-color:#c5e5f6}
+.program.cn .thumb_list.contents .txt_box .tit{background-image:url('../../images/program/cn/bg_pad_tit.png');background-repeat:no-repeat;background-position:0 0}
+.program.cn .thumb_list.level .txt_box .tit{background:url('../../images/program/cn/bg_tit_level.png');background-repeat:no-repeat;background-position:0 50%}
+
 .program .section_study .tit_section{margin-bottom:70px;}
 
 .program.ko .thumb_list .txt_box .tit{color:#169d90}
@@ -805,10 +821,19 @@ table col[data-device="pc"]{display:table-column !important;}
   .program .circle mark{margin:10px 0;padding:3px 3px;font-size:12px;}
   .program .circle .sub_txt{font-size:12px}
 
+  .program.cn .bg_card_wrap .card_box{min-height:260px;background-size:199px auto}
+  .program.cn .thumb_list.contents li .txt_box .tit{background-size:80px auto;}
+  .program.cn .thumb_list.level .txt_box .tit{background-size:31px auto;}
+  .program.cn .circle_box{box-shadow:none}
+  .program.cn .circle_row{box-shadow:0 10px 0px 0px rgba(104, 190, 234, .25)}
+  .program.cn .circle.kids{box-shadow:none}
+  .program.cn .circle.pr{box-shadow:0 10px 0px 0px rgba(104, 190, 234, .25)}
+  .program.cn .circle_row .circle + .circle:before{display:none}
+
   .program .section_study .tit_section{margin-bottom:35px}
   
-  .program .section1 .card_box:first-child{background-size:304px auto}
-  .program .section1 .card_box:nth-child(2){background-size:304px auto}
+  .program.en .card_box:first-child{background-size:304px auto}
+  .program.en .card_box:nth-child(2){background-size:304px auto}
 
   .program .stage_card{border-radius:25px;padding:25px 20px;box-shadow:2px 6px 5px -2px rgba(107, 107, 107, .06);}
   .program .stage_card + .stage_card{margin-top:20px}
