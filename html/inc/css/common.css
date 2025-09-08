@@ -356,12 +356,6 @@ table col[data-device="pc"]{display:table-column !important;}
 .program .stage_card .point_list strong{display:inline-block;margin-right:4px;font-weight:500;font-size:23px;color:#61b126}
 
 /* study */
-.study{/*width:100%;min-height:100vh;*/background:#fff url('../../images/study/bg_study.png') no-repeat 50% 0% / auto 100%}
-.study_main{background:#fff url('../../images/study/bg_study.png') no-repeat 50% 0% / auto 100%}
-.study_main.en{background:#fff url('../../images/study/bg_en.png') no-repeat 50% 0% / auto 100%}
-.study_main.ko{background:#fff url('../../images/study/bg_ko.png') no-repeat 50% 0% / auto 100%}
-.study_main.cn{background:#fff url('../../images/study/bg_cn.png') no-repeat 50% 0% / auto 100%}
-
 .study_header{display:flex;}
 .study_header .inner{display:flex;width:100%;height:50px;margin-top:50px;align-items:center;justify-content:space-between;}
 .study_header h1{padding-left:50px;color:#dc2c2c;font-weight:300;font-size:40px;letter-spacing:-.04em;background:url('../../images/study/ico_tit_en.png') no-repeat 0 0 / 38px auto}
@@ -382,7 +376,6 @@ table col[data-device="pc"]{display:table-column !important;}
 .book_list_wrap.lv{background:url("../../images/study/bg_bookshelf_lv.png") no-repeat 50% 0 / 100% 100%;}
 .book_list.lv{gap:40px 65px;}
 .book_list.lv li{gap:40px 65px;flex: 0 0 calc((100% - 3 * 65px) / 4);}
-.book_list.lv li a{text-align:left;}
 .book_list .sub_num{display:inline-block;margin-bottom:8px;padding:3px 10px;background:#e7e7e7;color:#555;border-radius:30px}
 .book_list .book_lv{display:flex;gap:18px}
 .book_list .book_num{display:inline-block;margin-top:20px;padding:6px 14px;background:#4b4b4b;color:#fff;border-radius:0 0 10px 10px;font-size:13px;font-weight:700;box-shadow:0 2px 4px rgba(0,0,0,0.3)}
@@ -905,10 +898,6 @@ table col[data-device="pc"]{display:table-column !important;}
   .pagination{margin-top:30px;gap:5px;}
   .pagination a{padding:3px 4px;font-size:12px;}
 
-  .study{background:url('../../images/study/bg_study_m_top.png') no-repeat 50% 0% / 100% auto, url('../../images/study/bg_study_m_bottom.png') no-repeat 50% 100% / 100% auto;}
-  .study_main.en{background:url('../../images/study/bg_en_m_top.png') no-repeat 50% 0% / 100% auto, url('../../images/study/bg_en_m_bottom.png') no-repeat 50% 100% / 100% auto;}
-  .study_main.ko{background:url('../../images/study/bg_ko_m_top.png') no-repeat 50% 0% / 100% auto, url('../../images/study/bg_ko_m_bottom.png') no-repeat 50% 100% / 100% auto;}
-  .study_main.cn{background:url('../../images/study/bg_cn_m_top.png') no-repeat 50% 0% / 100% auto, url('../../images/study/bg_cn_m_bottom.png') no-repeat 50% 100% / 100% auto;}
 
   .sel_lv_list{gap:20px 15px;}
   

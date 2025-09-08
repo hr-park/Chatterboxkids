@@ -29,6 +29,14 @@
     <script src="inc/js/common.js"></script>
 </head>
 <body>
+<!-- 배경 관리자에서 적용!! -->
+<style>
+.study{background:#fff url('images/study/bg_study.png') no-repeat 50% 0% / auto 100%}
+/* 모바일은 위/아래 나눠서 적용 */
+@media (max-width:767px){
+  .study{background:url('images/study/bg_study_m_top.png') no-repeat 50% 0% / 100% auto, url('images/study/bg_study_m_bottom.png') no-repeat 50% 100% / 100% auto;}
+}
+</style>
     <ul id="skipToContent">
         <li><a href="#container">본문 바로가기</a></li>
         <li><a href="#gnb">주메뉴 바로가기</a></li>

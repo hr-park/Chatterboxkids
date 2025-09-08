@@ -29,6 +29,19 @@
     <script src="inc/js/common.js"></script>
 </head>
 <body>
+<!-- 배경 관리자에서 적용!! -->
+<style>
+.study_main{background:#fff url('images/study/bg_study.png') no-repeat 50% 0% / auto 100%}
+.study_main.en{background:#fff url('images/study/bg_en.png') no-repeat 50% 0% / auto 100%}
+.study_main.ko{background:#fff url('images/study/bg_ko.png') no-repeat 50% 0% / auto 100%}
+.study_main.cn{background:#fff url('images/study/bg_cn.png') no-repeat 50% 0% / auto 100%}
+/* 모바일은 위/아래 나눠서 적용 */
+@media (max-width:767px){
+  .study_main.en{background:url('images/study/bg_en_m_top.png') no-repeat 50% 0% / 100% auto, url('images/study/bg_en_m_bottom.png') no-repeat 50% 100% / 100% auto;}
+  .study_main.ko{background:url('images/study/bg_ko_m_top.png') no-repeat 50% 0% / 100% auto, url('images/study/bg_ko_m_bottom.png') no-repeat 50% 100% / 100% auto;}
+  .study_main.cn{background:url('images/study/bg_cn_m_top.png') no-repeat 50% 0% / 100% auto, url('images/study/bg_cn_m_bottom.png') no-repeat 50% 100% / 100% auto;}
+}
+</style>
     <!-- wrap -->
     <div id="wrap" class="study_main">
         <!-- header -->
